@@ -25,10 +25,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    aboutdialog.cpp \
+    logindialog.cpp \
+    providerdialog.cpp \
+    customerdialog.cpp \
+    employeedialog.cpp \
+    departmentdialog.cpp \
+    statedialog.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    aboutdialog.h \
+    logindialog.h \
+    providerdialog.h \
+    customerdialog.h \
+    employeedialog.h \
+    departmentdialog.h \
+    statedialog.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    aboutdialog.ui \
+    logindialog.ui \
+    providerdialog.ui \
+    customerdialog.ui \
+    employeedialog.ui \
+    departmentdialog.ui \
+    statedialog.ui
