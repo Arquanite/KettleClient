@@ -32,7 +32,10 @@ SOURCES += \
     customerdialog.cpp \
     employeedialog.cpp \
     departmentdialog.cpp \
-    statedialog.cpp
+    statedialog.cpp \
+    productdialog.cpp \
+    partdialog.cpp \
+    orderdialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +45,10 @@ HEADERS += \
     customerdialog.h \
     employeedialog.h \
     departmentdialog.h \
-    statedialog.h
+    statedialog.h \
+    productdialog.h \
+    partdialog.h \
+    orderdialog.h
 
 FORMS += \
         mainwindow.ui \
@@ -52,4 +58,7 @@ FORMS += \
     customerdialog.ui \
     employeedialog.ui \
     departmentdialog.ui \
-    statedialog.ui
+    statedialog.ui \
+    productdialog.ui \
+    partdialog.ui \
+    orderdialog.ui
