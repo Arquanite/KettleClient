@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = KettleClient
 TEMPLATE = app
 
+INCLUDEPATH += $$PWD/headers
+
 DEFINES += QT_DEPRECATED_WARNINGS
 
 isEmpty(PREFIX) {
@@ -30,41 +32,41 @@ INSTALLS += iconfile
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    aboutdialog.cpp \
-    logindialog.cpp \
-    providerdialog.cpp \
-    customerdialog.cpp \
-    employeedialog.cpp \
-    departmentdialog.cpp \
-    statedialog.cpp \
-    productdialog.cpp \
-    partdialog.cpp \
-    orderdialog.cpp
+        sources/main.cpp \
+        sources/mainwindow.cpp \
+    sources/aboutdialog.cpp \
+    sources/logindialog.cpp \
+    sources/providerdialog.cpp \
+    sources/customerdialog.cpp \
+    sources/employeedialog.cpp \
+    sources/departmentdialog.cpp \
+    sources/statedialog.cpp \
+    sources/productdialog.cpp \
+    sources/partdialog.cpp \
+    sources/orderdialog.cpp
 
 HEADERS += \
-        mainwindow.h \
-    aboutdialog.h \
-    logindialog.h \
-    providerdialog.h \
-    customerdialog.h \
-    employeedialog.h \
-    departmentdialog.h \
-    statedialog.h \
-    productdialog.h \
-    partdialog.h \
-    orderdialog.h
+        headers/mainwindow.h \
+    headers/aboutdialog.h \
+    headers/logindialog.h \
+    headers/providerdialog.h \
+    headers/customerdialog.h \
+    headers/employeedialog.h \
+    headers/departmentdialog.h \
+    headers/statedialog.h \
+    headers/productdialog.h \
+    headers/partdialog.h \
+    headers/orderdialog.h
 
 FORMS += \
-        mainwindow.ui \
-    aboutdialog.ui \
-    logindialog.ui \
-    providerdialog.ui \
-    customerdialog.ui \
-    employeedialog.ui \
-    departmentdialog.ui \
-    statedialog.ui \
-    productdialog.ui \
-    partdialog.ui \
-    orderdialog.ui
+        forms/mainwindow.ui \
+    forms/aboutdialog.ui \
+    forms/logindialog.ui \
+    forms/providerdialog.ui \
+    forms/customerdialog.ui \
+    forms/employeedialog.ui \
+    forms/departmentdialog.ui \
+    forms/statedialog.ui \
+    forms/productdialog.ui \
+    forms/partdialog.ui \
+    forms/orderdialog.ui
