@@ -43,7 +43,9 @@ SOURCES += \
     sources/statedialog.cpp \
     sources/productdialog.cpp \
     sources/partdialog.cpp \
-    sources/orderdialog.cpp
+    sources/orderdialog.cpp \
+    sources/waitingspinnerwidget.cpp \
+    sources/waitingdialog.cpp \
 
 HEADERS += \
         headers/mainwindow.h \
@@ -56,7 +58,9 @@ HEADERS += \
     headers/statedialog.h \
     headers/productdialog.h \
     headers/partdialog.h \
-    headers/orderdialog.h
+    headers/orderdialog.h \
+    headers/waitingspinnerwidget.h \
+    headers/waitingdialog.h
 
 FORMS += \
         forms/mainwindow.ui \
@@ -69,4 +73,5 @@ FORMS += \
     forms/statedialog.ui \
     forms/productdialog.ui \
     forms/partdialog.ui \
-    forms/orderdialog.ui
+    forms/orderdialog.ui \
+    forms/waitingdialog.ui
