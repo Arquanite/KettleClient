@@ -46,6 +46,9 @@ SOURCES += \
     sources/orderdialog.cpp \
     sources/waitingspinnerwidget.cpp \
     sources/waitingdialog.cpp \
+    sources/randomjsonfactory.cpp \
+    sources/randomaccesslist.cpp \
+    sources/jsonmodel.cpp
 
 HEADERS += \
         headers/mainwindow.h \
@@ -60,7 +63,10 @@ HEADERS += \
     headers/partdialog.h \
     headers/orderdialog.h \
     headers/waitingspinnerwidget.h \
-    headers/waitingdialog.h
+    headers/waitingdialog.h \
+    headers/randomjsonfactory.h \
+    headers/randomaccesslist.h \
+    headers/jsonmodel.h
 
 FORMS += \
         forms/mainwindow.ui \

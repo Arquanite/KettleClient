@@ -12,6 +12,8 @@
 #include "providerdialog.h"
 #include "statedialog.h"
 #include "waitingdialog.h"
+#include "randomjsonfactory.h"
+#include "jsonmodel.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
@@ -54,6 +56,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
        LoginDialog *dialog = new LoginDialog(this);
        dialog->exec();
     });
+
+    QList<QJsonObject> data;
+    RandomJSONFactory f;
+    for(int i=0; i<10; i++){
+        data.append(f.randomCustomer());
+    }
+    JSONModel *model = new JSONModel(data, this);
+    ui->tableMain->setModel(model);
 }
 
 MainWindow::~MainWindow()
