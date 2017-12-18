@@ -49,7 +49,7 @@ SOURCES += \
     sources/randomjsonfactory.cpp \
     sources/randomaccesslist.cpp \
     sources/jsonmodel.cpp \
-    viewcontroller.cpp
+    sources/viewcontroller.cpp
 
 HEADERS += \
         headers/mainwindow.h \
@@ -68,7 +68,7 @@ HEADERS += \
     headers/randomjsonfactory.h \
     headers/randomaccesslist.h \
     headers/jsonmodel.h \
-    viewcontroller.h
+    headers/viewcontroller.h
 
 FORMS += \
         forms/mainwindow.ui \

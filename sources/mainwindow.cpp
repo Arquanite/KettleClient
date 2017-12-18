@@ -1,17 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "aboutdialog.h"
-#include "customerdialog.h"
-#include "departmentdialog.h"
-#include "employeedialog.h"
-#include "logindialog.h"
-#include "orderdialog.h"
-#include "partdialog.h"
-#include "productdialog.h"
-#include "providerdialog.h"
-#include "statedialog.h"
 #include "waitingdialog.h"
+#include "logindialog.h"
+#include "aboutdialog.h"
+
 #include "randomjsonfactory.h"
 #include "jsonmodel.h"
 
@@ -26,11 +19,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         WaitingDialog *dialog = new WaitingDialog(this);
         dialog->exec();
     });
+    connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
+    connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         ui->tableMain->setModel(m_model);
     });
-    connect(ui->buttonLogout, &QPushButton::clicked, [&](){
+    connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);
        dialog->exec();
     });
