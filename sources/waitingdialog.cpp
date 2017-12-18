@@ -16,6 +16,9 @@ WaitingDialog::WaitingDialog(QWidget *parent) :
     ui->spinner->setRevolutionsPerSecond(2);
     ui->spinner->setColor(QColor(0, 0, 0));
     ui->spinner->start();
+    QTimer::singleShot(3000, [&](){
+       accept();
+    });
 }
 
 WaitingDialog::~WaitingDialog()
