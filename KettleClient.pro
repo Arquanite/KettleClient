@@ -48,7 +48,8 @@ SOURCES += \
     sources/waitingdialog.cpp \
     sources/randomjsonfactory.cpp \
     sources/randomaccesslist.cpp \
-    sources/jsonmodel.cpp
+    sources/jsonmodel.cpp \
+    viewcontroller.cpp
 
 HEADERS += \
         headers/mainwindow.h \
@@ -66,7 +67,8 @@ HEADERS += \
     headers/waitingdialog.h \
     headers/randomjsonfactory.h \
     headers/randomaccesslist.h \
-    headers/jsonmodel.h
+    headers/jsonmodel.h \
+    viewcontroller.h
 
 FORMS += \
         forms/mainwindow.ui \
