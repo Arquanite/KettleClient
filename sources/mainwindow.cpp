@@ -57,6 +57,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
        dialog->exec();
     });
 
+    connect(ui->actionAbout, &QAction::triggered, [&](){
+        AboutDialog *dialog = new AboutDialog(this);
+        dialog->exec();
+    });
+
     QList<QJsonObject> data;
     RandomJSONFactory f;
     for(int i=0; i<10; i++){
