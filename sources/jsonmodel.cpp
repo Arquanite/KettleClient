@@ -1,5 +1,4 @@
 #include "jsonmodel.h"
-#include <QDebug>
 
 JSONModel::JSONModel(QList<QJsonObject> data, QObject *parent) : QAbstractTableModel(parent), m_data(data){
 
@@ -11,7 +10,6 @@ void JSONModel::setData(QList<QJsonObject> data){
     m_data = data;
     rows -= rowCount();
     cols -= columnCount();
-    qDebug()<<"cols: "<<cols;
     if(cols < 0){
         beginInsertColumns(QModelIndex(), 0, -(cols+1));
         endInsertColumns();
@@ -21,7 +19,6 @@ void JSONModel::setData(QList<QJsonObject> data){
         endRemoveColumns();
     }
     emit dataChanged(index(0,0), index(rowCount(), columnCount()));
-    qDebug()<<"Działa?"<<rowCount()<<columnCount();
 }
 
 int JSONModel::rowCount(const QModelIndex &parent) const {
@@ -39,7 +36,6 @@ QVariant JSONModel::data(const QModelIndex &index, int role) const {
     if(role == Qt::DisplayRole) return obj.value(obj.keys().at(index.column())).toVariant();
     return QVariant();
 }
-
 
 QVariant JSONModel::headerData(int section, Qt::Orientation orientation, int role) const {
     if(orientation == Qt::Horizontal && role == Qt::DisplayRole) return m_data.first().keys().at(section);
