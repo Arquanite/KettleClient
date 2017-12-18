@@ -36,10 +36,12 @@ RandomJSONFactory::RandomJSONFactory(){
     m_states = {"Czeka na realizacje", "W realizacji", "Gotowe", "Przyjęte do realizacji"};
     m_parts = {"Grzałka", "Obudowa", "Pokrywka", "Wtyczka"};
     m_letters = {"A", "B", "C", "D", "E", "F"};
-    m_street = {"ul.", "al."};
-    m_city = {"Białystok", "Warszawa", "Ełk", "Augustów", "Rzeszów", "Suwałki", "Tallinn", "Wrocław",
+    m_streets = {"ul.", "al."};
+    m_cities = {"Białystok", "Warszawa", "Ełk", "Augustów", "Rzeszów", "Suwałki", "Tallinn", "Wrocław",
               "Krasiejów", "Opole", "Rybnik", "Radom", "Sandomierz", "Kielce", "Kraków", "Zakopane",
               "Gdańsk", "Gdynia", "Sopot", "Łódź", "Poznań", "Lublin", "Bielsk Podalski", "Bielsko Biała"};
+    m_departments = {"Rozwoju", "Wysyłki", "Klientów", "Dostaw", "Produkcji", "Międzynarodowych",
+                     "Kontaktów", "Administracyjnych"};
 }
 
 QJsonObject RandomJSONFactory::randomProvider(){
@@ -118,7 +120,7 @@ QString RandomJSONFactory::randomPersonName(){
 }
 
 QString RandomJSONFactory::randomDepartmentName(){
-    return "Sample department name";
+    return m_colors.get() + " departament ds. " + m_departments.get();
 }
 
 QString RandomJSONFactory::randomProviderName(){
@@ -134,9 +136,9 @@ QString RandomJSONFactory::randomStateName(){
 }
 
 QString RandomJSONFactory::randomAddress(){
-    if(qrand()%2) return QString("%1 %2ego %3, %4").arg(m_street.get()).arg(m_surnames_m.get()).arg(qrand()%98+1).arg(m_city.get());
+    if(qrand()%2) return QString("%1 %2ego %3, %4").arg(m_streets.get()).arg(m_surnames_m.get()).arg(qrand()%98+1).arg(m_cities.get());
     QString street = m_surnames_f.get();
-    return QString("%1 %2iej %3, %4").arg(m_street.get()).arg(street.left(street.length()-1)).arg(qrand()%98+1).arg(m_city.get());
+    return QString("%1 %2iej %3, %4").arg(m_streets.get()).arg(street.left(street.length()-1)).arg(qrand()%98+1).arg(m_cities.get());
 }
 
 QString RandomJSONFactory::randomNIP(){

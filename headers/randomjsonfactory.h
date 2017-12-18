@@ -11,6 +11,11 @@ private:
     RandomAccessList m_surnames_m;
     RandomAccessList m_surnames_f;
     RandomAccessList m_colors;
+    RandomAccessList m_states;
+    RandomAccessList m_parts;
+    RandomAccessList m_letters;
+    RandomAccessList m_streets;
+    RandomAccessList m_cities;
     RandomAccessList m_departments;
 
 public:
