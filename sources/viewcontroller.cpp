@@ -55,6 +55,8 @@ void ViewController::viewChanged(int id){
     for(int i=0; i<25; i++){
         data.append(generate());
     }
+    WaitingDialog *dialog = new WaitingDialog((QWidget*)parent());
+    dialog->exec();
     m_model->setData(data);
 }
 
