@@ -11,6 +11,7 @@ private:
     RandomAccessList m_surnames_m;
     RandomAccessList m_surnames_f;
     RandomAccessList m_colors;
+    RandomAccessList m_departments;
 
 public:
     RandomJSONFactory();

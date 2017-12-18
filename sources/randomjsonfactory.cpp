@@ -33,6 +33,8 @@ RandomJSONFactory::RandomJSONFactory(){
                     "Duda", "Szewczyk", "Tomaszewska", "Pietrzak", "Marciniak"};
     m_colors = {"Czerwony", "Zielony", "Niebieski", "Żółty", "Biały", "Czarny", "Srebrny", "Złoty",
                 "Pomarańczowy", "Błękitny", "Turkusowy", "Różowy", "Beżowy", "Fioletowy", "Szary"};
+    m_departments = {"Rozwoju", "Wysyłki", "Klientów", "Dostaw", "Produkcji", "Międzynarodowych",
+                     "Kontaktów", "Administracyjnych"};
 }
 
 QJsonObject RandomJSONFactory::randomProvider(){
@@ -111,7 +113,7 @@ QString RandomJSONFactory::randomPersonName(){
 }
 
 QString RandomJSONFactory::randomDepartmentName(){
-    return "Sample department name";
+    return m_colors.get() + " departament ds. " + m_departments.get();
 }
 
 QString RandomJSONFactory::randomProviderName(){

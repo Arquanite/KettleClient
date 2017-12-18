@@ -36,7 +36,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Program &lt;span style=&quot; font-style:italic;&quot;&gt;KettleClient&lt;/span&gt; jest aplikacją umożliwiającą dostęp do bazy danych firmy &lt;span style=&quot; font-style:italic;&quot;&gt;Czajnex&lt;/span&gt;. Jest klientem napisanym w Qt do RESTowego API.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;KettleClient&lt;/span&gt; is an aplication which allow users to access database of &lt;span style=&quot; font-style:italic;&quot;&gt;Czajnex Company&lt;/span&gt;. It is a client written in Qt for REST API.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
