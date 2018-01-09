@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     });
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
     connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);
+    connect(ui->buttonRemove, &QPushButton::clicked, m_controller, &ViewController::remove);
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         ui->tableMain->setModel(m_model);
