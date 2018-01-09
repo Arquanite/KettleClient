@@ -32,54 +32,60 @@ INSTALLS += iconfile
 
 
 SOURCES += \
-        sources/main.cpp \
-        sources/mainwindow.cpp \
-    sources/aboutdialog.cpp \
-    sources/logindialog.cpp \
-    sources/providerdialog.cpp \
-    sources/customerdialog.cpp \
-    sources/employeedialog.cpp \
-    sources/departmentdialog.cpp \
-    sources/statedialog.cpp \
-    sources/productdialog.cpp \
-    sources/partdialog.cpp \
-    sources/orderdialog.cpp \
-    sources/waitingspinnerwidget.cpp \
-    sources/waitingdialog.cpp \
-    sources/randomjsonfactory.cpp \
-    sources/randomaccesslist.cpp \
-    sources/jsonmodel.cpp \
-    sources/viewcontroller.cpp
+        utils/main.cpp \
+        dialogs/mainwindow.cpp \
+    dialogs/aboutdialog.cpp \
+    dialogs/logindialog.cpp \
+    dialogs/providerdialog.cpp \
+    dialogs/customerdialog.cpp \
+    dialogs/employeedialog.cpp \
+    dialogs/departmentdialog.cpp \
+    dialogs/statedialog.cpp \
+    dialogs/productdialog.cpp \
+    dialogs/partdialog.cpp \
+    dialogs/orderdialog.cpp \
+    utils/waitingspinnerwidget.cpp \
+    dialogs/waitingdialog.cpp \
+    utils/randomjsonfactory.cpp \
+    utils/randomaccesslist.cpp \
+    patterns/jsonmodel.cpp \
+    patterns/viewcontroller.cpp \
+    patterns/credentials.cpp \
+    patterns/filteringmodel.cpp \
+    patterns/sortingstrategy.cpp
 
 HEADERS += \
-        headers/mainwindow.h \
-    headers/aboutdialog.h \
-    headers/logindialog.h \
-    headers/providerdialog.h \
-    headers/customerdialog.h \
-    headers/employeedialog.h \
-    headers/departmentdialog.h \
-    headers/statedialog.h \
-    headers/productdialog.h \
-    headers/partdialog.h \
-    headers/orderdialog.h \
-    headers/waitingspinnerwidget.h \
-    headers/waitingdialog.h \
-    headers/randomjsonfactory.h \
-    headers/randomaccesslist.h \
-    headers/jsonmodel.h \
-    headers/viewcontroller.h
+        dialogs/mainwindow.h \
+    dialogs/aboutdialog.h \
+    dialogs/logindialog.h \
+    dialogs/providerdialog.h \
+    dialogs/customerdialog.h \
+    dialogs/employeedialog.h \
+    dialogs/departmentdialog.h \
+    dialogs/statedialog.h \
+    dialogs/productdialog.h \
+    dialogs/partdialog.h \
+    dialogs/orderdialog.h \
+    utils/waitingspinnerwidget.h \
+    dialogs/waitingdialog.h \
+    utils/randomjsonfactory.h \
+    utils/randomaccesslist.h \
+    patterns/jsonmodel.h \
+    patterns/viewcontroller.h \
+    patterns/credentials.h \
+    patterns/filteringmodel.h \
+    patterns/sortingstrategy.h
 
 FORMS += \
-        forms/mainwindow.ui \
-    forms/aboutdialog.ui \
-    forms/logindialog.ui \
-    forms/providerdialog.ui \
-    forms/customerdialog.ui \
-    forms/employeedialog.ui \
-    forms/departmentdialog.ui \
-    forms/statedialog.ui \
-    forms/productdialog.ui \
-    forms/partdialog.ui \
-    forms/orderdialog.ui \
-    forms/waitingdialog.ui
+        dialogs/mainwindow.ui \
+    dialogs/aboutdialog.ui \
+    dialogs/logindialog.ui \
+    dialogs/providerdialog.ui \
+    dialogs/customerdialog.ui \
+    dialogs/employeedialog.ui \
+    dialogs/departmentdialog.ui \
+    dialogs/statedialog.ui \
+    dialogs/productdialog.ui \
+    dialogs/partdialog.ui \
+    dialogs/orderdialog.ui \
+    dialogs/waitingdialog.ui
