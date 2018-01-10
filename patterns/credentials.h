@@ -10,8 +10,6 @@ class Credentials {
     Credentials() = default;
     Credentials(const Credentials&) = delete;
     Credentials& operator =(const Credentials&) = delete;
-    Credentials(Credentials&&) = delete;
-    Credentials& operator =(Credentials&&) = delete;
 public:
     static Credentials& instance();
     QString token() const;

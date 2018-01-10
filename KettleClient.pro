@@ -64,7 +64,8 @@ SOURCES += \
     entities/part.cpp \
     entities/product.cpp \
     entities/state.cpp \
-    entities/order.cpp
+    entities/order.cpp \
+    patterns/jsonable.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -96,7 +97,8 @@ HEADERS += \
     entities/part.h \
     entities/product.h \
     entities/state.h \
-    entities/order.h
+    entities/order.h \
+    patterns/jsonable.h
 
 FORMS += \
         dialogs/mainwindow.ui \
