@@ -11,7 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = KettleClient
 TEMPLATE = app
 
-INCLUDEPATH += $$PWD/headers
+INCLUDEPATH += $$PWD/dialogs \
+               $$PWD/utils \
+               $$PWD/patterns
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
