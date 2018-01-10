@@ -54,7 +54,9 @@ SOURCES += \
     patterns/viewcontroller.cpp \
     patterns/credentials.cpp \
     patterns/filteringmodel.cpp \
-    patterns/sortingstrategy.cpp
+    patterns/sortingstrategy.cpp \
+    patterns/ascendingstrategy.cpp \
+    descendingstrategy.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -76,7 +78,9 @@ HEADERS += \
     patterns/viewcontroller.h \
     patterns/credentials.h \
     patterns/filteringmodel.h \
-    patterns/sortingstrategy.h
+    patterns/sortingstrategy.h \
+    patterns/ascendingstrategy.h \
+    descendingstrategy.h
 
 FORMS += \
         dialogs/mainwindow.ui \

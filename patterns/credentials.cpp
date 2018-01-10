@@ -5,7 +5,7 @@ Credentials &Credentials::instance(){
     return instance;
 }
 
-QString Credentials::token() const{
+QString Credentials::token() const {
     return m_token;
 }
 

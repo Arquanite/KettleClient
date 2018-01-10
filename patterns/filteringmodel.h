@@ -3,6 +3,8 @@
 
 #include <QAbstractTableModel>
 
+// Dekorator
+
 class FilteringModel : public QAbstractTableModel {
 public:
     FilteringModel(QAbstractTableModel *sourceModel, QObject *parent);

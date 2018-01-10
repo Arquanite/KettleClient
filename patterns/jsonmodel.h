@@ -4,6 +4,8 @@
 #include <QAbstractTableModel>
 #include <QJsonObject>
 
+// Adapter
+
 class JSONModel : public QAbstractTableModel {
 private:
     QList<QJsonObject> m_data;

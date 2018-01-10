@@ -4,6 +4,8 @@
 #include "jsonmodel.h"
 #include <QObject>
 
+// ???
+
 enum {
     Provider,
     Customer,
