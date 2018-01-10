@@ -56,7 +56,15 @@ SOURCES += \
     patterns/filteringmodel.cpp \
     patterns/sortingstrategy.cpp \
     patterns/ascendingstrategy.cpp \
-    descendingstrategy.cpp
+    patterns/descendingstrategy.cpp \
+    entities/provider.cpp \
+    entities/customer.cpp \
+    entities/employee.cpp \
+    entities/department.cpp \
+    entities/part.cpp \
+    entities/product.cpp \
+    entities/state.cpp \
+    entities/order.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -80,7 +88,15 @@ HEADERS += \
     patterns/filteringmodel.h \
     patterns/sortingstrategy.h \
     patterns/ascendingstrategy.h \
-    descendingstrategy.h
+    patterns/descendingstrategy.h \
+    entities/provider.h \
+    entities/customer.h \
+    entities/employee.h \
+    entities/department.h \
+    entities/part.h \
+    entities/product.h \
+    entities/state.h \
+    entities/order.h
 
 FORMS += \
         dialogs/mainwindow.ui \
