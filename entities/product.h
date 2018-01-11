@@ -1,11 +1,32 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+#include "jsonable.h"
+#include "part.h"
 
-class Product
-{
+class Product : public JSONAble {
+protected:
+    int m_id;
+    QString m_name;
+    QList<Part> m_parts;
+
+    Product(); // TODO something with this :u
 public:
-    Product();
+
+    int id() const;
+    void setId(int id);
+
+    QString name() const;
+    void setName(const QString &name);
+
+    QList<Part> parts() const;
+    void setParts(const QList<Part> &parts);
+
+    // JSONAble interface
+protected:
+    bool validate(QJsonObject json) override;
+    QMap<QString, QVariant> valuesMap() override;
+    void setValuesMap(QMap<QString, QVariant> values) override;
 };
 
 #endif // PRODUCT_H

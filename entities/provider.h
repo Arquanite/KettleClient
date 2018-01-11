@@ -1,11 +1,30 @@
 #ifndef PROVIDER_H
 #define PROVIDER_H
 
+#include "jsonable.h"
 
-class Provider
-{
+class Provider : public JSONAble {
+protected:
+    int m_id;
+    QString m_name;
+    QString m_address;
 public:
-    Provider();
+    Provider(int id, QString name, QString address);
+
+    int id() const;
+    void setId(int id);
+
+    QString name() const;
+    void setName(const QString &name);
+
+    QString address() const;
+    void setAddress(const QString &address);
+
+    // JSONAble interface
+protected:
+    bool validate(QJsonObject json) override;
+    QMap<QString, QVariant> valuesMap() override;
+    void setValuesMap(QMap<QString, QVariant> values) override;
 };
 
 #endif // PROVIDER_H

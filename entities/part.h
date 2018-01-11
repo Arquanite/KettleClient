@@ -1,11 +1,30 @@
 #ifndef PART_H
 #define PART_H
 
+#include "jsonable.h"
 
-class Part
-{
+class Part : public JSONAble {
+protected:
+    int m_id;
+    QString m_name;
+    int m_providerId;
 public:
-    Part();
+    Part(int id, QString name, int providerId);
+
+    int id() const;
+    void setId(int id);
+
+    QString name() const;
+    void setName(const QString &name);
+
+    int providerId() const;
+    void setProviderId(int providerId);
+
+    // JSONAble interface
+protected:
+    bool validate(QJsonObject json) override;
+    QMap<QString, QVariant> valuesMap() override;
+    void setValuesMap(QMap<QString, QVariant> values) override;
 };
 
 #endif // PART_H
