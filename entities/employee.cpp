@@ -7,15 +7,36 @@ Employee::Employee(int id, QString name, QString surname, double hourlyRate, int
 }
 
 bool Employee::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("surname")) return false;
+    if(!json.contains("hourly_rate")) return false;
+    if(!json.contains("hour_count")) return false;
+    if(!json.contains("supervisor_id")) return false;
+    if(!json.contains("department_id")) return false;
+    return true;
 }
 
 QMap<QString, QVariant> Employee::valuesMap(){
-    // TODO implement me
+    QMap<QString, QVariant> values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    values.insert("surname", m_surname);
+    values.insert("hourly_rate", m_hourlyRate);
+    values.insert("hour_count", m_hourCount);
+    values.insert("supervisor_id", m_supervisorId);
+    values.insert("department_id", m_departmentId);
+    return values;
 }
 
 void Employee::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    m_surname = values.value("surname").toString();
+    m_hourlyRate = values.value("hourly_rate").toDouble();
+    m_hourCount = values.value("hour_count").toInt();
+    m_supervisorId = values.value("supervisor_id").toInt();
+    m_departmentId = values.value("department_id").toInt();
 }
 
 int Employee::id() const {

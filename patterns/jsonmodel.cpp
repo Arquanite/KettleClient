@@ -4,7 +4,7 @@ JSONModel::JSONModel(QList<QJsonObject> data, QObject *parent) : QAbstractTableM
 
 }
 
-void JSONModel::setData(QList<QJsonObject> data){
+void JSONModel::setSourceData(QList<QJsonObject> data){
     int rows = rowCount();
     int cols = columnCount();
     m_data = data;

@@ -11,7 +11,7 @@ private:
     QList<QJsonObject> m_data;
 public:
     JSONModel(QList<QJsonObject> data, QObject *parent = nullptr);
-    void setData(QList<QJsonObject> data);
+    void setSourceData(QList<QJsonObject> data);
     // QAbstractItemModel interface
 public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

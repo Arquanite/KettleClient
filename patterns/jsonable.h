@@ -14,6 +14,7 @@ protected:
     virtual QMap<QString, QVariant> valuesMap() = 0;
     virtual void setValuesMap(QMap<QString, QVariant> values) = 0;
 public:
+    virtual ~JSONAble();
     bool fromJSON(QJsonObject json);
     QJsonObject toJSON();
 };

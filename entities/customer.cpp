@@ -47,4 +47,3 @@ QString Customer::nip() const {
 void Customer::setNip(const QString &nip){
     m_nip = nip;
 }
-

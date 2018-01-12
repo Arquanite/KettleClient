@@ -1,5 +1,9 @@
 #include "jsonable.h"
 
+JSONAble::~JSONAble(){
+
+}
+
 bool JSONAble::fromJSON(QJsonObject json){
     if(!validate(json)) return false;
     setValuesMap(json.toVariantMap());
