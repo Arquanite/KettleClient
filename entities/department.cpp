@@ -5,15 +5,21 @@ Department::Department(int id, QString name) : m_id(id), m_name(name){
 }
 
 bool Department::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    return true;
 }
 
 QMap<QString, QVariant> Department::valuesMap(){
-    // TODO implement me
+    QMap<QString, QVariant> values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    return values;
 }
 
 void Department::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
 }
 
 int Department::id() const {
