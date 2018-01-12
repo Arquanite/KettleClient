@@ -5,15 +5,27 @@ Customer::Customer(int id, QString name, QString address, QString nip) : m_id(id
 }
 
 bool Customer::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("address")) return false;
+    if(!json.contains("nip")) return false;
+    return true;
 }
 
 QMap<QString, QVariant> Customer::valuesMap(){
-    // TODO implement me
+    QMap<QString, QVariant> values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    values.insert("address", m_address);
+    values.insert("nip", m_nip);
+    return values;
 }
 
 void Customer::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    m_address = values.value("address").toString();
+    m_nip = values.value("nip").toString();
 }
 
 int Customer::id() const {
