@@ -5,15 +5,31 @@ Product::Product(){
 }
 
 bool Product::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("parts")) return false;
+    return true;
 }
 
 QMap<QString, QVariant> Product::valuesMap(){
-    // TODO implement me
+    QMap<QString, QVariant> values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    QList<QVariant> parts;
+    for(Part p : m_parts) parts.append(p.toJSON());
+    values.insert("parts", parts);
+    return values;
 }
 
 void Product::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    QList<QVariant> parts = values.values("products");
+    for(QVariant p : parts){
+        Part part(0, "", 0);
+        part.fromJSON(p.toJsonObject());
+        m_parts.append(part);
+    }
 }
 
 int Product::id() const {

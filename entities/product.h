@@ -8,7 +8,7 @@ class Product : public JSONAble {
 protected:
     int m_id;
     QString m_name;
-    QList<class Part> m_parts;
+    QList<Part> m_parts;
 
     Product(); // TODO something with this :u
 public:
@@ -19,8 +19,8 @@ public:
     QString name() const;
     void setName(const QString &name);
 
-    QList<class Part> parts() const;
-    void setParts(const QList<class Part> &parts);
+    QList<Part> parts() const;
+    void setParts(const QList<Part> &parts);
 
     // JSONAble interface
 protected:
