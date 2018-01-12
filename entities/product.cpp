@@ -1,7 +1,11 @@
 #include "product.h"
 
-Product::Product(){
-    // TODO implement me
+Product::Product(int id, QString name, QList<Part> parts) : m_id(id), m_name(name), m_parts(parts){
+
+}
+
+Product::Builder Product::builder(int id, QString name){
+    return Builder(id, name);
 }
 
 bool Product::validate(QJsonObject json){
@@ -54,4 +58,17 @@ QList<Part> Product::parts() const {
 
 void Product::setParts(const QList<Part> &parts){
     m_parts = parts;
+}
+
+Product::Builder::Builder(int id, QString name) : m_id(id), m_name(name){
+
+}
+
+Product::Builder &Product::Builder::addPart(Part p){
+    m_parts.append(p);
+    return *this;
+}
+
+Product Product::Builder::build(){
+    return Product(m_id, m_name, m_parts);
 }

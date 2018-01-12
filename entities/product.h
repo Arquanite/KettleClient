@@ -5,13 +5,16 @@
 #include "part.h"
 
 class Product : public JSONAble {
+    class Builder;
 protected:
     int m_id;
     QString m_name;
     QList<Part> m_parts;
 
-    Product(); // TODO something with this :u
+    Product(int id, QString name, QList<Part> parts);
+
 public:
+    static Builder builder(int id, QString name);
 
     int id() const;
     void setId(int id);
@@ -29,4 +32,14 @@ protected:
     void setValuesMap(QVariantMap values) override;
 };
 
+class Product::Builder {
+    int m_id;
+    QString m_name;
+    QList<Part> m_parts;
+
+public:
+    Builder(int id, QString name);
+    Builder& addPart(Part p);
+    Product build();
+};
 #endif // PRODUCT_H

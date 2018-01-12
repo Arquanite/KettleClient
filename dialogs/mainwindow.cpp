@@ -47,12 +47,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     JSONModel *model = new JSONModel(data, this);
     ui->tableMain->setModel(model);
 
+    /// TEST AREA ///
+
     QList<JSONAble*> lol;
     QList<Part> xd;
 //    lol = xd;
     //toJSONAble(d);
 //    toJSONAble(1);
     TypeConverter::toJSONAble(xd);
+
+    Product p = Product::builder(12, "lol").addPart(Part(1,"2",3)).addPart(Part(1,"2",3)).build();
 }
 
 MainWindow::~MainWindow(){
