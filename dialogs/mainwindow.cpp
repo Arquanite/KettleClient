@@ -9,6 +9,7 @@
 #include "jsonmodel.h"
 
 #include "product.h"
+#include "order.h"
 #include "typeconverter.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
@@ -57,6 +58,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     TypeConverter::toJSONAble(xd);
 
     Product p = Product::builder(12, "lol").addPart(Part(1,"2",3)).addPart(Part(1,"2",3)).build();
+
+
+    Order o = Order::builder(21, 37, "lolxd")
+            .addProduct(Product::builder(32, "dsd")
+                        .addPart(Part(1,"2",3))
+                        .addPart(Part(4,"5",6)).build())
+            .addProduct(Product::builder(12, "lol")
+                        .addPart(Part(7,"8",9))
+                        .addPart(Part(6,"6",6)).build())
+            .build();
 }
 
 MainWindow::~MainWindow(){

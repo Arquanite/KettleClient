@@ -5,14 +5,16 @@
 #include "product.h"
 
 class Order : public JSONAble {
+    class Builder;
 protected:
     int m_id;
     int m_customerId;
     QString m_date;
     QList<Product> m_products;
 
-    Order(); // TODO something with this :u
+    Order(int id, int customerId, QString date, QList<Product> products);
 public:
+    static Builder builder(int id, int customerId, QString date);
 
     int id() const;
     void setId(int id);
@@ -31,6 +33,18 @@ protected:
     bool validate(QJsonObject json) override;
     QVariantMap valuesMap() override;
     void setValuesMap(QVariantMap values) override;
+};
+
+class Order::Builder {
+    int m_id;
+    int m_customerId;
+    QString m_date;
+    QList<Product> m_products;
+
+public:
+    Builder(int id, int customerId, QString date);
+    Builder& addProduct(Product p);
+    Order build();
 };
 
 #endif // ORDER_H

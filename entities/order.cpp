@@ -1,7 +1,12 @@
 #include "order.h"
-// TODO destructor *->*
-Order::Order(){
-    // TODO implement me
+
+Order::Order(int id, int customerId, QString date, QList<Product> products)
+    : m_id(id), m_customerId(customerId), m_date(date), m_products(products){
+
+}
+
+Order::Builder Order::builder(int id, int customerId, QString date){
+    return Builder(id, customerId, date);
 }
 
 bool Order::validate(QJsonObject json){
@@ -29,9 +34,10 @@ void Order::setValuesMap(QVariantMap values){
     m_date = values.value("date").toString();
     QList<QVariant> products = values.values("products");
     for(QVariant p : products){
-        //m_products.append(new Product());
+        Product product = Product::builder(0, "").build();
+        product.fromJSON(p.toJsonObject());
+        m_products.append(product);
     }
-    // TODO this
 }
 
 int Order::id() const {
@@ -64,4 +70,17 @@ QList<Product> Order::products() const {
 
 void Order::setProducts(const QList<Product> &products){
     m_products = products;
+}
+
+Order::Builder::Builder(int id, int customerId, QString date) : m_id(id), m_customerId(customerId), m_date(date){
+
+}
+
+Order::Builder &Order::Builder::addProduct(Product p){
+    m_products.append(p);
+    return *this;
+}
+
+Order Order::Builder::build(){
+    return Order(m_id, m_customerId, m_date, m_products);
 }
