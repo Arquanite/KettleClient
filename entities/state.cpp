@@ -8,11 +8,11 @@ bool State::validate(QJsonObject json){
     // TODO implement me
 }
 
-QMap<QString, QVariant> State::valuesMap(){
+QVariantMap State::valuesMap(){
     // TODO implement me
 }
 
-void State::setValuesMap(QMap<QString, QVariant> values){
+void State::setValuesMap(QVariantMap values){
     // TODO implement me
 }
 

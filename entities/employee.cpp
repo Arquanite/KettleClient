@@ -17,8 +17,8 @@ bool Employee::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Employee::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Employee::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("name", m_name);
     values.insert("surname", m_surname);
@@ -29,7 +29,7 @@ QMap<QString, QVariant> Employee::valuesMap(){
     return values;
 }
 
-void Employee::setValuesMap(QMap<QString, QVariant> values){
+void Employee::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
     m_surname = values.value("surname").toString();

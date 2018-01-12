@@ -11,8 +11,8 @@ bool Product::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Product::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Product::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("name", m_name);
     QList<QVariant> parts;
@@ -21,7 +21,7 @@ QMap<QString, QVariant> Product::valuesMap(){
     return values;
 }
 
-void Product::setValuesMap(QMap<QString, QVariant> values){
+void Product::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
     QList<QVariant> parts = values.values("products");

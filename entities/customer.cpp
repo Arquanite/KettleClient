@@ -12,8 +12,8 @@ bool Customer::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Customer::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Customer::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("name", m_name);
     values.insert("address", m_address);
@@ -21,7 +21,7 @@ QMap<QString, QVariant> Customer::valuesMap(){
     return values;
 }
 
-void Customer::setValuesMap(QMap<QString, QVariant> values){
+void Customer::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
     m_address = values.value("address").toString();

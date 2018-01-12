@@ -10,14 +10,14 @@ bool Department::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Department::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Department::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("name", m_name);
     return values;
 }
 
-void Department::setValuesMap(QMap<QString, QVariant> values){
+void Department::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
 }

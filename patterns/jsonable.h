@@ -2,8 +2,7 @@
 #define JSONABLE_H
 
 #include <QJsonObject>
-#include <QMap>
-#include <QVariant>
+#include <QVariantMap>
 #include <QString>
 
 // Metoda szablonowa
@@ -11,8 +10,8 @@
 class JSONAble {
 protected:
     virtual bool validate(QJsonObject json) = 0;
-    virtual QMap<QString, QVariant> valuesMap() = 0;
-    virtual void setValuesMap(QMap<QString, QVariant> values) = 0;
+    virtual QVariantMap valuesMap() = 0;
+    virtual void setValuesMap(QVariantMap values) = 0;
 public:
     virtual ~JSONAble();
     bool fromJSON(QJsonObject json);

@@ -11,15 +11,15 @@ bool Part::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Part::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Part::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("name", m_name);
     values.insert("provider_id", m_providerId);
     return values;
 }
 
-void Part::setValuesMap(QMap<QString, QVariant> values){
+void Part::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
     m_providerId = values.value("provider_id").toInt();

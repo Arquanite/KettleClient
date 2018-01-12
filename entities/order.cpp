@@ -12,8 +12,8 @@ bool Order::validate(QJsonObject json){
     return true;
 }
 
-QMap<QString, QVariant> Order::valuesMap(){
-    QMap<QString, QVariant> values;
+QVariantMap Order::valuesMap(){
+    QVariantMap values;
     values.insert("id", m_id);
     values.insert("customer_id", m_customerId);
     values.insert("date", m_date);
@@ -23,7 +23,7 @@ QMap<QString, QVariant> Order::valuesMap(){
     return values;
 }
 
-void Order::setValuesMap(QMap<QString, QVariant> values){
+void Order::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_customerId = values.value("customer_id").toInt();
     m_date = values.value("date").toString();

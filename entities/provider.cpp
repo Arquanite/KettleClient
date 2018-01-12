@@ -5,15 +5,24 @@ Provider::Provider(int id, QString name, QString address) : m_id(id), m_name(nam
 }
 
 bool Provider::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("address")) return false;
+    return true;
 }
 
-QMap<QString, QVariant> Provider::valuesMap(){
-    // TODO implement me
+QVariantMap Provider::valuesMap(){
+    QVariantMap values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    values.insert("address", m_address);
+    return values;
 }
 
-void Provider::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+void Provider::setValuesMap(QVariantMap values){
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    m_address = values.value("address").toString();
 }
 
 int Provider::id() const {

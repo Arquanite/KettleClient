@@ -39,8 +39,8 @@ public:
     // JSONAble interface
 protected:
     bool validate(QJsonObject json) override;
-    QMap<QString, QVariant> valuesMap() override;
-    void setValuesMap(QMap<QString, QVariant> values) override;
+    QVariantMap valuesMap() override;
+    void setValuesMap(QVariantMap values) override;
 };
 
 #endif // EMPLOYEE_H
