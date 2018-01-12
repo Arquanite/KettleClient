@@ -8,6 +8,9 @@
 #include "randomjsonfactory.h"
 #include "jsonmodel.h"
 
+#include "product.h"
+#include "typeconverter.h"
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -43,6 +46,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     }
     JSONModel *model = new JSONModel(data, this);
     ui->tableMain->setModel(model);
+
+    QList<JSONAble*> lol;
+    QList<Part> xd;
+//    lol = xd;
+    //toJSONAble(d);
+//    toJSONAble(1);
+    TypeConverter::toJSONAble(xd);
 }
 
 MainWindow::~MainWindow(){

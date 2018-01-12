@@ -7,14 +7,14 @@
 // ???
 
 enum {
-    Provider,
-    Customer,
-    Employee,
-    Department,
-    Part,
-    Product,
-    State,
-    Order
+    TypeProvider,
+    TypeCustomer,
+    TypeEmployee,
+    TypeDepartment,
+    TypePart,
+    TypeProduct,
+    TypeState,
+    TypeOrder
 };
 
 class ViewController : public QObject {

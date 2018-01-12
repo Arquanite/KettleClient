@@ -13,7 +13,8 @@ TEMPLATE = app
 
 INCLUDEPATH += $$PWD/dialogs \
                $$PWD/utils \
-               $$PWD/patterns
+               $$PWD/patterns \
+               $$PWD/entities
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
@@ -98,7 +99,8 @@ HEADERS += \
     entities/product.h \
     entities/state.h \
     entities/order.h \
-    patterns/jsonable.h
+    patterns/jsonable.h \
+    utils/typeconverter.h
 
 FORMS += \
         dialogs/mainwindow.ui \

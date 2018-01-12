@@ -5,15 +5,24 @@ Part::Part(int id, QString name, int providerId) : m_id(id), m_name(name), m_pro
 }
 
 bool Part::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("provider_id")) return false;
+    return true;
 }
 
 QMap<QString, QVariant> Part::valuesMap(){
-    // TODO implement me
+    QMap<QString, QVariant> values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    values.insert("provider_id", m_providerId);
+    return values;
 }
 
 void Part::setValuesMap(QMap<QString, QVariant> values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    m_providerId = values.value("provider_id").toInt();
 }
 
 int Part::id() const {

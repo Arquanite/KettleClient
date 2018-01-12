@@ -26,28 +26,28 @@ void ViewController::viewChanged(int id){
     RandomJSONFactory JSONFactory;
     m_current = id;
     switch (id) {
-    case Provider:
+    case TypeProvider:
         generate = std::bind(&RandomJSONFactory::randomProvider, JSONFactory);
         break;
-    case Customer:
+    case TypeCustomer:
         generate = std::bind(&RandomJSONFactory::randomCustomer, JSONFactory);
         break;
-    case Employee:
+    case TypeEmployee:
         generate = std::bind(&RandomJSONFactory::randomEmployee, JSONFactory);
         break;
-    case Department:
+    case TypeDepartment:
         generate = std::bind(&RandomJSONFactory::randomDepartment, JSONFactory);
         break;
-    case Part:
+    case TypePart:
         generate = std::bind(&RandomJSONFactory::randomPart, JSONFactory);
         break;
-    case Product:
+    case TypeProduct:
         generate = std::bind(&RandomJSONFactory::randomProduct, JSONFactory);
         break;
-    case State:
+    case TypeState:
         generate = std::bind(&RandomJSONFactory::randomState, JSONFactory);
         break;
-    case Order:
+    case TypeOrder:
         generate = std::bind(&RandomJSONFactory::randomOrder, JSONFactory);
         break;
     }
