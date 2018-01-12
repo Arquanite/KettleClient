@@ -5,15 +5,24 @@ State::State(int id, QString name, int departmentId) : m_id(id), m_name(name), m
 }
 
 bool State::validate(QJsonObject json){
-    // TODO implement me
+    if(!json.contains("id")) return false;
+    if(!json.contains("name")) return false;
+    if(!json.contains("department_id")) return false;
+    return true;
 }
 
 QVariantMap State::valuesMap(){
-    // TODO implement me
+    QVariantMap values;
+    values.insert("id", m_id);
+    values.insert("name", m_name);
+    values.insert("department_id", m_departmentId);
+    return values;
 }
 
 void State::setValuesMap(QVariantMap values){
-    // TODO implement me
+    m_id = values.value("id").toInt();
+    m_name = values.value("name").toString();
+    m_departmentId = values.value("departmend_id").toInt();
 }
 
 int State::id() const {
