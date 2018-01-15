@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -66,7 +66,9 @@ SOURCES += \
     entities/product.cpp \
     entities/state.cpp \
     entities/order.cpp \
-    patterns/jsonable.cpp
+    patterns/jsonable.cpp \
+    utils/networkservice.cpp \
+    utils/typeconverter.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -100,7 +102,9 @@ HEADERS += \
     entities/state.h \
     entities/order.h \
     patterns/jsonable.h \
-    utils/typeconverter.h
+    utils/typeconverter.h \
+    utils/networkservice.h \
+    utils/entities.h
 
 FORMS += \
         dialogs/mainwindow.ui \

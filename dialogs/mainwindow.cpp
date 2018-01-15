@@ -12,6 +12,8 @@
 #include "order.h"
 #include "typeconverter.h"
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -59,7 +61,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     Product p = Product::builder(12, "lol").addPart(Part(1,"2",3)).addPart(Part(1,"2",3)).build();
 
-
     Order o = Order::builder(21, 37, "lolxd")
             .addProduct(Product::builder(32, "dsd")
                         .addPart(Part(1,"2",3))
@@ -68,6 +69,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                         .addPart(Part(7,"8",9))
                         .addPart(Part(6,"6",6)).build())
             .build();
+
+    RandomJSONFactory fac;
+    for(int i=0; i<32; i++){
+//        qDebug()<<fac.randomState();
+    };
 }
 
 MainWindow::~MainWindow(){

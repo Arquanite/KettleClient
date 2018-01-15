@@ -4,6 +4,8 @@
 #include "jsonmodel.h"
 #include <QObject>
 
+#include "networkservice.h"
+
 // ???
 
 enum {
@@ -20,6 +22,7 @@ enum {
 class ViewController : public QObject {
     Q_OBJECT
 private:
+    NetworkService m_service;
     JSONModel *m_model;
     int m_current = -1;
 public:

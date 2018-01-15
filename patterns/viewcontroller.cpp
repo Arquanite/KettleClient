@@ -12,9 +12,11 @@
 #include "providerdialog.h"
 #include "statedialog.h"
 #include "waitingdialog.h"
+#include "typeconverter.h"
 
 #include <QDebug>
 #include <QMessageBox>
+#include <QtNetwork/QNetworkReply>
 
 ViewController::ViewController(JSONModel *model, QObject *parent) : QObject(parent), m_model(model){
 
@@ -27,10 +29,14 @@ void ViewController::viewChanged(int id){
     m_current = id;
     switch (id) {
     case TypeProvider:
-        generate = std::bind(&RandomJSONFactory::randomProvider, JSONFactory);
+    {QNetworkReply *reply = m_service.getProviders();
+        connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<reply->readAll(); });}
+//        generate = std::bind(&RandomJSONFactory::randomProvider, JSONFactory);
         break;
-    case TypeCustomer:
-        generate = std::bind(&RandomJSONFactory::randomCustomer, JSONFactory);
+    case TypeCustomer: {
+        QNetworkReply *reply = m_service.getProviders();
+//        connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<TypeConverter::toCustomer( reply->readAll()); });
+    }
         break;
     case TypeEmployee:
         generate = std::bind(&RandomJSONFactory::randomEmployee, JSONFactory);
@@ -52,12 +58,12 @@ void ViewController::viewChanged(int id){
         break;
     }
     qDebug()<<"id"<<id;
-    for(int i=0; i<25; i++){
-        data.append(generate());
-    }
-    WaitingDialog *dialog = new WaitingDialog((QWidget*)parent());
-    dialog->exec();
-    m_model->setSourceData(data);
+//    for(int i=0; i<25; i++){
+//        data.append(generate());
+//    }
+//    WaitingDialog *dialog = new WaitingDialog((QWidget*)parent());
+//    dialog->exec();
+//    m_model->setSourceData(data);
 }
 
 void ViewController::add(){
