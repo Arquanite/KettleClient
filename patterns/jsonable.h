@@ -12,6 +12,7 @@ protected:
     virtual bool validate(QJsonObject json) = 0;
     virtual QVariantMap valuesMap() = 0;
     virtual void setValuesMap(QVariantMap values) = 0;
+    JSONAble() { }
 public:
     virtual ~JSONAble();
     bool fromJSON(QJsonObject json);

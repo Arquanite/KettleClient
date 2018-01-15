@@ -104,7 +104,8 @@ HEADERS += \
     patterns/jsonable.h \
     utils/typeconverter.h \
     utils/networkservice.h \
-    utils/entities.h
+    utils/entities.h \
+    utils/pdebug.h
 
 FORMS += \
         dialogs/mainwindow.ui \

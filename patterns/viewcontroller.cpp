@@ -16,7 +16,10 @@
 
 #include <QDebug>
 #include <QMessageBox>
+#include <QJsonDocument>
 #include <QtNetwork/QNetworkReply>
+
+#include "pdebug.h"
 
 ViewController::ViewController(JSONModel *model, QObject *parent) : QObject(parent), m_model(model){
 
@@ -27,34 +30,39 @@ void ViewController::viewChanged(int id){
     std::function<QJsonObject(void)> generate;
     RandomJSONFactory JSONFactory;
     m_current = id;
+    QNetworkReply *reply;
     switch (id) {
     case TypeProvider:
-    {QNetworkReply *reply = m_service.getProviders();
-        connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<reply->readAll(); });}
-//        generate = std::bind(&RandomJSONFactory::randomProvider, JSONFactory);
+        reply = m_service.getProviders();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toProvider(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
-    case TypeCustomer: {
-        QNetworkReply *reply = m_service.getProviders();
-//        connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<TypeConverter::toCustomer( reply->readAll()); });
-    }
+    case TypeCustomer:
+        reply = m_service.getCustomers();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toCustomer(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypeEmployee:
-        generate = std::bind(&RandomJSONFactory::randomEmployee, JSONFactory);
+        reply = m_service.getEmployees();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toEmployee(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypeDepartment:
-        generate = std::bind(&RandomJSONFactory::randomDepartment, JSONFactory);
+        reply = m_service.getDepartments();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toDepartment(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypePart:
-        generate = std::bind(&RandomJSONFactory::randomPart, JSONFactory);
+        reply = m_service.getParts();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toPart(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypeProduct:
-        generate = std::bind(&RandomJSONFactory::randomProduct, JSONFactory);
+        reply = m_service.getProducts();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toProduct(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypeState:
-        generate = std::bind(&RandomJSONFactory::randomState, JSONFactory);
+        reply = m_service.getStates();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toState(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     case TypeOrder:
-        generate = std::bind(&RandomJSONFactory::randomOrder, JSONFactory);
+        reply = m_service.getOrders();
+        connect(reply, &QNetworkReply::finished, [=](){ m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toOrder(QJsonDocument::fromJson(reply->readAll()).array()))); });
         break;
     }
     qDebug()<<"id"<<id;

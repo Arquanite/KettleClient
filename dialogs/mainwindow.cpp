@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
-    m_model = new JSONModel(QList<QJsonObject>(), this);
+    m_model = new JSONModel(QList<JSONAble*>(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
     connect(ui->buttonRefresh, &QPushButton::clicked, [&](){
@@ -41,14 +41,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         AboutDialog *dialog = new AboutDialog(this);
         dialog->exec();
     });
-
-    QList<QJsonObject> data;
-    RandomJSONFactory f;
-    for(int i=0; i<10; i++){
-        data.append(f.randomCustomer());
-    }
-    JSONModel *model = new JSONModel(data, this);
-    ui->tableMain->setModel(model);
 
     /// TEST AREA ///
 
