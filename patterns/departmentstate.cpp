@@ -11,7 +11,7 @@ DepartmentState::DepartmentState(NetworkService *service, JSONModel *model) : Ab
 void DepartmentState::getList(){
     QNetworkReply *reply = m_service->getDepartments();
     reply->connect(reply, &QNetworkReply::finished, [=](){
-        m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toCustomer(QJsonDocument::fromJson(reply->readAll()).array())));
+        m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toDepartment(QJsonDocument::fromJson(reply->readAll()).array())));
     });
 }
 
