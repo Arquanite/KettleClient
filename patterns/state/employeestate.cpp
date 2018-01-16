@@ -3,6 +3,8 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
+#include "employeedialog.h"
+
 EmployeeState::EmployeeState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -16,4 +18,8 @@ void EmployeeState::getList(){
 }
 
 void EmployeeState::add(){
+    EmployeeDialog *dialog = new EmployeeDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+        //m_service->post();
+    }
 }

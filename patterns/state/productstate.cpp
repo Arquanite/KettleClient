@@ -3,6 +3,8 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
+#include "productdialog.h"
+
 ProductState::ProductState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -16,5 +18,8 @@ void ProductState::getList(){
 }
 
 void ProductState::add(){
-
+    ProductDialog *dialog = new ProductDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+//        m_service->post(dialog->customer);
+    }
 }

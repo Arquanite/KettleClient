@@ -5,8 +5,6 @@
 
 #include "customerdialog.h"
 
-#include <QDebug>
-
 CustomerState::CustomerState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -21,6 +19,6 @@ void CustomerState::getList(){
 void CustomerState::add(){
     CustomerDialog *dialog = new CustomerDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-        qDebug()<<dialog->customer.name();
+        m_service->post(dialog->customer);
     }
 }

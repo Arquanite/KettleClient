@@ -3,6 +3,8 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
+#include "partdialog.h"
+
 PartState::PartState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -15,5 +17,8 @@ void PartState::getList(){
 }
 
 void PartState::add(){
-
+    PartDialog *dialog = new PartDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+//        m_service->post(dialog->customer);
+    }
 }

@@ -3,6 +3,8 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
+#include "orderdialog.h"
+
 OrderState::OrderState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -16,5 +18,8 @@ void OrderState::getList(){
 }
 
 void OrderState::add(){
-
+    OrderDialog *dialog = new OrderDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+//        m_service->post(dialog->);
+    }
 }
