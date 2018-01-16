@@ -13,7 +13,7 @@
 #include "statedialog.h"
 #include "waitingdialog.h"
 #include "typeconverter.h"
-#include "customerstate.h"
+#include "states.h"
 
 #include <QDebug>
 #include <QMessageBox>

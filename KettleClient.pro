@@ -108,7 +108,8 @@ HEADERS += \
     utils/networkservice.h \
     utils/entities.h \
     patterns/abstractstate.h \
-    patterns/customerstate.h
+    patterns/customerstate.h \
+    utils/states.h
 
 FORMS += \
         dialogs/mainwindow.ui \
