@@ -22,7 +22,7 @@ QVariantMap State::valuesMap(){
 void State::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
-    m_departmentId = values.value("departmend_id").toInt();
+    m_departmentId = values.value("department_id").toInt();
 }
 
 int State::id() const {

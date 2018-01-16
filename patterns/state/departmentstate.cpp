@@ -20,6 +20,10 @@ void DepartmentState::getList(){
 void DepartmentState::add(){
     DepartmentDialog *dialog = new DepartmentDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-        //m_service->post();
+        m_service->post(dialog->department);
     }
+}
+
+void DepartmentState::update(){
+
 }

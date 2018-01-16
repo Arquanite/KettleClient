@@ -9,17 +9,6 @@
 
 // ???
 
-enum {
-    TypeProvider,
-    TypeCustomer,
-    TypeEmployee,
-    TypeDepartment,
-    TypePart,
-    TypeProduct,
-    TypeState,
-    TypeOrder
-};
-
 class ViewController : public QObject {
     Q_OBJECT
 private:
@@ -27,7 +16,6 @@ private:
     AbstractState *m_currentState;
     NetworkService m_service;
     JSONModel *m_model;
-    int m_current = -1;
 public:
     explicit ViewController(JSONModel *model, QWidget *parent = nullptr);
 

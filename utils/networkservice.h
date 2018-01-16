@@ -23,32 +23,32 @@ public:
     QNetworkReply* getProviders();
     QNetworkReply* getStates();
 
-    void post(Customer c);
-    void post(Department d);
-    void post(Employee e);
-    void post(Order o);
-    void post(Part p);
-    void post(Product p);
-    void post(Provider p);
-    void post(State s);
+    QNetworkReply* post(Customer c);
+    QNetworkReply* post(Department d);
+    QNetworkReply* post(Employee e);
+    QNetworkReply* post(Order o);
+    QNetworkReply* post(Part p);
+    QNetworkReply* post(Product p);
+    QNetworkReply* post(Provider p);
+    QNetworkReply* post(State s);
 
-    void update(Customer c);
-    void update(Department d);
-    void update(Employee e);
-    void update(Order o);
-    void update(Part p);
-    void update(Product p);
-    void update(Provider p);
-    void update(State s);
+    QNetworkReply* update(Customer c);
+    QNetworkReply* update(Department d);
+    QNetworkReply* update(Employee e);
+    QNetworkReply* update(Order o);
+    QNetworkReply* update(Part p);
+    QNetworkReply* update(Product p);
+    QNetworkReply* update(Provider p);
+    QNetworkReply* update(State s);
 
-    void deleteResource(Customer c);
-    void deleteResource(Department d);
-    void deleteResource(Employee e);
-    void deleteResource(Order o);
-    void deleteResource(Part p);
-    void deleteResource(Product p);
-    void deleteResource(Provider p);
-    void deleteResource(State s);
+    QNetworkReply* deleteResource(Customer c);
+    QNetworkReply* deleteResource(Department d);
+    QNetworkReply* deleteResource(Employee e);
+    QNetworkReply* deleteResource(Order o);
+    QNetworkReply* deleteResource(Part p);
+    QNetworkReply* deleteResource(Product p);
+    QNetworkReply* deleteResource(Provider p);
+    QNetworkReply* deleteResource(State s);
 
 signals:
 

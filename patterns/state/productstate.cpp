@@ -20,6 +20,10 @@ void ProductState::getList(){
 void ProductState::add(){
     ProductDialog *dialog = new ProductDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-//        m_service->post(dialog->customer);
+        m_service->post(dialog->product);
     }
+}
+
+void ProductState::update(){
+
 }

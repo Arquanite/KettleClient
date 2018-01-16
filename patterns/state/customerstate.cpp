@@ -22,3 +22,7 @@ void CustomerState::add(){
         m_service->post(dialog->customer);
     }
 }
+
+void CustomerState::update(){
+
+}

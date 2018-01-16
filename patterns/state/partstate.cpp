@@ -19,6 +19,10 @@ void PartState::getList(){
 void PartState::add(){
     PartDialog *dialog = new PartDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-//        m_service->post(dialog->customer);
+        m_service->post(dialog->part);
     }
+}
+
+void PartState::update(){
+
 }

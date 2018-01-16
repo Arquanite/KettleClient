@@ -1,274 +1,1447 @@
 {
   "customer": [
-    {"address":"ul. Baranego 61, Kraków","id":1867,"name":"Bożena Nowak","nip":"613-603-84-37"},
-    {"address":"al. Jabłońskiego 41, Suwałki","id":1863,"name":"Maria Duda","nip":"558-567-28-18"},
-    {"address":"al. Olszewskiej 85, Rybnik","id":2507,"name":"Karol Michalak","nip":"425-961-04-15"},
-    {"address":"ul. Michalakego 33, Gdańsk","id":6365,"name":"Igor Tomaszewski","nip":"510-729-08-76"},
-    {"address":"ul. Pietrzaiej 64, Zakopane","id":8997,"name":"Felicja Nowicka","nip":"870-312-11-48"},
-    {"address":"al. Wiśniewskiego 87, Bielsko Biała","id":9084,"name":"Milena Ostrowska","nip":"444-856-64-41"},
-    {"address":"ul. Zającego 7, Sopot","id":2616,"name":"Bogumiła Kowalczyk","nip":"854-527-54-01"},
-    {"address":"al. Kwiatkowskiego 40, Rzeszów","id":4658,"name":"Andżelika Baran","nip":"754-988-22-85"},
-    {"address":"ul. Kowalczykego 71, Łódź","id":9200,"name":"Jan Rutkowski","nip":"491-799-63-13"},
-    {"address":"ul. Kozłowskiego 85, Kraków","id":4480,"name":"Ronald","surname": "Nowak","nip":"348-034-58-00"},
-    {"address":"ul. Dudaego 67, Wrocław","id":7489,"name":"Karolina Mazur","nip":"273-383-18-64"},
-    {"address":"al. Jankowskiej 19, Kraków","id":7417,"name":"Filip Wieczorek","nip":"049-169-82-26"},
-    {"address":"ul. Szewczyiej 97, Gdańsk","id":4461,"name":"Krystyna Wójcik","nip":"168-009-78-52"},
-    {"address":"al. Olszewskiego 86, Gdańsk","id":1693,"name":"Stefan Pawlak","nip":"893-200-73-54"},
-    {"address":"ul. Michalaiej 1, Zakopane","id":9686,"name":"Karol Jaworski","nip":"626-385-96-87"},
-    {"address":"al. Szymańskiej 66, Rybnik","id":6984,"name":"Zygmunt Wieczorek","nip":"677-998-47-40"},
-    {"address":"al. Baraiej 34, Sopot","id":7860,"name":"Filip Nowakowski","nip":"263-584-17-35"},
-    {"address":"ul. Wiśniewskiego 79, Poznań","id":4560,"name":"Henryk Adamczyk","nip":"867-464-13-19"},
-    {"address":"al. Wójcikego 87, Warszawa","id":3724,"name":"Radomir Zieliński","nip":"693-216-91-79"},
-    {"address":"al. Witkowskiej 70, Opole","id":3011,"name":"Bogusława Wojciechowska","nip":"597-011-33-72"},
-    {"address":"al. Stępieiej 96, Poznań","id":8530,"name":"Szymon Wójcik","nip":"061-596-73-02"},
-    {"address":"al. Piotrowskiego 7, Wrocław","id":5356,"name":"Michał Zieliński","nip":"200-113-10-25"},
-    {"address":"ul. Michalskiego 42, Kraków","id":2483,"name":"Józef Jankowski","nip":"747-970-06-12"},
-    {"address":"ul. Walczaiej 5, Sopot","id":9170,"name":"Milena Pietrzak","nip":"119-510-92-52"},
-    {"address":"ul. Olszewskiej 77, Opole","id":7391,"name":"Szymon Jankowski","nip":"434-215-39-25"},
-    {"address":"ul. Rutkowskiej 97, Gdynia","id":4822,"name":"Agnieszka Olszewska","nip":"422-459-44-05"},
-    {"address":"al. Stępieńego 37, Kraków","id":7972,"name":"Daria Nowak","nip":"466-825-66-90"},
-    {"address":"ul. Wójcikego 89, Lublin","id":5756,"name":"Szymon Kozłowski","nip":"786-594-31-59"},
-    {"address":"ul. Kaczmareiej 42, Gdańsk","id":8198,"name":"Marcin Zając","nip":"284-017-65-46"},
-    {"address":"ul. Piotrowskiej 20, Tallinn","id":9159,"name":"Alfred Kozłowski","nip":"428-159-23-16"},
-    {"address":"al. Wiśniewskiego 74, Łódź","id":1071,"name":"Konrad Witkowski","nip":"098-234-96-81"},
-    {"address":"al. Sikoriej 17, Rybnik","id":7502,"name":"Maria Wójcik","nip":"453-421-98-09"}
+    {
+      "address": "ul. Baranego 61, Kraków",
+      "id": 1867,
+      "name": "Bożena Nowak",
+      "nip": "613-603-84-37"
+    },
+    {
+      "address": "al. Jabłońskiego 41, Suwałki",
+      "id": 1863,
+      "name": "Maria Duda",
+      "nip": "558-567-28-18"
+    },
+    {
+      "address": "al. Olszewskiej 85, Rybnik",
+      "id": 2507,
+      "name": "Karol Michalak",
+      "nip": "425-961-04-15"
+    },
+    {
+      "address": "ul. Michalakego 33, Gdańsk",
+      "id": 6365,
+      "name": "Igor Tomaszewski",
+      "nip": "510-729-08-76"
+    },
+    {
+      "address": "ul. Pietrzaiej 64, Zakopane",
+      "id": 8997,
+      "name": "Felicja Nowicka",
+      "nip": "870-312-11-48"
+    },
+    {
+      "address": "al. Wiśniewskiego 87, Bielsko Biała",
+      "id": 9084,
+      "name": "Milena Ostrowska",
+      "nip": "444-856-64-41"
+    },
+    {
+      "address": "ul. Zającego 7, Sopot",
+      "id": 2616,
+      "name": "Bogumiła Kowalczyk",
+      "nip": "854-527-54-01"
+    },
+    {
+      "address": "al. Kwiatkowskiego 40, Rzeszów",
+      "id": 4658,
+      "name": "Andżelika Baran",
+      "nip": "754-988-22-85"
+    },
+    {
+      "address": "ul. Kowalczykego 71, Łódź",
+      "id": 9200,
+      "name": "Jan Rutkowski",
+      "nip": "491-799-63-13"
+    },
+    {
+      "address": "ul. Kozłowskiego 85, Kraków",
+      "id": 4480,
+      "name": "Ronald",
+      "surname": "Nowak",
+      "nip": "348-034-58-00"
+    },
+    {
+      "address": "ul. Dudaego 67, Wrocław",
+      "id": 7489,
+      "name": "Karolina Mazur",
+      "nip": "273-383-18-64"
+    },
+    {
+      "address": "al. Jankowskiej 19, Kraków",
+      "id": 7417,
+      "name": "Filip Wieczorek",
+      "nip": "049-169-82-26"
+    },
+    {
+      "address": "ul. Szewczyiej 97, Gdańsk",
+      "id": 4461,
+      "name": "Krystyna Wójcik",
+      "nip": "168-009-78-52"
+    },
+    {
+      "address": "al. Olszewskiego 86, Gdańsk",
+      "id": 1693,
+      "name": "Stefan Pawlak",
+      "nip": "893-200-73-54"
+    },
+    {
+      "address": "ul. Michalaiej 1, Zakopane",
+      "id": 9686,
+      "name": "Karol Jaworski",
+      "nip": "626-385-96-87"
+    },
+    {
+      "address": "al. Szymańskiej 66, Rybnik",
+      "id": 6984,
+      "name": "Zygmunt Wieczorek",
+      "nip": "677-998-47-40"
+    },
+    {
+      "address": "al. Baraiej 34, Sopot",
+      "id": 7860,
+      "name": "Filip Nowakowski",
+      "nip": "263-584-17-35"
+    },
+    {
+      "address": "ul. Wiśniewskiego 79, Poznań",
+      "id": 4560,
+      "name": "Henryk Adamczyk",
+      "nip": "867-464-13-19"
+    },
+    {
+      "address": "al. Wójcikego 87, Warszawa",
+      "id": 3724,
+      "name": "Radomir Zieliński",
+      "nip": "693-216-91-79"
+    },
+    {
+      "address": "al. Witkowskiej 70, Opole",
+      "id": 3011,
+      "name": "Bogusława Wojciechowska",
+      "nip": "597-011-33-72"
+    },
+    {
+      "address": "al. Stępieiej 96, Poznań",
+      "id": 8530,
+      "name": "Szymon Wójcik",
+      "nip": "061-596-73-02"
+    },
+    {
+      "address": "al. Piotrowskiego 7, Wrocław",
+      "id": 5356,
+      "name": "Michał Zieliński",
+      "nip": "200-113-10-25"
+    },
+    {
+      "address": "ul. Michalskiego 42, Kraków",
+      "id": 2483,
+      "name": "Józef Jankowski",
+      "nip": "747-970-06-12"
+    },
+    {
+      "address": "ul. Walczaiej 5, Sopot",
+      "id": 9170,
+      "name": "Milena Pietrzak",
+      "nip": "119-510-92-52"
+    },
+    {
+      "address": "ul. Olszewskiej 77, Opole",
+      "id": 7391,
+      "name": "Szymon Jankowski",
+      "nip": "434-215-39-25"
+    },
+    {
+      "address": "ul. Rutkowskiej 97, Gdynia",
+      "id": 4822,
+      "name": "Agnieszka Olszewska",
+      "nip": "422-459-44-05"
+    },
+    {
+      "address": "al. Stępieńego 37, Kraków",
+      "id": 7972,
+      "name": "Daria Nowak",
+      "nip": "466-825-66-90"
+    },
+    {
+      "address": "ul. Wójcikego 89, Lublin",
+      "id": 5756,
+      "name": "Szymon Kozłowski",
+      "nip": "786-594-31-59"
+    },
+    {
+      "address": "ul. Kaczmareiej 42, Gdańsk",
+      "id": 8198,
+      "name": "Marcin Zając",
+      "nip": "284-017-65-46"
+    },
+    {
+      "address": "ul. Piotrowskiej 20, Tallinn",
+      "id": 9159,
+      "name": "Alfred Kozłowski",
+      "nip": "428-159-23-16"
+    },
+    {
+      "address": "al. Wiśniewskiego 74, Łódź",
+      "id": 1071,
+      "name": "Konrad Witkowski",
+      "nip": "098-234-96-81"
+    },
+    {
+      "address": "al. Sikoriej 17, Rybnik",
+      "id": 7502,
+      "name": "Maria Wójcik",
+      "nip": "453-421-98-09"
+    },
+    {
+      "address": "fdgdfg",
+      "id": 9687,
+      "name": "gfdf",
+      "nip": "dfg"
+    },
+    {
+      "address": "Holocaus 39",
+      "id": 9688,
+      "name": "Hadolf Itler",
+      "nip": "124234324fgd"
+    },
+    {
+      "address": "fdgdfg",
+      "id": 9689,
+      "name": "gfdf",
+      "nip": "dfg"
+    },
+    {
+      "address": "fdgsdfg",
+      "id": 9690,
+      "name": "gfdf",
+      "nip": "dfg"
+    }
   ],
   "department": [
-    {"id":1867,"name":"Czerwony departament ds. Międzynarodowych"},
-    {"id":3709,"name":"Biały departament ds. Administracyjnych"},
-    {"id":9044,"name":"Różowy departament ds. Produkcji"},
-    {"id":4256,"name":"Pomarańczowy departament ds. Administracyjnych"},
-    {"id":4486,"name":"Żółty departament ds. Produkcji"},
-    {"id":4598,"name":"Żółty departament ds. Klientów"},
-    {"id":4967,"name":"Różowy departament ds. Administracyjnych"},
-    {"id":7795,"name":"Szary departament ds. Administracyjnych"},
-    {"id":9437,"name":"Zielony departament ds. Klientów"},
-    {"id":2373,"name":"Turkusowy departament ds. Administracyjnych"},
-    {"id":3278,"name":"Zielony departament ds. Administracyjnych"},
-    {"id":9417,"name":"Pomarańczowy departament ds. Produkcji"},
-    {"id":1911,"name":"Złoty departament ds. Rozwoju"},
-    {"id":6646,"name":"Fioletowy departament ds. Wysyłki"},
-    {"id":9416,"name":"Czarny departament ds. Administracyjnych"},
-    {"id":5576,"name":"Błękitny departament ds. Klientów"},
-    {"id":1092,"name":"Biały departament ds. Dostaw"},
-    {"id":6896,"name":"Czarny departament ds. Wysyłki"},
-    {"id":7594,"name":"Czerwony departament ds. Wysyłki"},
-    {"id":6365,"name":"Niebieski departament ds. Rozwoju"},
-    {"id":4513,"name":"Zielony departament ds. Administracyjnych"},
-    {"id":2741,"name":"Złoty departament ds. Rozwoju"},
-    {"id":6915,"name":"Turkusowy departament ds. Administracyjnych"},
-    {"id":7497,"name":"Biały departament ds. Produkcji"},
-    {"id":6580,"name":"Niebieski departament ds. Kontaktów"},
-    {"id":8556,"name":"Beżowy departament ds. Międzynarodowych"},
-    {"id":4123,"name":"Czarny departament ds. Produkcji"},
-    {"id":5598,"name":"Zielony departament ds. Rozwoju"},
-    {"id":8695,"name":"Niebieski departament ds. Rozwoju"},
-    {"id":2840,"name":"Srebrny departament ds. Międzynarodowych"},
-    {"id":5922,"name":"Różowy departament ds. Wysyłki"},
-    {"id":9424,"name":"Szary departament ds. Klientów"}
+    {
+      "id": 1867,
+      "name": "Czerwony departament ds. Międzynarodowych"
+    },
+    {
+      "id": 3709,
+      "name": "Biały departament ds. Administracyjnych"
+    },
+    {
+      "id": 9044,
+      "name": "Różowy departament ds. Produkcji"
+    },
+    {
+      "id": 4256,
+      "name": "Pomarańczowy departament ds. Administracyjnych"
+    },
+    {
+      "id": 4486,
+      "name": "Żółty departament ds. Produkcji"
+    },
+    {
+      "id": 4598,
+      "name": "Żółty departament ds. Klientów"
+    },
+    {
+      "id": 4967,
+      "name": "Różowy departament ds. Administracyjnych"
+    },
+    {
+      "id": 7795,
+      "name": "Szary departament ds. Administracyjnych"
+    },
+    {
+      "id": 9437,
+      "name": "Zielony departament ds. Klientów"
+    },
+    {
+      "id": 2373,
+      "name": "Turkusowy departament ds. Administracyjnych"
+    },
+    {
+      "id": 3278,
+      "name": "Zielony departament ds. Administracyjnych"
+    },
+    {
+      "id": 9417,
+      "name": "Pomarańczowy departament ds. Produkcji"
+    },
+    {
+      "id": 1911,
+      "name": "Złoty departament ds. Rozwoju"
+    },
+    {
+      "id": 6646,
+      "name": "Fioletowy departament ds. Wysyłki"
+    },
+    {
+      "id": 9416,
+      "name": "Czarny departament ds. Administracyjnych"
+    },
+    {
+      "id": 5576,
+      "name": "Błękitny departament ds. Klientów"
+    },
+    {
+      "id": 1092,
+      "name": "Biały departament ds. Dostaw"
+    },
+    {
+      "id": 6896,
+      "name": "Czarny departament ds. Wysyłki"
+    },
+    {
+      "id": 7594,
+      "name": "Czerwony departament ds. Wysyłki"
+    },
+    {
+      "id": 6365,
+      "name": "Niebieski departament ds. Rozwoju"
+    },
+    {
+      "id": 4513,
+      "name": "Zielony departament ds. Administracyjnych"
+    },
+    {
+      "id": 2741,
+      "name": "Złoty departament ds. Rozwoju"
+    },
+    {
+      "id": 6915,
+      "name": "Turkusowy departament ds. Administracyjnych"
+    },
+    {
+      "id": 7497,
+      "name": "Biały departament ds. Produkcji"
+    },
+    {
+      "id": 6580,
+      "name": "Niebieski departament ds. Kontaktów"
+    },
+    {
+      "id": 8556,
+      "name": "Beżowy departament ds. Międzynarodowych"
+    },
+    {
+      "id": 4123,
+      "name": "Czarny departament ds. Produkcji"
+    },
+    {
+      "id": 5598,
+      "name": "Zielony departament ds. Rozwoju"
+    },
+    {
+      "id": 8695,
+      "name": "Niebieski departament ds. Rozwoju"
+    },
+    {
+      "id": 2840,
+      "name": "Srebrny departament ds. Międzynarodowych"
+    },
+    {
+      "id": 5922,
+      "name": "Różowy departament ds. Wysyłki"
+    },
+    {
+      "id": 9424,
+      "name": "Szary departament ds. Klientów"
+    },
+    {
+      "id": 9438,
+      "name": "DONktonow"
+    }
   ],
   "employee": [
-    {"department_id":5676,"hour_count":6,"hourly_rate":21,"id":1867,"name":"Bożena","surname":"Nowak","supervisor_id":9044},
-    {"department_id":4598,"hour_count":4,"hourly_rate":16,"id":9246,"name":"Karol","surname":"Kozłowski","supervisor_id":4453},
-    {"department_id":2529,"hour_count":4,"hourly_rate":21,"id":2994,"name":"Danuta","surname":"Krawczyk","supervisor_id":2991},
-    {"department_id":8975,"hour_count":6,"hourly_rate":25,"id":9437,"name":"Karol","surname":"Szewczyk","supervisor_id":3278},
-    {"department_id":6646,"hour_count":4,"hourly_rate":21,"id":6626,"name":"Wiktoria","surname":"Jaworska","supervisor_id":2507},
-    {"department_id":9754,"hour_count":6,"hourly_rate":15,"id":2441,"name":"Kalina","surname":"Mazur","supervisor_id":5978},
-    {"department_id":5241,"hour_count":8,"hourly_rate":11,"id":1092,"name":"Sylwia","surname":"Król","supervisor_id":7594},
-    {"department_id":2741,"hour_count":6,"hourly_rate":23,"id":6715,"name":"Urszula","surname":"Witkowska","supervisor_id":6896},
-    {"department_id":3749,"hour_count":8,"hourly_rate":20,"id":8704,"name":"Stefan","surname":"Kaczmarek","supervisor_id":7132},
-    {"department_id":8772,"hour_count":4,"hourly_rate":27,"id":6580,"name":"Bronisław","surname":"Wieczorek","supervisor_id":4123},
-    {"department_id":2840,"hour_count":8,"hourly_rate":25,"id":5040,"name":"Adrian","surname":"Baran","supervisor_id":6147},
-    {"department_id":9084,"hour_count":4,"hourly_rate":11,"id":3133,"name":"Ewelina","surname":"Michalska","supervisor_id":2618},
-    {"department_id":3231,"hour_count":8,"hourly_rate":23,"id":1557,"name":"Urszula","surname":"Sikora","supervisor_id":4288},
-    {"department_id":5044,"hour_count":4,"hourly_rate":25,"id":1504,"name":"Edmund","surname":"Adamczyk","supervisor_id":8296},
-    {"department_id":4960,"hour_count":6,"hourly_rate":27,"id":2224,"name":"Aneta","surname":"Mazur","supervisor_id":7779},
-    {"department_id":8502,"hour_count":8,"hourly_rate":25,"id":5476,"name":"Radosław","surname":"Zieliński","supervisor_id":6365},
-    {"department_id":6694,"hour_count":6,"hourly_rate":21,"id":8577,"name":"Celestyna","surname":"Malinowska","supervisor_id":3589},
-    {"department_id":5985,"hour_count":6,"hourly_rate":13,"id":8604,"name":"Daria","surname":"Nowicka","supervisor_id":5257},
-    {"department_id":2455,"hour_count":6,"hourly_rate":12,"id":4034,"name":"Lena","surname":"Pietrzak","supervisor_id":7088},
-    {"department_id":9978,"hour_count":4,"hourly_rate":25,"id":9200,"name":"Jan","surname":"Rutkowski","supervisor_id":9807},
-    {"department_id":2656,"hour_count":6,"hourly_rate":27,"id":3323,"name":"Hektor","surname":"Król","supervisor_id":3949},
-    {"department_id":3037,"hour_count":4,"hourly_rate":18,"id":8233,"name":"Julia","surname":"Wróbel","supervisor_id":8239},
-    {"department_id":5590,"hour_count":6,"hourly_rate":13,"id":8958,"name":"Eugenia","surname":"Michalska","supervisor_id":1708},
-    {"department_id":2887,"hour_count":6,"hourly_rate":10,"id":2913,"name":"Maciej","surname":"Duda","supervisor_id":7489},
-    {"department_id":2862,"hour_count":8,"hourly_rate":25,"id":5516,"name":"Milena","surname":"Marciniak","supervisor_id":6407},
-    {"department_id":7166,"hour_count":8,"hourly_rate":13,"id":7007,"name":"Eliza","surname":"Ostrowska","supervisor_id":9928},
-    {"department_id":4325,"hour_count":6,"hourly_rate":10,"id":3134,"name":"Iwona","surname":"Nowak","supervisor_id":8062},
-    {"department_id":2959,"hour_count":8,"hourly_rate":29,"id":2446,"name":"Iwan","surname":"Nowakowski","supervisor_id":8636},
-    {"department_id":5737,"hour_count":6,"hourly_rate":11,"id":4308,"name":"Jan","surname":"Jankowski","supervisor_id":2355},
-    {"department_id":4038,"hour_count":6,"hourly_rate":18,"id":6046,"name":"Mateusz","surname":"Mazur","supervisor_id":2006},
-    {"department_id":1693,"hour_count":4,"hourly_rate":18,"id":2600,"name":"Radomir","surname":"Król","supervisor_id":6502},
-    {"department_id":9920,"hour_count":6,"hourly_rate":29,"id":3208,"name":"Edyta","surname":"Michalak","supervisor_id":2015}
+    {
+      "department_id": 5676,
+      "hour_count": 6,
+      "hourly_rate": 21,
+      "id": 1867,
+      "name": "Bożena",
+      "surname": "Nowak",
+      "supervisor_id": 9044
+    },
+    {
+      "department_id": 4598,
+      "hour_count": 4,
+      "hourly_rate": 16,
+      "id": 9246,
+      "name": "Karol",
+      "surname": "Kozłowski",
+      "supervisor_id": 4453
+    },
+    {
+      "department_id": 2529,
+      "hour_count": 4,
+      "hourly_rate": 21,
+      "id": 2994,
+      "name": "Danuta",
+      "surname": "Krawczyk",
+      "supervisor_id": 2991
+    },
+    {
+      "department_id": 8975,
+      "hour_count": 6,
+      "hourly_rate": 25,
+      "id": 9437,
+      "name": "Karol",
+      "surname": "Szewczyk",
+      "supervisor_id": 3278
+    },
+    {
+      "department_id": 6646,
+      "hour_count": 4,
+      "hourly_rate": 21,
+      "id": 6626,
+      "name": "Wiktoria",
+      "surname": "Jaworska",
+      "supervisor_id": 2507
+    },
+    {
+      "department_id": 9754,
+      "hour_count": 6,
+      "hourly_rate": 15,
+      "id": 2441,
+      "name": "Kalina",
+      "surname": "Mazur",
+      "supervisor_id": 5978
+    },
+    {
+      "department_id": 5241,
+      "hour_count": 8,
+      "hourly_rate": 11,
+      "id": 1092,
+      "name": "Sylwia",
+      "surname": "Król",
+      "supervisor_id": 7594
+    },
+    {
+      "department_id": 2741,
+      "hour_count": 6,
+      "hourly_rate": 23,
+      "id": 6715,
+      "name": "Urszula",
+      "surname": "Witkowska",
+      "supervisor_id": 6896
+    },
+    {
+      "department_id": 3749,
+      "hour_count": 8,
+      "hourly_rate": 20,
+      "id": 8704,
+      "name": "Stefan",
+      "surname": "Kaczmarek",
+      "supervisor_id": 7132
+    },
+    {
+      "department_id": 8772,
+      "hour_count": 4,
+      "hourly_rate": 27,
+      "id": 6580,
+      "name": "Bronisław",
+      "surname": "Wieczorek",
+      "supervisor_id": 4123
+    },
+    {
+      "department_id": 2840,
+      "hour_count": 8,
+      "hourly_rate": 25,
+      "id": 5040,
+      "name": "Adrian",
+      "surname": "Baran",
+      "supervisor_id": 6147
+    },
+    {
+      "department_id": 9084,
+      "hour_count": 4,
+      "hourly_rate": 11,
+      "id": 3133,
+      "name": "Ewelina",
+      "surname": "Michalska",
+      "supervisor_id": 2618
+    },
+    {
+      "department_id": 3231,
+      "hour_count": 8,
+      "hourly_rate": 23,
+      "id": 1557,
+      "name": "Urszula",
+      "surname": "Sikora",
+      "supervisor_id": 4288
+    },
+    {
+      "department_id": 5044,
+      "hour_count": 4,
+      "hourly_rate": 25,
+      "id": 1504,
+      "name": "Edmund",
+      "surname": "Adamczyk",
+      "supervisor_id": 8296
+    },
+    {
+      "department_id": 4960,
+      "hour_count": 6,
+      "hourly_rate": 27,
+      "id": 2224,
+      "name": "Aneta",
+      "surname": "Mazur",
+      "supervisor_id": 7779
+    },
+    {
+      "department_id": 8502,
+      "hour_count": 8,
+      "hourly_rate": 25,
+      "id": 5476,
+      "name": "Radosław",
+      "surname": "Zieliński",
+      "supervisor_id": 6365
+    },
+    {
+      "department_id": 6694,
+      "hour_count": 6,
+      "hourly_rate": 21,
+      "id": 8577,
+      "name": "Celestyna",
+      "surname": "Malinowska",
+      "supervisor_id": 3589
+    },
+    {
+      "department_id": 5985,
+      "hour_count": 6,
+      "hourly_rate": 13,
+      "id": 8604,
+      "name": "Daria",
+      "surname": "Nowicka",
+      "supervisor_id": 5257
+    },
+    {
+      "department_id": 2455,
+      "hour_count": 6,
+      "hourly_rate": 12,
+      "id": 4034,
+      "name": "Lena",
+      "surname": "Pietrzak",
+      "supervisor_id": 7088
+    },
+    {
+      "department_id": 9978,
+      "hour_count": 4,
+      "hourly_rate": 25,
+      "id": 9200,
+      "name": "Jan",
+      "surname": "Rutkowski",
+      "supervisor_id": 9807
+    },
+    {
+      "department_id": 2656,
+      "hour_count": 6,
+      "hourly_rate": 27,
+      "id": 3323,
+      "name": "Hektor",
+      "surname": "Król",
+      "supervisor_id": 3949
+    },
+    {
+      "department_id": 3037,
+      "hour_count": 4,
+      "hourly_rate": 18,
+      "id": 8233,
+      "name": "Julia",
+      "surname": "Wróbel",
+      "supervisor_id": 8239
+    },
+    {
+      "department_id": 5590,
+      "hour_count": 6,
+      "hourly_rate": 13,
+      "id": 8958,
+      "name": "Eugenia",
+      "surname": "Michalska",
+      "supervisor_id": 1708
+    },
+    {
+      "department_id": 2887,
+      "hour_count": 6,
+      "hourly_rate": 10,
+      "id": 2913,
+      "name": "Maciej",
+      "surname": "Duda",
+      "supervisor_id": 7489
+    },
+    {
+      "department_id": 2862,
+      "hour_count": 8,
+      "hourly_rate": 25,
+      "id": 5516,
+      "name": "Milena",
+      "surname": "Marciniak",
+      "supervisor_id": 6407
+    },
+    {
+      "department_id": 7166,
+      "hour_count": 8,
+      "hourly_rate": 13,
+      "id": 7007,
+      "name": "Eliza",
+      "surname": "Ostrowska",
+      "supervisor_id": 9928
+    },
+    {
+      "department_id": 4325,
+      "hour_count": 6,
+      "hourly_rate": 10,
+      "id": 3134,
+      "name": "Iwona",
+      "surname": "Nowak",
+      "supervisor_id": 8062
+    },
+    {
+      "department_id": 2959,
+      "hour_count": 8,
+      "hourly_rate": 29,
+      "id": 2446,
+      "name": "Iwan",
+      "surname": "Nowakowski",
+      "supervisor_id": 8636
+    },
+    {
+      "department_id": 5737,
+      "hour_count": 6,
+      "hourly_rate": 11,
+      "id": 4308,
+      "name": "Jan",
+      "surname": "Jankowski",
+      "supervisor_id": 2355
+    },
+    {
+      "department_id": 4038,
+      "hour_count": 6,
+      "hourly_rate": 18,
+      "id": 6046,
+      "name": "Mateusz",
+      "surname": "Mazur",
+      "supervisor_id": 2006
+    },
+    {
+      "department_id": 1693,
+      "hour_count": 4,
+      "hourly_rate": 18,
+      "id": 2600,
+      "name": "Radomir",
+      "surname": "Król",
+      "supervisor_id": 6502
+    },
+    {
+      "department_id": 9920,
+      "hour_count": 6,
+      "hourly_rate": 29,
+      "id": 3208,
+      "name": "Edyta",
+      "surname": "Michalak",
+      "supervisor_id": 2015
+    },
+    {
+      "department_id": -1,
+      "hour_count": 0,
+      "hourly_rate": 0,
+      "id": 9438,
+      "name": "",
+      "supervisor_id": -1,
+      "surname": ""
+    }
   ],
   "order": [
-    {"customer_id":4101,"date":"2008-10-15","id":1867},
-    {"customer_id":9044,"date":"2014-03-08","id":4334},
-    {"customer_id":9123,"date":"2004-01-21","id":7711},
-    {"customer_id":2994,"date":"2001-08-23","id":4598},
-    {"customer_id":7795,"date":"2009-06-09","id":9951},
-    {"customer_id":3446,"date":"2011-12-27","id":9378},
-    {"customer_id":8975,"date":"2004-06-16","id":3278},
-    {"customer_id":1911,"date":"2006-08-18","id":6798},
-    {"customer_id":4373,"date":"2014-04-05","id":2441},
-    {"customer_id":5978,"date":"2012-09-07","id":5576},
-    {"customer_id":6896,"date":"1999-09-06","id":6629},
-    {"customer_id":6715,"date":"2003-05-13","id":5241},
-    {"customer_id":5207,"date":"2014-02-04","id":4513},
-    {"customer_id":6915,"date":"2009-11-05","id":8312},
-    {"customer_id":3749,"date":"1998-07-21","id":7132},
-    {"customer_id":8997,"date":"2015-04-24","id":8556},
-    {"customer_id":5598,"date":"2002-08-03","id":5040},
-    {"customer_id":6147,"date":"1998-10-19","id":5568},
-    {"customer_id":1521,"date":"1999-01-02","id":5922},
-    {"customer_id":1557,"date":"2011-09-19","id":9084},
-    {"customer_id":2202,"date":"2006-12-12","id":4213},
-    {"customer_id":4974,"date":"2016-08-12","id":8484},
-    {"customer_id":5044,"date":"2002-08-00","id":8296},
-    {"customer_id":3657,"date":"2005-12-04","id":1105},
-    {"customer_id":9946,"date":"2016-11-07","id":5476},
-    {"customer_id":6365,"date":"2000-06-09","id":7014},
-    {"customer_id":8510,"date":"2009-11-21","id":2334},
-    {"customer_id":8604,"date":"2013-06-20","id":6694},
-    {"customer_id":5492,"date":"2015-06-18","id":3963},
-    {"customer_id":7998,"date":"2016-07-06","id":7399},
-    {"customer_id":2455,"date":"1998-03-14","id":7088},
-    {"customer_id":4115,"date":"2016-12-14","id":2216}
+    {
+      "customer_id": 4101,
+      "date": "2008-10-15",
+      "id": 1867
+    },
+    {
+      "customer_id": 9044,
+      "date": "2014-03-08",
+      "id": 4334
+    },
+    {
+      "customer_id": 9123,
+      "date": "2004-01-21",
+      "id": 7711
+    },
+    {
+      "customer_id": 2994,
+      "date": "2001-08-23",
+      "id": 4598
+    },
+    {
+      "customer_id": 7795,
+      "date": "2009-06-09",
+      "id": 9951
+    },
+    {
+      "customer_id": 3446,
+      "date": "2011-12-27",
+      "id": 9378
+    },
+    {
+      "customer_id": 8975,
+      "date": "2004-06-16",
+      "id": 3278
+    },
+    {
+      "customer_id": 1911,
+      "date": "2006-08-18",
+      "id": 6798
+    },
+    {
+      "customer_id": 4373,
+      "date": "2014-04-05",
+      "id": 2441
+    },
+    {
+      "customer_id": 5978,
+      "date": "2012-09-07",
+      "id": 5576
+    },
+    {
+      "customer_id": 6896,
+      "date": "1999-09-06",
+      "id": 6629
+    },
+    {
+      "customer_id": 6715,
+      "date": "2003-05-13",
+      "id": 5241
+    },
+    {
+      "customer_id": 5207,
+      "date": "2014-02-04",
+      "id": 4513
+    },
+    {
+      "customer_id": 6915,
+      "date": "2009-11-05",
+      "id": 8312
+    },
+    {
+      "customer_id": 3749,
+      "date": "1998-07-21",
+      "id": 7132
+    },
+    {
+      "customer_id": 8997,
+      "date": "2015-04-24",
+      "id": 8556
+    },
+    {
+      "customer_id": 5598,
+      "date": "2002-08-03",
+      "id": 5040
+    },
+    {
+      "customer_id": 6147,
+      "date": "1998-10-19",
+      "id": 5568
+    },
+    {
+      "customer_id": 1521,
+      "date": "1999-01-02",
+      "id": 5922
+    },
+    {
+      "customer_id": 1557,
+      "date": "2011-09-19",
+      "id": 9084
+    },
+    {
+      "customer_id": 2202,
+      "date": "2006-12-12",
+      "id": 4213
+    },
+    {
+      "customer_id": 4974,
+      "date": "2016-08-12",
+      "id": 8484
+    },
+    {
+      "customer_id": 5044,
+      "date": "2002-08-00",
+      "id": 8296
+    },
+    {
+      "customer_id": 3657,
+      "date": "2005-12-04",
+      "id": 1105
+    },
+    {
+      "customer_id": 9946,
+      "date": "2016-11-07",
+      "id": 5476
+    },
+    {
+      "customer_id": 6365,
+      "date": "2000-06-09",
+      "id": 7014
+    },
+    {
+      "customer_id": 8510,
+      "date": "2009-11-21",
+      "id": 2334
+    },
+    {
+      "customer_id": 8604,
+      "date": "2013-06-20",
+      "id": 6694
+    },
+    {
+      "customer_id": 5492,
+      "date": "2015-06-18",
+      "id": 3963
+    },
+    {
+      "customer_id": 7998,
+      "date": "2016-07-06",
+      "id": 7399
+    },
+    {
+      "customer_id": 2455,
+      "date": "1998-03-14",
+      "id": 7088
+    },
+    {
+      "customer_id": 4115,
+      "date": "2016-12-14",
+      "id": 2216
+    }
   ],
   "part": [
-    {"id":1867,"name":"Obudowa typu A koloru Błękitny","provider_id":7831},
-    {"id":4334,"name":"Grzałka typu C koloru Różowy","provider_id":4256},
-    {"id":7711,"name":"Wtyczka typu A koloru Czerwony","provider_id":4453},
-    {"id":4598,"name":"Pokrywka typu D koloru Złoty","provider_id":1863},
-    {"id":9951,"name":"Wtyczka typu F koloru Szary","provider_id":9437},
-    {"id":9378,"name":"Pokrywka typu F koloru Czarny","provider_id":2795},
-    {"id":3278,"name":"Wtyczka typu E koloru Niebieski","provider_id":5532},
-    {"id":6798,"name":"Wtyczka typu A koloru Złoty","provider_id":6646},
-    {"id":2441,"name":"Obudowa typu E koloru Srebrny","provider_id":4965},
-    {"id":5576,"name":"Pokrywka typu A koloru Niebieski","provider_id":7355},
-    {"id":6629,"name":"Grzałka typu D koloru Czarny","provider_id":7594},
-    {"id":5241,"name":"Wtyczka typu B koloru Zielony","provider_id":1797},
-    {"id":4513,"name":"Wtyczka typu E koloru Zielony","provider_id":8704},
-    {"id":8312,"name":"Wtyczka typu D koloru Turkusowy","provider_id":7497},
-    {"id":7132,"name":"Obudowa typu A koloru Żółty","provider_id":4077},
-    {"id":8556,"name":"Obudowa typu D koloru Żółty","provider_id":8772},
-    {"id":5040,"name":"Pokrywka typu E koloru Zielony","provider_id":8695},
-    {"id":5568,"name":"Wtyczka typu E koloru Żółty","provider_id":8311},
-    {"id":5922,"name":"Obudowa typu F koloru Błękitny","provider_id":2618},
-    {"id":9084,"name":"Obudowa typu F koloru Niebieski","provider_id":8647},
-    {"id":4213,"name":"Pokrywka typu A koloru Różowy","provider_id":1504},
-    {"id":8484,"name":"Pokrywka typu C koloru Turkusowy","provider_id":3676},
-    {"id":8296,"name":"Grzałka typu A koloru Zielony","provider_id":2616},
-    {"id":1105,"name":"Obudowa typu B koloru Szary","provider_id":4960},
-    {"id":5476,"name":"Pokrywka typu A koloru Fioletowy","provider_id":6295},
-    {"id":7014,"name":"Obudowa typu C koloru Niebieski","provider_id":2285},
-    {"id":2334,"name":"Pokrywka typu F koloru Fioletowy","provider_id":3589},
-    {"id":6694,"name":"Grzałka typu B koloru Pomarańczowy","provider_id":7664},
-    {"id":3963,"name":"Grzałka typu D koloru Czarny","provider_id":4034},
-    {"id":7399,"name":"Pokrywka typu E koloru Beżowy","provider_id":7322},
-    {"id":7088,"name":"Wtyczka typu E koloru Niebieski","provider_id":9890},
-    {"id":2216,"name":"Wtyczka typu A koloru Niebieski","provider_id":9978}
+    {
+      "id": 1867,
+      "name": "Obudowa typu A koloru Błękitny",
+      "provider_id": 7831
+    },
+    {
+      "id": 4334,
+      "name": "Grzałka typu C koloru Różowy",
+      "provider_id": 4256
+    },
+    {
+      "id": 7711,
+      "name": "Wtyczka typu A koloru Czerwony",
+      "provider_id": 4453
+    },
+    {
+      "id": 4598,
+      "name": "Pokrywka typu D koloru Złoty",
+      "provider_id": 1863
+    },
+    {
+      "id": 9951,
+      "name": "Wtyczka typu F koloru Szary",
+      "provider_id": 9437
+    },
+    {
+      "id": 9378,
+      "name": "Pokrywka typu F koloru Czarny",
+      "provider_id": 2795
+    },
+    {
+      "id": 3278,
+      "name": "Wtyczka typu E koloru Niebieski",
+      "provider_id": 5532
+    },
+    {
+      "id": 6798,
+      "name": "Wtyczka typu A koloru Złoty",
+      "provider_id": 6646
+    },
+    {
+      "id": 2441,
+      "name": "Obudowa typu E koloru Srebrny",
+      "provider_id": 4965
+    },
+    {
+      "id": 5576,
+      "name": "Pokrywka typu A koloru Niebieski",
+      "provider_id": 7355
+    },
+    {
+      "id": 6629,
+      "name": "Grzałka typu D koloru Czarny",
+      "provider_id": 7594
+    },
+    {
+      "id": 5241,
+      "name": "Wtyczka typu B koloru Zielony",
+      "provider_id": 1797
+    },
+    {
+      "id": 4513,
+      "name": "Wtyczka typu E koloru Zielony",
+      "provider_id": 8704
+    },
+    {
+      "id": 8312,
+      "name": "Wtyczka typu D koloru Turkusowy",
+      "provider_id": 7497
+    },
+    {
+      "id": 7132,
+      "name": "Obudowa typu A koloru Żółty",
+      "provider_id": 4077
+    },
+    {
+      "id": 8556,
+      "name": "Obudowa typu D koloru Żółty",
+      "provider_id": 8772
+    },
+    {
+      "id": 5040,
+      "name": "Pokrywka typu E koloru Zielony",
+      "provider_id": 8695
+    },
+    {
+      "id": 5568,
+      "name": "Wtyczka typu E koloru Żółty",
+      "provider_id": 8311
+    },
+    {
+      "id": 5922,
+      "name": "Obudowa typu F koloru Błękitny",
+      "provider_id": 2618
+    },
+    {
+      "id": 9084,
+      "name": "Obudowa typu F koloru Niebieski",
+      "provider_id": 8647
+    },
+    {
+      "id": 4213,
+      "name": "Pokrywka typu A koloru Różowy",
+      "provider_id": 1504
+    },
+    {
+      "id": 8484,
+      "name": "Pokrywka typu C koloru Turkusowy",
+      "provider_id": 3676
+    },
+    {
+      "id": 8296,
+      "name": "Grzałka typu A koloru Zielony",
+      "provider_id": 2616
+    },
+    {
+      "id": 1105,
+      "name": "Obudowa typu B koloru Szary",
+      "provider_id": 4960
+    },
+    {
+      "id": 5476,
+      "name": "Pokrywka typu A koloru Fioletowy",
+      "provider_id": 6295
+    },
+    {
+      "id": 7014,
+      "name": "Obudowa typu C koloru Niebieski",
+      "provider_id": 2285
+    },
+    {
+      "id": 2334,
+      "name": "Pokrywka typu F koloru Fioletowy",
+      "provider_id": 3589
+    },
+    {
+      "id": 6694,
+      "name": "Grzałka typu B koloru Pomarańczowy",
+      "provider_id": 7664
+    },
+    {
+      "id": 3963,
+      "name": "Grzałka typu D koloru Czarny",
+      "provider_id": 4034
+    },
+    {
+      "id": 7399,
+      "name": "Pokrywka typu E koloru Beżowy",
+      "provider_id": 7322
+    },
+    {
+      "id": 7088,
+      "name": "Wtyczka typu E koloru Niebieski",
+      "provider_id": 9890
+    },
+    {
+      "id": 2216,
+      "name": "Wtyczka typu A koloru Niebieski",
+      "provider_id": 9978
+    },
+    {
+      "id": 9952,
+      "name": "tgf",
+      "provider_id": -1
+    }
   ],
   "product": [
-    {"id":1867,"name":"Czajnik elektryczny, model Agata, Różowy"},
-    {"id":3709,"name":"Czajnik elektryczny, model Kinga, Srebrny"},
-    {"id":9044,"name":"Czajnik elektryczny, model Sylwia, Różowy"},
-    {"id":4256,"name":"Czajnik elektryczny, model Gertruda, Srebrny"},
-    {"id":4486,"name":"Czajnik elektryczny, model Alicja, Czerwony"},
-    {"id":4598,"name":"Czajnik elektryczny, model Gertruda, Szary"},
-    {"id":4967,"name":"Czajnik elektryczny, model Agnieszka, Pomarańczowy"},
-    {"id":7795,"name":"Czajnik elektryczny, model Joanna, Różowy"},
-    {"id":9437,"name":"Czajnik elektryczny, model Sylwia, Pomarańczowy"},
-    {"id":2373,"name":"Czajnik elektryczny, model Patrycja, Czarny"},
-    {"id":3278,"name":"Czajnik elektryczny, model Iga, Turkusowy"},
-    {"id":9417,"name":"Czajnik elektryczny, model Wiktoria, Niebieski"},
-    {"id":1911,"name":"Czajnik elektryczny, model Bogumiła, Żółty"},
-    {"id":6646,"name":"Czajnik elektryczny, model Gertruda, Zielony"},
-    {"id":9416,"name":"Czajnik elektryczny, model Dominika, Srebrny"},
-    {"id":5576,"name":"Czajnik elektryczny, model Andżelika, Fioletowy"},
-    {"id":1092,"name":"Czajnik elektryczny, model Joanna, Turkusowy"},
-    {"id":6896,"name":"Czajnik elektryczny, model Julia, Srebrny"},
-    {"id":7594,"name":"Czajnik elektryczny, model Dominika, Różowy"},
-    {"id":6365,"name":"Czajnik elektryczny, model Urszula, Zielony"},
-    {"id":4513,"name":"Czajnik elektryczny, model Sylwia, Złoty"},
-    {"id":2741,"name":"Czajnik elektryczny, model Dagmara, Błękitny"},
-    {"id":6915,"name":"Czajnik elektryczny, model Eugenia, Srebrny"},
-    {"id":7497,"name":"Czajnik elektryczny, model Zuzanna, Beżowy"},
-    {"id":6580,"name":"Czajnik elektryczny, model Iwona, Żółty"},
-    {"id":8556,"name":"Czajnik elektryczny, model Urszula, Niebieski"},
-    {"id":4123,"name":"Czajnik elektryczny, model Malwina, Niebieski"},
-    {"id":5598,"name":"Czajnik elektryczny, model Agnieszka, Biały"},
-    {"id":8695,"name":"Czajnik elektryczny, model Urszula, Pomarańczowy"},
-    {"id":2840,"name":"Czajnik elektryczny, model Celina, Żółty"},
-    {"id":5922,"name":"Czajnik elektryczny, model Maria, Różowy"},
-    {"id":9424,"name":"Czajnik elektryczny, model Kinga, Fioletowy"}
+    {
+      "id": 1867,
+      "name": "Czajnik elektryczny, model Agata, Różowy"
+    },
+    {
+      "id": 3709,
+      "name": "Czajnik elektryczny, model Kinga, Srebrny"
+    },
+    {
+      "id": 9044,
+      "name": "Czajnik elektryczny, model Sylwia, Różowy"
+    },
+    {
+      "id": 4256,
+      "name": "Czajnik elektryczny, model Gertruda, Srebrny"
+    },
+    {
+      "id": 4486,
+      "name": "Czajnik elektryczny, model Alicja, Czerwony"
+    },
+    {
+      "id": 4598,
+      "name": "Czajnik elektryczny, model Gertruda, Szary"
+    },
+    {
+      "id": 4967,
+      "name": "Czajnik elektryczny, model Agnieszka, Pomarańczowy"
+    },
+    {
+      "id": 7795,
+      "name": "Czajnik elektryczny, model Joanna, Różowy"
+    },
+    {
+      "id": 9437,
+      "name": "Czajnik elektryczny, model Sylwia, Pomarańczowy"
+    },
+    {
+      "id": 2373,
+      "name": "Czajnik elektryczny, model Patrycja, Czarny"
+    },
+    {
+      "id": 3278,
+      "name": "Czajnik elektryczny, model Iga, Turkusowy"
+    },
+    {
+      "id": 9417,
+      "name": "Czajnik elektryczny, model Wiktoria, Niebieski"
+    },
+    {
+      "id": 1911,
+      "name": "Czajnik elektryczny, model Bogumiła, Żółty"
+    },
+    {
+      "id": 6646,
+      "name": "Czajnik elektryczny, model Gertruda, Zielony"
+    },
+    {
+      "id": 9416,
+      "name": "Czajnik elektryczny, model Dominika, Srebrny"
+    },
+    {
+      "id": 5576,
+      "name": "Czajnik elektryczny, model Andżelika, Fioletowy"
+    },
+    {
+      "id": 1092,
+      "name": "Czajnik elektryczny, model Joanna, Turkusowy"
+    },
+    {
+      "id": 6896,
+      "name": "Czajnik elektryczny, model Julia, Srebrny"
+    },
+    {
+      "id": 7594,
+      "name": "Czajnik elektryczny, model Dominika, Różowy"
+    },
+    {
+      "id": 6365,
+      "name": "Czajnik elektryczny, model Urszula, Zielony"
+    },
+    {
+      "id": 4513,
+      "name": "Czajnik elektryczny, model Sylwia, Złoty"
+    },
+    {
+      "id": 2741,
+      "name": "Czajnik elektryczny, model Dagmara, Błękitny"
+    },
+    {
+      "id": 6915,
+      "name": "Czajnik elektryczny, model Eugenia, Srebrny"
+    },
+    {
+      "id": 7497,
+      "name": "Czajnik elektryczny, model Zuzanna, Beżowy"
+    },
+    {
+      "id": 6580,
+      "name": "Czajnik elektryczny, model Iwona, Żółty"
+    },
+    {
+      "id": 8556,
+      "name": "Czajnik elektryczny, model Urszula, Niebieski"
+    },
+    {
+      "id": 4123,
+      "name": "Czajnik elektryczny, model Malwina, Niebieski"
+    },
+    {
+      "id": 5598,
+      "name": "Czajnik elektryczny, model Agnieszka, Biały"
+    },
+    {
+      "id": 8695,
+      "name": "Czajnik elektryczny, model Urszula, Pomarańczowy"
+    },
+    {
+      "id": 2840,
+      "name": "Czajnik elektryczny, model Celina, Żółty"
+    },
+    {
+      "id": 5922,
+      "name": "Czajnik elektryczny, model Maria, Różowy"
+    },
+    {
+      "id": 9424,
+      "name": "Czajnik elektryczny, model Kinga, Fioletowy"
+    }
   ],
   "provider": [
-    {"address":"al. Szymańskiej 97, Rzeszów","id":1867,"name":"Adrianex sp. z o.o."},
-    {"address":"al. Kozłowskiej 21, Sandomierz","id":5676,"name":"Wacławex sp. z o.o."},
-    {"address":"al. Nowickiej 24, Bielsko Biała","id":4453,"name":"Władysławex sp. z o.o."},
-    {"address":"al. Jabłońskiego 41, Suwałki","id":7795,"name":"Stefanex sp. z o.o."},
-    {"address":"ul. Dudeiej 96, Poznań","id":3615,"name":"Tomaszex sp. z o.o."},
-    {"address":"ul. Kowalczyiej 36, Kielce","id":6798,"name":"Hektorex sp. z o.o."},
-    {"address":"ul. Jabłońskiego 3, Poznań","id":9416,"name":"Marianex sp. z o.o."},
-    {"address":"ul. Olszewskiej 91, Gdynia","id":7355,"name":"Marcelex sp. z o.o."},
-    {"address":"al. Tomaszewskiej 26, Gdańsk","id":6715,"name":"Jakubex sp. z o.o."},
-    {"address":"al. Kaczmareiej 75, Gdynia","id":2741,"name":"Bartoszex sp. z o.o."},
-    {"address":"al. Zielińskiej 65, Suwałki","id":7132,"name":"Zygmuntex sp. z o.o."},
-    {"address":"ul. Rutkowskiej 21, Łódź","id":4597,"name":"Karolex sp. z o.o."},
-    {"address":"ul. Wróbelego 62, Ełk","id":8695,"name":"Jędrzejex sp. z o.o."},
-    {"address":"ul. Piotrowskiej 80, Gdynia","id":1521,"name":"Stefanex sp. z o.o."},
-    {"address":"ul. Stępieńego 56, Białystok","id":4092,"name":"Wiktorex sp. z o.o."},
-    {"address":"ul. Dudeiej 55, Sandomierz","id":8484,"name":"Konradex sp. z o.o."},
-    {"address":"al. Wójciiej 40, Radom","id":2224,"name":"Stefanex sp. z o.o."},
-    {"address":"ul. Zielińskiej 36, Kraków","id":4960,"name":"Lubomirex sp. z o.o."},
-    {"address":"al. Malinowskiego 19, Radom","id":6365,"name":"Alfredex sp. z o.o."},
-    {"address":"al. Lewandowskiej 12, Gdańsk","id":4658,"name":"Ronaldex sp. z o.o."},
-    {"address":"al. Malinowskiego 6, Kraków","id":3963,"name":"Szczepanex sp. z o.o."},
-    {"address":"al. Stępieiej 93, Kraków","id":8138,"name":"Kamilex sp. z o.o."},
-    {"address":"ul. Kowalczykego 71, Łódź","id":9890,"name":"Janex sp. z o.o."},
-    {"address":"al. Królego 22, Białystok","id":6914,"name":"Marcelex sp. z o.o."},
-    {"address":"ul. Jabłońskiego 47, Zakopane","id":8233,"name":"Hektorex sp. z o.o."},
-    {"address":"ul. Nowakowskiego 16, Rzeszów","id":3037,"name":"Edmundex sp. z o.o."},
-    {"address":"ul. Dudaego 97, Sandomierz","id":1708,"name":"Rudolfex sp. z o.o."},
-    {"address":"ul. Wróbelego 96, Gdańsk","id":3020,"name":"Ronaldex sp. z o.o."},
-    {"address":"ul. Kowalczykego 24, Warszawa","id":6695,"name":"Maciejex sp. z o.o."},
-    {"address":"ul. Mazurego 87, Opole","id":9568,"name":"Igorex sp. z o.o."},
-    {"address":"ul. Nowakowskiej 30, Tallinn","id":5800,"name":"Ludwikex sp. z o.o."},
-    {"address":"al. Grabowskiej 29, Zakopane","id":6030,"name":"Julianex sp. z o.o."}
+    {
+      "address": "al. Szymańskiej 97, Rzeszów",
+      "id": 1867,
+      "name": "Adrianex sp. z o.o."
+    },
+    {
+      "address": "al. Kozłowskiej 21, Sandomierz",
+      "id": 5676,
+      "name": "Wacławex sp. z o.o."
+    },
+    {
+      "address": "al. Nowickiej 24, Bielsko Biała",
+      "id": 4453,
+      "name": "Władysławex sp. z o.o."
+    },
+    {
+      "address": "al. Jabłońskiego 41, Suwałki",
+      "id": 7795,
+      "name": "Stefanex sp. z o.o."
+    },
+    {
+      "address": "ul. Dudeiej 96, Poznań",
+      "id": 3615,
+      "name": "Tomaszex sp. z o.o."
+    },
+    {
+      "address": "ul. Kowalczyiej 36, Kielce",
+      "id": 6798,
+      "name": "Hektorex sp. z o.o."
+    },
+    {
+      "address": "ul. Jabłońskiego 3, Poznań",
+      "id": 9416,
+      "name": "Marianex sp. z o.o."
+    },
+    {
+      "address": "ul. Olszewskiej 91, Gdynia",
+      "id": 7355,
+      "name": "Marcelex sp. z o.o."
+    },
+    {
+      "address": "al. Tomaszewskiej 26, Gdańsk",
+      "id": 6715,
+      "name": "Jakubex sp. z o.o."
+    },
+    {
+      "address": "al. Kaczmareiej 75, Gdynia",
+      "id": 2741,
+      "name": "Bartoszex sp. z o.o."
+    },
+    {
+      "address": "al. Zielińskiej 65, Suwałki",
+      "id": 7132,
+      "name": "Zygmuntex sp. z o.o."
+    },
+    {
+      "address": "ul. Rutkowskiej 21, Łódź",
+      "id": 4597,
+      "name": "Karolex sp. z o.o."
+    },
+    {
+      "address": "ul. Wróbelego 62, Ełk",
+      "id": 8695,
+      "name": "Jędrzejex sp. z o.o."
+    },
+    {
+      "address": "ul. Piotrowskiej 80, Gdynia",
+      "id": 1521,
+      "name": "Stefanex sp. z o.o."
+    },
+    {
+      "address": "ul. Stępieńego 56, Białystok",
+      "id": 4092,
+      "name": "Wiktorex sp. z o.o."
+    },
+    {
+      "address": "ul. Dudeiej 55, Sandomierz",
+      "id": 8484,
+      "name": "Konradex sp. z o.o."
+    },
+    {
+      "address": "al. Wójciiej 40, Radom",
+      "id": 2224,
+      "name": "Stefanex sp. z o.o."
+    },
+    {
+      "address": "ul. Zielińskiej 36, Kraków",
+      "id": 4960,
+      "name": "Lubomirex sp. z o.o."
+    },
+    {
+      "address": "al. Malinowskiego 19, Radom",
+      "id": 6365,
+      "name": "Alfredex sp. z o.o."
+    },
+    {
+      "address": "al. Lewandowskiej 12, Gdańsk",
+      "id": 4658,
+      "name": "Ronaldex sp. z o.o."
+    },
+    {
+      "address": "al. Malinowskiego 6, Kraków",
+      "id": 3963,
+      "name": "Szczepanex sp. z o.o."
+    },
+    {
+      "address": "al. Stępieiej 93, Kraków",
+      "id": 8138,
+      "name": "Kamilex sp. z o.o."
+    },
+    {
+      "address": "ul. Kowalczykego 71, Łódź",
+      "id": 9890,
+      "name": "Janex sp. z o.o."
+    },
+    {
+      "address": "al. Królego 22, Białystok",
+      "id": 6914,
+      "name": "Marcelex sp. z o.o."
+    },
+    {
+      "address": "ul. Jabłońskiego 47, Zakopane",
+      "id": 8233,
+      "name": "Hektorex sp. z o.o."
+    },
+    {
+      "address": "ul. Nowakowskiego 16, Rzeszów",
+      "id": 3037,
+      "name": "Edmundex sp. z o.o."
+    },
+    {
+      "address": "ul. Dudaego 97, Sandomierz",
+      "id": 1708,
+      "name": "Rudolfex sp. z o.o."
+    },
+    {
+      "address": "ul. Wróbelego 96, Gdańsk",
+      "id": 3020,
+      "name": "Ronaldex sp. z o.o."
+    },
+    {
+      "address": "ul. Kowalczykego 24, Warszawa",
+      "id": 6695,
+      "name": "Maciejex sp. z o.o."
+    },
+    {
+      "address": "ul. Mazurego 87, Opole",
+      "id": 9568,
+      "name": "Igorex sp. z o.o."
+    },
+    {
+      "address": "ul. Nowakowskiej 30, Tallinn",
+      "id": 5800,
+      "name": "Ludwikex sp. z o.o."
+    },
+    {
+      "address": "al. Grabowskiej 29, Zakopane",
+      "id": 6030,
+      "name": "Julianex sp. z o.o."
+    },
+    {
+      "address": "asdsds",
+      "id": 9891,
+      "name": "sd"
+    }
   ],
   "state": [
-    {"department_id":7750,"id":1867,"name":"W realizacji"},
-    {"department_id":4334,"id":3709,"name":"Przyjęte do realizacji"},
-    {"department_id":9246,"id":9044,"name":"Czeka na realizacje"},
-    {"department_id":9123,"id":4256,"name":"Przyjęte do realizacji"},
-    {"department_id":4453,"id":4486,"name":"Czeka na realizacje"},
-    {"department_id":8023,"id":4598,"name":"Gotowe"},
-    {"department_id":9951,"id":4967,"name":"Przyjęte do realizacji"},
-    {"department_id":2529,"id":7795,"name":"Przyjęte do realizacji"},
-    {"department_id":3446,"id":9437,"name":"Gotowe"},
-    {"department_id":2795,"id":2373,"name":"Przyjęte do realizacji"},
-    {"department_id":6626,"id":3278,"name":"Przyjęte do realizacji"},
-    {"department_id":6798,"id":9417,"name":"Czeka na realizacje"},
-    {"department_id":2507,"id":1911,"name":"Czeka na realizacje"},
-    {"department_id":4373,"id":6646,"name":"W realizacji"},
-    {"department_id":4965,"id":9416,"name":"Przyjęte do realizacji"},
-    {"department_id":9754,"id":5576,"name":"Gotowe"},
-    {"department_id":6629,"id":1092,"name":"Przyjęte do realizacji"},
-    {"department_id":1080,"id":6896,"name":"W realizacji"},
-    {"department_id":6715,"id":7594,"name":"W realizacji"},
-    {"department_id":1797,"id":6365,"name":"Czeka na realizacje"},
-    {"department_id":6896,"id":4513,"name":"Przyjęte do realizacji"},
-    {"department_id":8312,"id":2741,"name":"Czeka na realizacje"},
-    {"department_id":7070,"id":6915,"name":"Przyjęte do realizacji"},
-    {"department_id":3749,"id":7497,"name":"Czeka na realizacje"},
-    {"department_id":4077,"id":6580,"name":"Gotowe"},
-    {"department_id":4597,"id":8556,"name":"W realizacji"},
-    {"department_id":5040,"id":4123,"name":"Czeka na realizacje"},
-    {"department_id":9851,"id":5598,"name":"Czeka na realizacje"},
-    {"department_id":6147,"id":8695,"name":"Czeka na realizacje"},
-    {"department_id":8311,"id":2840,"name":"W realizacji"},
-    {"department_id":1641,"id":5922,"name":"W realizacji"},
-    {"department_id":9084,"id":9424,"name":"Gotowe"}
+    {
+      "department_id": 7750,
+      "id": 1867,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 4334,
+      "id": 3709,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 9246,
+      "id": 9044,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 9123,
+      "id": 4256,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 4453,
+      "id": 4486,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 8023,
+      "id": 4598,
+      "name": "Gotowe"
+    },
+    {
+      "department_id": 9951,
+      "id": 4967,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 2529,
+      "id": 7795,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 3446,
+      "id": 9437,
+      "name": "Gotowe"
+    },
+    {
+      "department_id": 2795,
+      "id": 2373,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 6626,
+      "id": 3278,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 6798,
+      "id": 9417,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 2507,
+      "id": 1911,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 4373,
+      "id": 6646,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 4965,
+      "id": 9416,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 9754,
+      "id": 5576,
+      "name": "Gotowe"
+    },
+    {
+      "department_id": 6629,
+      "id": 1092,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 1080,
+      "id": 6896,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 6715,
+      "id": 7594,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 1797,
+      "id": 6365,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 6896,
+      "id": 4513,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 8312,
+      "id": 2741,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 7070,
+      "id": 6915,
+      "name": "Przyjęte do realizacji"
+    },
+    {
+      "department_id": 3749,
+      "id": 7497,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 4077,
+      "id": 6580,
+      "name": "Gotowe"
+    },
+    {
+      "department_id": 4597,
+      "id": 8556,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 5040,
+      "id": 4123,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 9851,
+      "id": 5598,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 6147,
+      "id": 8695,
+      "name": "Czeka na realizacje"
+    },
+    {
+      "department_id": 8311,
+      "id": 2840,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 1641,
+      "id": 5922,
+      "name": "W realizacji"
+    },
+    {
+      "department_id": 9084,
+      "id": 9424,
+      "name": "Gotowe"
+    },
+    {
+      "department_id": -1,
+      "id": 9438,
+      "name": "sd"
+    }
   ]
 }

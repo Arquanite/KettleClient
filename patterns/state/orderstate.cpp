@@ -20,6 +20,10 @@ void OrderState::getList(){
 void OrderState::add(){
     OrderDialog *dialog = new OrderDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-//        m_service->post(dialog->);
+        m_service->post(dialog->order);
     }
+}
+
+void OrderState::update(){
+
 }

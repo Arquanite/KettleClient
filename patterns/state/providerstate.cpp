@@ -19,6 +19,10 @@ void ProviderState::getList(){
 void ProviderState::add(){
     ProviderDialog *dialog = new ProviderDialog(m_parent);
     if(dialog->exec() == QDialog::Accepted){
-//        m_service->post(dialog->customer);
+        m_service->post(dialog->provider);
     }
+}
+
+void ProviderState::update(){
+
 }

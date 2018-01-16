@@ -11,6 +11,7 @@ public:
 public:
     void getList() override;
     void add() override;
+    void update() override;
 };
 
 #endif // STATESTATE_H
