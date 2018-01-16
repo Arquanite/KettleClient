@@ -3,9 +3,11 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-//#include <
+#include "customerdialog.h"
 
-CustomerState::CustomerState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+#include <QDebug>
+
+CustomerState::CustomerState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
 
@@ -17,5 +19,8 @@ void CustomerState::getList(){
 }
 
 void CustomerState::add(){
-
+    CustomerDialog *dialog = new CustomerDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+        qDebug()<<dialog->customer.name();
+    }
 }

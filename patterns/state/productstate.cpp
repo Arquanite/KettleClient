@@ -3,7 +3,7 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-ProductState::ProductState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+ProductState::ProductState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
 

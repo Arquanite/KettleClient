@@ -3,10 +3,9 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-ProviderState::ProviderState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+ProviderState::ProviderState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
-
 
 void ProviderState::getList(){
     QNetworkReply *reply = m_service->getProviders();

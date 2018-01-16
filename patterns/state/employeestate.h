@@ -5,7 +5,7 @@
 
 class EmployeeState : public AbstractState{
 public:
-    EmployeeState(NetworkService *service, JSONModel *model);
+    EmployeeState(NetworkService *service, JSONModel *model, QWidget *parent);
 
     // AbstractState interface
 public:

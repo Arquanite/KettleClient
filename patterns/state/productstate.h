@@ -5,7 +5,7 @@
 
 class ProductState : public AbstractState {
 public:
-    ProductState(NetworkService *service, JSONModel *model);
+    ProductState(NetworkService *service, JSONModel *model, QWidget *parent);
 
     // AbstractState interface
 public:

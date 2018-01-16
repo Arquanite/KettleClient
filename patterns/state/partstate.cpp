@@ -3,7 +3,7 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-PartState::PartState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+PartState::PartState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
 
@@ -14,6 +14,6 @@ void PartState::getList(){
     });
 }
 
-void PartState::add()
-{
+void PartState::add(){
+
 }

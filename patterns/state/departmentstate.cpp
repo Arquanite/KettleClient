@@ -3,7 +3,7 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-DepartmentState::DepartmentState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+DepartmentState::DepartmentState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
 

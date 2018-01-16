@@ -3,10 +3,9 @@
 
 #include "abstractstate.h"
 
-class PartState : public AbstractState
-{
+class PartState : public AbstractState {
 public:
-    PartState(NetworkService *service, JSONModel *model);
+    PartState(NetworkService *service, JSONModel *model, QWidget *parent);
 
     // AbstractState interface
 public:

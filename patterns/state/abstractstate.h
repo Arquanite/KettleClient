@@ -12,10 +12,10 @@ class AbstractState {
 protected:
     NetworkService *m_service;
     JSONModel *m_model;
-    QDialog *m_dialog;
+    QWidget *m_parent;
 
 public:
-    AbstractState(NetworkService *service, JSONModel *model);
+    AbstractState(NetworkService *service, JSONModel *model, QWidget *parent);
     virtual ~AbstractState();
 
     virtual void getList() = 0;

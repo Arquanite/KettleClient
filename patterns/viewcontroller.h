@@ -29,7 +29,7 @@ private:
     JSONModel *m_model;
     int m_current = -1;
 public:
-    explicit ViewController(JSONModel *model, QObject *parent = nullptr);
+    explicit ViewController(JSONModel *model, QWidget *parent = nullptr);
 
 public slots:
     void viewChanged(int id);

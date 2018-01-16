@@ -5,7 +5,7 @@
 
 class StateState : public AbstractState {
 public:
-    StateState(NetworkService *service, JSONModel *model);
+    StateState(NetworkService *service, JSONModel *model, QWidget *parent);
 
     // AbstractState interface
 public:

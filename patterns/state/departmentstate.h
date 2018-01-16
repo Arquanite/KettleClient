@@ -5,7 +5,7 @@
 
 class DepartmentState : public AbstractState {
 public:
-    DepartmentState(NetworkService *service, JSONModel *model);
+    DepartmentState(NetworkService *service, JSONModel *model, QWidget *parent);
 
     // AbstractState interface
 public:
