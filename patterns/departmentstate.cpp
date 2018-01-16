@@ -16,4 +16,5 @@ void DepartmentState::getList(){
 }
 
 void DepartmentState::add(){
+
 }
