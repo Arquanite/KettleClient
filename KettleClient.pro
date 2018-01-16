@@ -70,7 +70,8 @@ SOURCES += \
     utils/networkservice.cpp \
     utils/typeconverter.cpp \
     patterns/abstractstate.cpp \
-    patterns/customerstate.cpp
+    patterns/customerstate.cpp \
+    patterns/departmentstate.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -109,7 +110,8 @@ HEADERS += \
     utils/entities.h \
     patterns/abstractstate.h \
     patterns/customerstate.h \
-    utils/states.h
+    utils/states.h \
+    patterns/departmentstate.h
 
 FORMS += \
         dialogs/mainwindow.ui \

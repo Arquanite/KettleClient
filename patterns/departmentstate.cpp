@@ -1,19 +1,19 @@
-#include "customerstate.h"
+#include "departmentstate.h"
 #include "typeconverter.h"
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-CustomerState::CustomerState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
+DepartmentState::DepartmentState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
 
 }
 
-void CustomerState::getList(){
-    QNetworkReply *reply = m_service->getCustomers();
+
+void DepartmentState::getList(){
+    QNetworkReply *reply = m_service->getDepartments();
     reply->connect(reply, &QNetworkReply::finished, [=](){
         m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toCustomer(QJsonDocument::fromJson(reply->readAll()).array())));
     });
 }
 
-void CustomerState::add(){
-
+void DepartmentState::add(){
 }
