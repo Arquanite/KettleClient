@@ -25,5 +25,10 @@ void ProductState::add(){
 }
 
 void ProductState::update(){
-
+    ProductDialog *dialog = new ProductDialog(m_parent);
+    dialog->product.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->product);
+    }
 }

@@ -8,8 +8,7 @@ namespace Ui {
 class StateDialog;
 }
 
-class StateDialog : public QDialog
-{
+class StateDialog : public QDialog {
     Q_OBJECT
 
     bool validate();
@@ -18,6 +17,8 @@ public:
     State state = State(0, "", 0);
     explicit StateDialog(QWidget *parent = 0);
     ~StateDialog();
+
+    void reload();
 
 private:
     Ui::StateDialog *ui;

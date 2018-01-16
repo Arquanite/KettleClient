@@ -25,5 +25,10 @@ void EmployeeState::add(){
 }
 
 void EmployeeState::update(){
-
+    EmployeeDialog *dialog = new EmployeeDialog(m_parent);
+    dialog->employee.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->employee);
+    }
 }

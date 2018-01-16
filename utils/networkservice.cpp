@@ -108,43 +108,43 @@ QNetworkReply* NetworkService::update(Customer c){
 QNetworkReply* NetworkService::update(Department d){
     QNetworkRequest request(QUrl(QString(m_address + "/department/%1").arg(d.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(d.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(d.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::update(Employee e){
     QNetworkRequest request(QUrl(QString(m_address + "/employee/%1").arg(e.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(e.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(e.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::update(Order o){
     QNetworkRequest request(QUrl(QString(m_address + "/order/%1").arg(o.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(o.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(o.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::update(Part p){
     QNetworkRequest request(QUrl(QString(m_address + "/part/%1").arg(p.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::update(Product p){
     QNetworkRequest request(QUrl(QString(m_address + "/product/%1").arg(p.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::update(Provider p){
     QNetworkRequest request(QUrl(QString(m_address + "/provider/%1").arg(p.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(p.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply *NetworkService::update(State s){
     QNetworkRequest request(QUrl(QString(m_address + "/state/%1").arg(s.id())));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    return m_manager->post(request, QJsonDocument(s.toJSON()).toJson(QJsonDocument::Compact));
+    return m_manager->put(request, QJsonDocument(s.toJSON()).toJson(QJsonDocument::Compact));
 }
 
 QNetworkReply* NetworkService::deleteResource(Customer c){

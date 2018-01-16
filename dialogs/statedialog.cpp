@@ -6,8 +6,7 @@
 StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDialog){
     ui->setupUi(this);
 
-    ui->textName->setText(state.name());
-    ui->comboDepartment->setCurrentIndex(state.departmentId());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &StateDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -21,9 +20,13 @@ StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDia
     });
 }
 
-StateDialog::~StateDialog()
-{
+StateDialog::~StateDialog(){
     delete ui;
+}
+
+void StateDialog::reload(){
+    ui->textName->setText(state.name());
+    ui->comboDepartment->setCurrentIndex(state.departmentId());
 }
 
 bool StateDialog::validate(){

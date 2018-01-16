@@ -7,8 +7,7 @@ namespace Ui {
 class WaitingDialog;
 }
 
-class WaitingDialog : public QDialog
-{
+class WaitingDialog : public QDialog {
     Q_OBJECT
 
 public:

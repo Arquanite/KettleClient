@@ -27,5 +27,7 @@ void CustomerState::update(){
     CustomerDialog *dialog = new CustomerDialog(m_parent);
     dialog->customer.fromJSON(m_model->currentJSON()->toJSON());
     dialog->reload();
-    dialog->exec();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->customer);
+    }
 }

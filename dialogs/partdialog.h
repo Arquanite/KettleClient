@@ -18,6 +18,8 @@ public:
     explicit PartDialog(QWidget *parent = 0);
     ~PartDialog();
 
+    void reload();
+
 private:
     Ui::PartDialog *ui;
 };

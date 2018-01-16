@@ -6,7 +6,7 @@
 DepartmentDialog::DepartmentDialog(QWidget *parent) : QDialog(parent), ui(new Ui::DepartmentDialog){
     ui->setupUi(this);
 
-    ui->textName->setText(department.name());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &DepartmentDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -19,9 +19,12 @@ DepartmentDialog::DepartmentDialog(QWidget *parent) : QDialog(parent), ui(new Ui
     });
 }
 
-DepartmentDialog::~DepartmentDialog()
-{
+DepartmentDialog::~DepartmentDialog(){
     delete ui;
+}
+
+void DepartmentDialog::reload(){
+    ui->textName->setText(department.name());
 }
 
 bool DepartmentDialog::validate(){

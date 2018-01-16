@@ -24,5 +24,10 @@ void PartState::add(){
 }
 
 void PartState::update(){
-
+    PartDialog *dialog = new PartDialog(m_parent);
+    dialog->part.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->part);
+    }
 }

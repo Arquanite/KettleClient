@@ -12,6 +12,7 @@
 #include "order.h"
 #include "typeconverter.h"
 
+#include <QTimer>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
@@ -33,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         ui->tableMain->setModel(m_model);
+        QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);

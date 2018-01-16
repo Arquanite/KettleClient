@@ -6,8 +6,7 @@
 ProviderDialog::ProviderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::ProviderDialog){
     ui->setupUi(this);
 
-    ui->textName->setText(provider.name());
-    ui->textAddress->setText(provider.address());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProviderDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -21,9 +20,13 @@ ProviderDialog::ProviderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Pr
     });
 }
 
-ProviderDialog::~ProviderDialog()
-{
+ProviderDialog::~ProviderDialog(){
     delete ui;
+}
+
+void ProviderDialog::reload(){
+    ui->textName->setText(provider.name());
+    ui->textAddress->setText(provider.address());
 }
 
 bool ProviderDialog::validate(){

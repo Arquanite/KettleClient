@@ -24,5 +24,10 @@ void ProviderState::add(){
 }
 
 void ProviderState::update(){
-
+    ProviderDialog *dialog = new ProviderDialog(m_parent);
+    dialog->provider.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->provider);
+    }
 }

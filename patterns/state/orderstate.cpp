@@ -25,5 +25,10 @@ void OrderState::add(){
 }
 
 void OrderState::update(){
-
+    OrderDialog *dialog = new OrderDialog(m_parent);
+    dialog->order.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->order);
+    }
 }

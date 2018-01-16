@@ -6,7 +6,7 @@
 OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::OrderDialog){
     ui->setupUi(this);
 
-    ui->comboCustomer->setCurrentIndex(order.customerId());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &OrderDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -20,9 +20,12 @@ OrderDialog::OrderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::OrderDia
     });
 }
 
-OrderDialog::~OrderDialog()
-{
+OrderDialog::~OrderDialog(){
     delete ui;
+}
+
+void OrderDialog::reload(){
+    ui->comboCustomer->setCurrentIndex(order.customerId());
 }
 
 bool OrderDialog::validate(){

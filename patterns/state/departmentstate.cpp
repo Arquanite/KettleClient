@@ -25,5 +25,10 @@ void DepartmentState::add(){
 }
 
 void DepartmentState::update(){
-
+    DepartmentDialog *dialog = new DepartmentDialog(m_parent);
+    dialog->department.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    if(dialog->exec() == QDialog::Accepted){
+        m_service->update(dialog->department);
+    }
 }

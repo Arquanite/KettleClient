@@ -6,8 +6,7 @@
 PartDialog::PartDialog(QWidget *parent) : QDialog(parent), ui(new Ui::PartDialog){
     ui->setupUi(this);
 
-    ui->textName->setText(part.name());
-    ui->comboProvider->setCurrentIndex(part.providerId());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &PartDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -21,9 +20,13 @@ PartDialog::PartDialog(QWidget *parent) : QDialog(parent), ui(new Ui::PartDialog
     });
 }
 
-PartDialog::~PartDialog()
-{
+PartDialog::~PartDialog(){
     delete ui;
+}
+
+void PartDialog::reload(){
+    ui->textName->setText(part.name());
+    ui->comboProvider->setCurrentIndex(part.providerId());
 }
 
 bool PartDialog::validate(){

@@ -3,13 +3,10 @@
 
 #include <QMessageBox>
 
-ProductDialog::ProductDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::ProductDialog)
-{
+ProductDialog::ProductDialog(QWidget *parent) : QDialog(parent), ui(new Ui::ProductDialog){
     ui->setupUi(this);
 
-    ui->textName->setText(product.name());
+
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProductDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -23,9 +20,12 @@ ProductDialog::ProductDialog(QWidget *parent) :
     });
 }
 
-ProductDialog::~ProductDialog()
-{
+ProductDialog::~ProductDialog(){
     delete ui;
+}
+
+void ProductDialog::reload(){
+    ui->textName->setText(product.name());
 }
 
 bool ProductDialog::validate(){

@@ -8,8 +8,7 @@ namespace Ui {
 class OrderDialog;
 }
 
-class OrderDialog : public QDialog
-{
+class OrderDialog : public QDialog {
     Q_OBJECT
 
     bool validate();
@@ -18,6 +17,8 @@ public:
     Order order = Order::builder(0, 0, "").build();
     explicit OrderDialog(QWidget *parent = 0);
     ~OrderDialog();
+
+    void reload();
 
 private:
     Ui::OrderDialog *ui;
