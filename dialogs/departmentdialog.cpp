@@ -28,5 +28,6 @@ void DepartmentDialog::reload(){
 }
 
 bool DepartmentDialog::validate(){
+    if(ui->textName->text() == "") return false;
     return true;
 }

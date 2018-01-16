@@ -38,5 +38,8 @@ void EmployeeDialog::reload(){
 }
 
 bool EmployeeDialog::validate(){
+    if(ui->textName->text() == "" || ui->textSurname->text() == "" ||
+            ui->spinRate->value() == 0 || ui->spinCount->value() == 0 ||
+            ui->comboDepartment->currentIndex() < 0 || ui->comboSupervisor->currentIndex() < 0) return false;
     return true;
 }

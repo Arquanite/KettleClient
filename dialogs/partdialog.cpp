@@ -30,5 +30,6 @@ void PartDialog::reload(){
 }
 
 bool PartDialog::validate(){
+    if(ui->textName->text() == "" || ui->comboProvider->currentIndex() < 0) return false;
     return true;
 }

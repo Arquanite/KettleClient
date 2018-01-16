@@ -30,5 +30,6 @@ void StateDialog::reload(){
 }
 
 bool StateDialog::validate(){
+    if(ui->textName->text() == "" || ui->comboDepartment->currentIndex() < 0) return false;
     return true;
 }

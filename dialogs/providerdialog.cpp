@@ -30,5 +30,6 @@ void ProviderDialog::reload(){
 }
 
 bool ProviderDialog::validate(){
+    if(ui->textAddress->text() == "" || ui->textName->text() == "") return false;
     return true;
 }
