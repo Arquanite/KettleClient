@@ -2,16 +2,17 @@
 #define JSONMODEL_H
 
 #include <QAbstractTableModel>
-#include <QJsonObject>
+#include "jsonable.h"
 
 // Adapter
 
 class JSONModel : public QAbstractTableModel {
 private:
-    QList<QJsonObject> m_data;
+    QList<JSONAble*> m_data;
 public:
-    JSONModel(QList<QJsonObject> data, QObject *parent = nullptr);
-    void setSourceData(QList<QJsonObject> data);
+    JSONModel(QList<JSONAble*> data, QObject *parent = nullptr);
+    void setSourceData(QList<JSONAble*> data);
+
     // QAbstractItemModel interface
 public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

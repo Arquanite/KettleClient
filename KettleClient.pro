@@ -68,7 +68,9 @@ SOURCES += \
     entities/order.cpp \
     patterns/jsonable.cpp \
     utils/networkservice.cpp \
-    utils/typeconverter.cpp
+    utils/typeconverter.cpp \
+    patterns/abstractstate.cpp \
+    patterns/customerstate.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -104,7 +106,9 @@ HEADERS += \
     patterns/jsonable.h \
     utils/typeconverter.h \
     utils/networkservice.h \
-    utils/entities.h
+    utils/entities.h \
+    patterns/abstractstate.h \
+    patterns/customerstate.h
 
 FORMS += \
         dialogs/mainwindow.ui \

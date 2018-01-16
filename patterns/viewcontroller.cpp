@@ -13,13 +13,15 @@
 #include "statedialog.h"
 #include "waitingdialog.h"
 #include "typeconverter.h"
+#include "customerstate.h"
 
 #include <QDebug>
 #include <QMessageBox>
 #include <QtNetwork/QNetworkReply>
+#include <QJsonDocument>
 
 ViewController::ViewController(JSONModel *model, QObject *parent) : QObject(parent), m_model(model){
-
+    state = new CustomerState(&m_service, m_model);
 }
 
 void ViewController::viewChanged(int id){
@@ -33,10 +35,13 @@ void ViewController::viewChanged(int id){
         connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<reply->readAll(); });}
 //        generate = std::bind(&RandomJSONFactory::randomProvider, JSONFactory);
         break;
-    case TypeCustomer: {
-        QNetworkReply *reply = m_service.getProviders();
+    case TypeCustomer: /*{
+        QNetworkReply *reply = m_service.getCustomers();
+        connect(reply, &QNetworkReply::finished, [=](){
+            m_model->setSourceData(TypeConverter::toJSONAble(TypeConverter::toCustomer(QJsonDocument::fromJson(reply->readAll()).array())));
+        });}*/
+        state->getList();
 //        connect(reply, &QNetworkReply::finished, [=](){ qDebug()<<TypeConverter::toCustomer( reply->readAll()); });
-    }
         break;
     case TypeEmployee:
         generate = std::bind(&RandomJSONFactory::randomEmployee, JSONFactory);
