@@ -14,7 +14,8 @@ TEMPLATE = app
 INCLUDEPATH += $$PWD/dialogs \
                $$PWD/utils \
                $$PWD/patterns \
-               $$PWD/entities
+               $$PWD/entities \
+               $$PWD/patterns/state
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
