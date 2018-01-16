@@ -71,7 +71,10 @@ SOURCES += \
     utils/typeconverter.cpp \
     patterns/abstractstate.cpp \
     patterns/customerstate.cpp \
-    patterns/departmentstate.cpp
+    patterns/departmentstate.cpp \
+    patterns/employeestate.cpp \
+    patterns/orderstate.cpp \
+    patterns/partstate.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -111,7 +114,10 @@ HEADERS += \
     patterns/abstractstate.h \
     patterns/customerstate.h \
     utils/states.h \
-    patterns/departmentstate.h
+    patterns/departmentstate.h \
+    patterns/employeestate.h \
+    patterns/orderstate.h \
+    patterns/partstate.h
 
 FORMS += \
         dialogs/mainwindow.ui \
