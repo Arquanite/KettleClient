@@ -3,6 +3,8 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
+#include "providerdialog.h"
+
 ProviderState::ProviderState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }
@@ -15,5 +17,8 @@ void ProviderState::getList(){
 }
 
 void ProviderState::add(){
-
+    ProviderDialog *dialog = new ProviderDialog(m_parent);
+    if(dialog->exec() == QDialog::Accepted){
+//        m_service->post(dialog->customer);
+    }
 }
