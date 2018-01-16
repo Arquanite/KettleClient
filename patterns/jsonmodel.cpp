@@ -22,7 +22,7 @@ void JSONModel::setSourceData(QList<JSONAble*> data){
         beginInsertRows(QModelIndex(), 0, -(rows+1));
         endInsertRows();
     }
-    else {
+    else if(rows > 0){
         beginRemoveRows(QModelIndex(), 0, rows-1);
         endRemoveRows();
     }

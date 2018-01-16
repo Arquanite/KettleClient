@@ -42,6 +42,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         dialog->exec();
     });
 
+//    QList<QJsonObject> data;
+//    RandomJSONFactory f;
+//    for(int i=0; i<10; i++){
+//        data.append(f.randomCustomer());
+//    }
+//    JSONModel *model = new JSONModel(data, this);
+//    ui->tableMain->setModel(model);
+
     /// TEST AREA ///
 
     QList<JSONAble*> lol;

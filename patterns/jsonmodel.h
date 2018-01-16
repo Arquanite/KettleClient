@@ -12,6 +12,7 @@ private:
 public:
     JSONModel(QList<JSONAble*> data, QObject *parent = nullptr);
     void setSourceData(QList<JSONAble*> data);
+
     // QAbstractItemModel interface
 public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

@@ -9,7 +9,7 @@
     {"address":"ul. Zającego 7, Sopot","id":2616,"name":"Bogumiła Kowalczyk","nip":"854-527-54-01"},
     {"address":"al. Kwiatkowskiego 40, Rzeszów","id":4658,"name":"Andżelika Baran","nip":"754-988-22-85"},
     {"address":"ul. Kowalczykego 71, Łódź","id":9200,"name":"Jan Rutkowski","nip":"491-799-63-13"},
-    {"address":"ul. Kozłowskiego 85, Kraków","id":4480,"name":"Ronald Nowak","nip":"348-034-58-00"},
+    {"address":"ul. Kozłowskiego 85, Kraków","id":4480,"name":"Ronald","surname": "Nowak","nip":"348-034-58-00"},
     {"address":"ul. Dudaego 67, Wrocław","id":7489,"name":"Karolina Mazur","nip":"273-383-18-64"},
     {"address":"al. Jankowskiej 19, Kraków","id":7417,"name":"Filip Wieczorek","nip":"049-169-82-26"},
     {"address":"ul. Szewczyiej 97, Gdańsk","id":4461,"name":"Krystyna Wójcik","nip":"168-009-78-52"},

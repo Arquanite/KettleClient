@@ -114,6 +114,9 @@ HEADERS += \
     utils/typeconverter.h \
     utils/networkservice.h \
     utils/entities.h \
+<<<<<<< HEAD
+    utils/pdebug.h
+=======
     utils/states.h \
     patterns/state/abstractstate.h \
     patterns/state/customerstate.h \
@@ -124,6 +127,7 @@ HEADERS += \
     patterns/state/productstate.h \
     patterns/state/providerstate.h \
     patterns/state/statestate.h
+>>>>>>> 6861cd9cafbf4ec6f5a2bc4a4a6393203ccacc24
 
 FORMS += \
         dialogs/mainwindow.ui \
