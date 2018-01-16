@@ -18,6 +18,8 @@ public:
     explicit CustomerDialog(QWidget *parent = 0);
     ~CustomerDialog();
 
+    void reload();
+
 private:
     Ui::CustomerDialog *ui;
 };

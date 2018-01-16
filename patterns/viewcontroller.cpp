@@ -39,7 +39,7 @@ void ViewController::add(){
 }
 
 void ViewController::edit(){
-//    m_currentState->
+    m_currentState->update();
 }
 
 void ViewController::remove(){

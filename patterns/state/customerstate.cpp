@@ -24,5 +24,8 @@ void CustomerState::add(){
 }
 
 void CustomerState::update(){
-
+    CustomerDialog *dialog = new CustomerDialog(m_parent);
+    dialog->customer.fromJSON(m_model->currentJSON()->toJSON());
+    dialog->reload();
+    dialog->exec();
 }

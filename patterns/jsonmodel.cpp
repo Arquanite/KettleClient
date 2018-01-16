@@ -49,3 +49,19 @@ QVariant JSONModel::headerData(int section, Qt::Orientation orientation, int rol
     if(orientation == Qt::Horizontal && role == Qt::DisplayRole) return m_data.first()->toJSON().keys().at(section);
     return QAbstractTableModel::headerData(section, orientation, role);
 }
+
+int JSONModel::selectedIndex() const {
+    return m_selectedIndex;
+}
+
+void JSONModel::setSelectedIndex(int selectedIndex){
+    m_selectedIndex = selectedIndex;
+}
+
+JSONAble* JSONModel::json(int row){
+    return m_data.at(row);
+}
+
+JSONAble* JSONModel::currentJSON(){
+    return m_data.at(m_selectedIndex);
+}

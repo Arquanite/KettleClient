@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_model = new JSONModel(QList<JSONAble*>(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
+
+    connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(ui->buttonRefresh, &QPushButton::clicked, [&](){
         WaitingDialog *dialog = new WaitingDialog(this);
         dialog->exec();

@@ -6,9 +6,7 @@
 CustomerDialog::CustomerDialog(QWidget *parent) : QDialog(parent), ui(new Ui::CustomerDialog){
     ui->setupUi(this);
 
-    ui->textAddress->setText(customer.address());
-    ui->textName->setText(customer.name());
-    ui->textNip->setText(customer.nip());
+    reload();
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &CustomerDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -25,6 +23,12 @@ CustomerDialog::CustomerDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Cu
 
 CustomerDialog::~CustomerDialog(){
     delete ui;
+}
+
+void CustomerDialog::reload(){
+    ui->textAddress->setText(customer.address());
+    ui->textName->setText(customer.name());
+    ui->textNip->setText(customer.nip());
 }
 
 bool CustomerDialog::validate(){
