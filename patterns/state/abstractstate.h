@@ -1,6 +1,8 @@
 #ifndef ABSTRACTSTATE_H
 #define ABSTRACTSTATE_H
 
+#include <QDialog>
+
 #include "networkservice.h"
 #include "jsonmodel.h"
 
@@ -10,6 +12,7 @@ class AbstractState {
 protected:
     NetworkService *m_service;
     JSONModel *m_model;
+    QDialog *m_dialog;
 
 public:
     AbstractState(NetworkService *service, JSONModel *model);

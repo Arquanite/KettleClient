@@ -3,8 +3,7 @@
 #include <QNetworkReply>
 #include <QJsonDocument>
 
-OrderState::OrderState(NetworkService *service, JSONModel *model) : AbstractState(service, model)
-{
+OrderState::OrderState(NetworkService *service, JSONModel *model) : AbstractState(service, model){
 
 }
 

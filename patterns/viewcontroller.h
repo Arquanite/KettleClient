@@ -5,7 +5,7 @@
 #include <QObject>
 
 #include "networkservice.h"
-#include "customerstate.h"
+#include "states.h"
 
 // ???
 
@@ -23,7 +23,8 @@ enum {
 class ViewController : public QObject {
     Q_OBJECT
 private:
-    CustomerState *state;
+    QList<AbstractState*> m_states;
+    AbstractState *m_currentState;
     NetworkService m_service;
     JSONModel *m_model;
     int m_current = -1;

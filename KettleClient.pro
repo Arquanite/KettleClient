@@ -33,7 +33,6 @@ iconfile.files = res/kettleclient.png
 iconfile.path = $$PREFIX/share/icons/hicolor/256x256/apps/
 INSTALLS += iconfile
 
-
 SOURCES += \
         utils/main.cpp \
         dialogs/mainwindow.cpp \
@@ -69,15 +68,15 @@ SOURCES += \
     patterns/jsonable.cpp \
     utils/networkservice.cpp \
     utils/typeconverter.cpp \
-    patterns/abstractstate.cpp \
-    patterns/customerstate.cpp \
-    patterns/departmentstate.cpp \
-    patterns/employeestate.cpp \
-    patterns/orderstate.cpp \
-    patterns/partstate.cpp
-    patterns/productstate.cpp    
-    patterns/providerstate.cpp \
-    patterns/statestate.cpp \
+    patterns/state/abstractstate.cpp \
+    patterns/state/customerstate.cpp \
+    patterns/state/departmentstate.cpp \
+    patterns/state/employeestate.cpp \
+    patterns/state/orderstate.cpp \
+    patterns/state/partstate.cpp \
+    patterns/state/productstate.cpp \
+    patterns/state/providerstate.cpp \
+    patterns/state/statestate.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -114,16 +113,16 @@ HEADERS += \
     utils/typeconverter.h \
     utils/networkservice.h \
     utils/entities.h \
-    patterns/abstractstate.h \
-    patterns/customerstate.h \
     utils/states.h \
-    patterns/departmentstate.h
-    patterns/employeestate.h \
-    patterns/orderstate.h \
-    patterns/partstate.h
-    patterns/productstate.h    
-    patterns/providerstate.h \
-    patterns/statestate.h \
+    patterns/state/abstractstate.h \
+    patterns/state/customerstate.h \
+    patterns/state/departmentstate.h \
+    patterns/state/employeestate.h \
+    patterns/state/orderstate.h \
+    patterns/state/partstate.h \
+    patterns/state/productstate.h \
+    patterns/state/providerstate.h \
+    patterns/state/statestate.h
 
 FORMS += \
         dialogs/mainwindow.ui \

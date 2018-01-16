@@ -155,12 +155,12 @@
            </column>
            <item row="0" column="0">
             <property name="text">
-             <string>Providers</string>
+             <string>Customer</string>
             </property>
            </item>
            <item row="1" column="0">
             <property name="text">
-             <string>Customers</string>
+             <string>Department</string>
             </property>
            </item>
            <item row="2" column="0">
@@ -170,7 +170,7 @@
            </item>
            <item row="3" column="0">
             <property name="text">
-             <string>Departments</string>
+             <string>Orders</string>
             </property>
            </item>
            <item row="4" column="0">
@@ -185,12 +185,12 @@
            </item>
            <item row="6" column="0">
             <property name="text">
-             <string>States</string>
+             <string>Providers</string>
             </property>
            </item>
            <item row="7" column="0">
             <property name="text">
-             <string>Orders</string>
+             <string>States</string>
             </property>
            </item>
           </widget>
