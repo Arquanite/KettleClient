@@ -24,12 +24,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
+    m_emptyModel = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
 
     FilteringModel *filter = new FilteringModel(m_model, this);
-
-    ui->tableMain->setModel(filter);
 
     logout();
     m_controller->viewChanged(0);
@@ -109,4 +108,5 @@ void MainWindow::logout() {
     ui->buttonEdit->setDisabled(true);
     ui->buttonRefresh->setDisabled(true);
     ui->buttonRemove->setDisabled(true);
+    ui->tableMain->setModel(m_emptyModel);
 }

@@ -607,57 +607,431 @@
     {
       "customer_id": 4101,
       "date": "2008-10-15",
-      "id": 1867
+      "id": 1867,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 9044,
       "date": "2014-03-08",
-      "id": 4334
+      "id": 4334,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 9123,
       "date": "2004-01-21",
-      "id": 7711
+      "id": 7711,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 2994,
       "date": "2001-08-23",
-      "id": 4598
+      "id": 4598,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 7795,
       "date": "2009-06-09",
-      "id": 9951
+      "id": 9951,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 3446,
       "date": "2011-12-27",
-      "id": 9378
+      "id": 9378,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 8975,
       "date": "2004-06-16",
-      "id": 3278
+      "id": 3278,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 1911,
       "date": "2006-08-18",
-      "id": 6798
+      "id": 6798,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 4373,
       "date": "2014-04-05",
-      "id": 2441
+      "id": 2441,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 5978,
       "date": "2012-09-07",
-      "id": 5576
+      "id": 5576,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 6896,
       "date": "1999-09-06",
-      "id": 6629
+      "id": 6629,
+      "products": [
+        {
+          "id": 1867,
+          "name": "Czajnik elektryczny, model Agata, Różowy",
+          "parts": [
+       	    {
+              "id": 2216,
+              "name": "Wtyczka typu A koloru Niebieski",
+              "provider_id": 9978
+            },
+            {
+              "id": 7088,
+              "name": "Wtyczka typu E koloru Niebieski",
+              "provider_id": 9890
+            }
+          ]
+        },
+        {
+          "id": 3709,
+          "name": "Czajnik elektryczny, model Kinga, Srebrny",
+          "parts": [
+            {
+              "id": 2334,
+              "name": "Pokrywka typu F koloru Fioletowy",
+              "provider_id": 3589
+            },
+            {
+              "id": 6694,
+              "name": "Grzałka typu B koloru Pomarańczowy",
+              "provider_id": 7664
+            }
+          ]
+        }
+      ]
     },
     {
       "customer_id": 6715,

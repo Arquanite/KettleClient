@@ -13,6 +13,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
     ViewController *m_controller;
     JSONModel *m_model;
+    JSONModel *m_emptyModel;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
