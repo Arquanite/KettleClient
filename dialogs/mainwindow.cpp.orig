@@ -24,33 +24,39 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
+    m_emptyModel = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
-<<<<<<< HEAD
-    ui->tableMain->setModel(m_model);
+
+    m_primaryFilter = new FilteringModel(m_model, this);
+    m_secondaryFilter = new FilteringModel(m_primaryFilter, this);
+
     logout();
-=======
-
-    FilteringModel *filter = new FilteringModel(m_model, this);
-
-    ui->tableMain->setModel(filter);
-
-    ui->buttonLogout->setText("Log In");
-    ui->labelLogged->setText("No logged in");
-    ui->labelUser->setText(Credentials::instance().token());
->>>>>>> 158ad09a3ab935913face428611727fbff59e2fc
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
-    connect(ui->textFilter, &QLineEdit::textChanged, [=](){
-        filter->filter(0, ui->textFilter->text());
+    connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
+    connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+    });
+
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
             m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
         }
-        filter->reload();
+<<<<<<< HEAD
+        primaryFilter->reload();
+        secondaryFilter->reload();
+        reload();
+=======
+        m_primaryFilter->reload();
+        m_secondaryFilter->reload();
+>>>>>>> 69fc3f2fc83d4ff262cb15c2339bcf31c7a161f2
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
@@ -67,10 +73,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 ui->buttonEdit->setDisabled(false);
                 ui->buttonRefresh->setDisabled(false);
                 ui->buttonRemove->setDisabled(false);
+                ui->tableMain->setModel(m_secondaryFilter);
             }
         } else {
-            if (QMessageBox::question(this, tr("Log out"),
-                                     tr("Do you want to log out?")) == QMessageBox::No) return;
+            if (QMessageBox::question(this, "Log out", "Do you want to log out?") == QMessageBox::No) return;
             Credentials::instance().setToken("");
             logout();
         }
@@ -78,6 +84,29 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
+<<<<<<< HEAD
+        reload();
+=======
+
+        for(int i=ui->comboFilterPrimary->count(); i>0; i--){
+            ui->comboFilterPrimary->removeItem(0);
+        }
+        if(m_model->rowCount() < 1 || Credentials::instance().token().size() == 0) return;
+        QStringList m = m_model->json(0)->toJSON().keys();
+        if(m.size() == 0) return;
+        for(QString s : m){
+            ui->comboFilterPrimary->addItem(s);
+        }
+        for(int i=ui->comboFilterSecondary->count(); i>0; i--){
+            ui->comboFilterSecondary->removeItem(0);
+        }
+        if(m_model->rowCount() < 1) return;
+        m = m_model->json(0)->toJSON().keys();
+        for(QString s : m){
+            ui->comboFilterSecondary->addItem(s);
+        }
+
+>>>>>>> 69fc3f2fc83d4ff262cb15c2339bcf31c7a161f2
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);
@@ -116,4 +145,19 @@ void MainWindow::logout() {
     ui->buttonEdit->setDisabled(true);
     ui->buttonRefresh->setDisabled(true);
     ui->buttonRemove->setDisabled(true);
+    ui->tableMain->setModel(m_emptyModel);
+}
+
+void MainWindow::reload(){
+    for(int i=ui->comboFilterPrimary->count(); i>0; i--){
+        ui->comboFilterPrimary->removeItem(0);
+        ui->comboFilterSecondary->removeItem(0);
+    }
+    if(m_model->rowCount() < 1) return;
+    auto m = m_model->json(0)->toJSON().keys();
+    if(m.size() == 0) return;
+    for(QString s : m){
+        ui->comboFilterPrimary->addItem(s);
+        ui->comboFilterSecondary->addItem(s);
+    }
 }

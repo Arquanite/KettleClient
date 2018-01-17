@@ -24,6 +24,7 @@ public:
 
 public slots:
     void reload();
+    void filter();
 private:
     Ui::MainWindow *ui;
 };

@@ -35,14 +35,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
-    connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
-        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
-        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
-    });
-    connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
-        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
-        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
-    });
+    connect(ui->comboFilterPrimary, &QComboBox::currentTextChanged, this, &MainWindow::filter);
+    connect(ui->comboFilterSecondary, &QComboBox::currentTextChanged, this, &MainWindow::filter);
+    connect(ui->textFilterPrimary, &QLineEdit::textChanged, this, &MainWindow::filter);
+    connect(ui->textFilterSecondary, &QLineEdit::textChanged, this, &MainWindow::filter);
 
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
@@ -133,4 +129,9 @@ void MainWindow::reload(){
         ui->comboFilterPrimary->addItem(s);
         ui->comboFilterSecondary->addItem(s);
     }
+}
+
+void MainWindow::filter(){
+    m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+    m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
 }
