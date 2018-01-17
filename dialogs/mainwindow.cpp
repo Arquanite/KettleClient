@@ -24,25 +24,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
+    m_emptyModel = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
 
-    FilteringModel *primaryFilter = new FilteringModel(m_model, this);
-    FilteringModel *secondaryFilter = new FilteringModel(primaryFilter, this);
-
-    ui->tableMain->setModel(secondaryFilter);
+    m_primaryFilter = new FilteringModel(m_model, this);
+    m_secondaryFilter = new FilteringModel(m_primaryFilter, this);
 
     logout();
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
-        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
-        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
     connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
-        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
-        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
 
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
@@ -50,9 +49,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
             m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
         }
-        primaryFilter->reload();
-        secondaryFilter->reload();
-        reload();
+        m_primaryFilter->reload();
+        m_secondaryFilter->reload();
+	reload();
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
@@ -69,6 +68,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 ui->buttonEdit->setDisabled(false);
                 ui->buttonRefresh->setDisabled(false);
                 ui->buttonRemove->setDisabled(false);
+                ui->tableMain->setModel(m_secondaryFilter);
             }
         } else {
             if (QMessageBox::question(this, "Log out", "Do you want to log out?") == QMessageBox::No) return;
@@ -118,6 +118,7 @@ void MainWindow::logout() {
     ui->buttonEdit->setDisabled(true);
     ui->buttonRefresh->setDisabled(true);
     ui->buttonRemove->setDisabled(true);
+    ui->tableMain->setModel(m_emptyModel);
 }
 
 void MainWindow::reload(){
