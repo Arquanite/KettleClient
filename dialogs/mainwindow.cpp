@@ -37,9 +37,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
-        primaryFilter->filter(0, ui->textFilterPrimary->text());
-        secondaryFilter->filter(0, ui->textFilterSecondary->text());
+        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
+    connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
+        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+    });
+
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
@@ -80,6 +85,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
         if(m_model->rowCount() < 1) return;
         auto m = m_model->currentJSON()->toJSON().keys();
+        if(m.size() == 0) return;
         for(QString s : m){
             ui->comboFilterPrimary->addItem(s);
         }
