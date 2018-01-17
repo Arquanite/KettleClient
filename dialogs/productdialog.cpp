@@ -2,13 +2,14 @@
 #include "ui_productdialog.h"
 #include "typeconverter.h"
 #include "pdebug.h"
-
+#include "ascendingstrategy.h"
+#include "descendingstrategy.h"
 #include <QMessageBox>
 
 ProductDialog::ProductDialog(QWidget *parent) : QDialog(parent), ui(new Ui::ProductDialog){
     ui->setupUi(this);
 
-    model = new JSONModel(QList<JSONAble*>(), this);
+    model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy, parent);
     ui->tableView->setModel(model);
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProductDialog::reject);
@@ -18,7 +19,6 @@ ProductDialog::ProductDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Prod
             return;
         }
         product.setName(ui->textName->text());
-        //TODO CAŁARESZTA
         this->accept();
     });
 }

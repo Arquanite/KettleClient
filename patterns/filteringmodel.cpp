@@ -1,7 +1,6 @@
 #include "filteringmodel.h"
 
-FilteringModel::FilteringModel(QAbstractTableModel *sourceModel, QObject *parent)
-{
+FilteringModel::FilteringModel(JSONModel *sourceModel, QObject *parent) : QAbstractTableModel(parent), m_model(sourceModel){
 
 }
 

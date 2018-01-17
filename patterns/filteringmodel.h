@@ -2,13 +2,14 @@
 #define FILTERINGMODEL_H
 
 #include <QAbstractTableModel>
-#include "jsonable.h"
+#include "jsonmodel.h"
 // Dekorator
 
 class FilteringModel : public QAbstractTableModel {
+    JSONModel *m_model;
     QList<JSONAble*> m_data;
 public:
-    FilteringModel(QAbstractTableModel *sourceModel, QObject *parent);
+    FilteringModel(JSONModel *sourceModel, QObject *parent);
     void filter(int columnNumber, QString text);
     int rowCount(const QModelIndex &parent) const override;
     int columnCount(const QModelIndex &parent) const override;
