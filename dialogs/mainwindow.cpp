@@ -17,25 +17,34 @@
 
 #include <QTimer>
 #include "pdebug.h"
+#include "filteringmodel.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
-    m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);
+    m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
-    ui->tableMain->setModel(m_model);
+
+    FilteringModel *filter = new FilteringModel(m_model, this);
+
+    ui->tableMain->setModel(filter);
+
     ui->buttonLogout->setText("Log In");
     ui->labelLogged->setText("No logged in");
     ui->labelUser->setText(Credentials::instance().token());
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
+    connect(ui->textFilter, &QLineEdit::textChanged, [=](){
+        filter->filter(0, ui->textFilter->text());
+    });
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
             m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
         }
+        filter->reload();
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);

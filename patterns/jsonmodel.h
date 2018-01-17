@@ -8,7 +8,7 @@
 // Adapter
 
 class JSONModel : public QAbstractTableModel {
-private:
+protected:
     QList<JSONAble*> m_data;
     int m_selectedIndex;
     SortingStrategy *m_asc;
@@ -17,6 +17,7 @@ private:
 public:
     JSONModel(QList<JSONAble*> data, SortingStrategy *asc, SortingStrategy *dsc, QObject *parent = nullptr);
     void setSourceData(QList<JSONAble*> data);
+    QList<JSONAble*> sourceData();
 
     // QAbstractItemModel interface
 public:

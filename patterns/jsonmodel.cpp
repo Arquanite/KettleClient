@@ -31,6 +31,10 @@ void JSONModel::setSourceData(QList<JSONAble*> data){
     emit dataChanged(index(0,0), index(rowCount(), columnCount()));
 }
 
+QList<JSONAble*> JSONModel::sourceData(){
+    return m_data;
+}
+
 int JSONModel::rowCount(const QModelIndex &parent) const {
     Q_UNUSED(parent);
     return m_data.size();
