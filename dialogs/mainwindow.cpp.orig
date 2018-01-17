@@ -26,12 +26,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->statusBar->showMessage("Ready");
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
+<<<<<<< HEAD
+    ui->tableMain->setModel(m_model);
+    logout();
+=======
 
     FilteringModel *filter = new FilteringModel(m_model, this);
 
     ui->tableMain->setModel(filter);
 
-    logout();
+    ui->buttonLogout->setText("Log In");
+    ui->labelLogged->setText("No logged in");
+    ui->labelUser->setText(Credentials::instance().token());
+>>>>>>> 158ad09a3ab935913face428611727fbff59e2fc
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 

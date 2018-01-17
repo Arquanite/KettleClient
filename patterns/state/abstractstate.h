@@ -21,6 +21,7 @@ public:
     virtual void getList() = 0;
     virtual void add() = 0;
     virtual void update() = 0;
+    virtual void remove() = 0;
 };
 
 #endif // ABSTRACTSTATE_H

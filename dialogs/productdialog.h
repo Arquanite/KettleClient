@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "product.h"
+#include "jsonmodel.h"
 
 namespace Ui {
 class ProductDialog;
@@ -22,6 +23,7 @@ public:
 
 private:
     Ui::ProductDialog *ui;
+    JSONModel *model;
 };
 
 #endif // PRODUCTDIALOG_H

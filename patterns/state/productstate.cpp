@@ -2,6 +2,7 @@
 #include "typeconverter.h"
 #include <QNetworkReply>
 #include <QJsonDocument>
+#include <QMessageBox>
 
 #include "productdialog.h"
 
@@ -30,5 +31,13 @@ void ProductState::update(){
     dialog->reload();
     if(dialog->exec() == QDialog::Accepted){
         m_service->update(dialog->product);
+    }
+}
+
+void ProductState::remove(){
+    if(QMessageBox::question(m_parent, "Are you sure?", "Do you really want to remove selected item?") == QMessageBox::Yes){
+        Product p = Product::builder(0, "").build();
+        p.fromJSON(m_model->currentJSON()->toJSON());
+        m_service->deleteResource(p);
     }
 }
