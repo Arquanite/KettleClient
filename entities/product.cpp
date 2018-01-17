@@ -33,7 +33,6 @@ void Product::setValuesMap(QVariantMap values){
     for(QVariant p : parts){
         QVariantMap m = p.toMap();
         Part part(m.value("id").toInt(), m.value("name").toString(), m.value("provider_id").toInt());
-        pDebug()<<m.value("provider_id").toInt();
         m_parts.append(part);
     }
 }
