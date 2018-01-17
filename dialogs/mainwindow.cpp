@@ -68,6 +68,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
+        pDebug()<<ui->comboFilter->count();
+        for(int i=ui->comboFilter->count(); i>0; i--){
+            ui->comboFilter->removeItem(0);
+        }
+        if(m_model->rowCount() < 1) return;
+        auto m = m_model->currentJSON()->toJSON().keys();
+        for(QString s : m){
+            ui->comboFilter->addItem(s);
+        }
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);
