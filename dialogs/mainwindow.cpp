@@ -39,6 +39,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         m_primaryFilter->filter(0, ui->textFilterPrimary->text());
         m_secondaryFilter->filter(0, ui->textFilterSecondary->text());
     });
+    connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
+        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+    });
+
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
@@ -62,8 +67,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 ui->buttonEdit->setDisabled(false);
                 ui->buttonRefresh->setDisabled(false);
                 ui->buttonRemove->setDisabled(false);
-//                FilteringModel *primaryFilterTest = new FilteringModel(m_model, this);
-//                FilteringModel *secondaryFilterTest = new FilteringModel(primaryFilterTest, this);
                 ui->tableMain->setModel(m_secondaryFilter);
             }
         } else {
@@ -82,6 +85,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
         if(m_model->rowCount() < 1 || Credentials::instance().token().size() == 0) return;
         QStringList m = m_model->currentJSON()->toJSON().keys();
+        if(m.size() == 0) return;
         for(QString s : m){
             ui->comboFilterPrimary->addItem(s);
         }
