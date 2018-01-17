@@ -13,6 +13,7 @@
 #include "order.h"
 #include "typeconverter.h"
 
+#include <QMessageBox>
 #include <QTimer>
 #include <QDebug>
 
@@ -23,9 +24,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_model = new JSONModel(QList<JSONAble*>(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
-    ui->buttonLogout->setText("Log In");
-    ui->labelLogged->setText("No logged in");
-    ui->labelUser->setText(Credentials::instance().token());
+    logout();
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
@@ -41,12 +40,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 ui->buttonLogout->setText("Log Out");
                 ui->labelLogged->setText("Logged as:");
                 ui->labelUser->setText(Credentials::instance().token());
+                ui->buttonAdd->setDisabled(false);
+                ui->buttonEdit->setDisabled(false);
+                ui->buttonRefresh->setDisabled(false);
+                ui->buttonRemove->setDisabled(false);
             }
         } else {
+            if (QMessageBox::question(this, tr("Log out"),
+                                     tr("Do you want to log out?")) == QMessageBox::No) return;
             Credentials::instance().setToken("");
-            ui->buttonLogout->setText("Log In");
-            ui->labelLogged->setText("No logged in");
-            ui->labelUser->setText(Credentials::instance().token());
+            logout();
         }
     });
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
@@ -99,4 +102,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow(){
     delete ui;
+}
+
+void MainWindow::logout() {
+    ui->buttonLogout->setText("Log In");
+    ui->labelLogged->setText("Not logged in");
+    ui->labelUser->setText(Credentials::instance().token());
+    ui->buttonAdd->setDisabled(true);
+    ui->buttonEdit->setDisabled(true);
+    ui->buttonRefresh->setDisabled(true);
+    ui->buttonRemove->setDisabled(true);
 }
