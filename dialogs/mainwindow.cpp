@@ -75,13 +75,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
 
-        for(int i=ui->comboFilter->count(); i>0; i--){
-            ui->comboFilter->removeItem(0);
+        for(int i=ui->comboFilterPrimary->count(); i>0; i--){
+            ui->comboFilterPrimary->removeItem(0);
         }
         if(m_model->rowCount() < 1) return;
         auto m = m_model->currentJSON()->toJSON().keys();
         for(QString s : m){
-            ui->comboFilter->addItem(s);
+            ui->comboFilterPrimary->addItem(s);
+        }
+        for(int i=ui->comboFilterSecondary->count(); i>0; i--){
+            ui->comboFilterSecondary->removeItem(0);
+        }
+        if(m_model->rowCount() < 1) return;
+        m = m_model->currentJSON()->toJSON().keys();
+        for(QString s : m){
+            ui->comboFilterSecondary->addItem(s);
         }
 
     });
