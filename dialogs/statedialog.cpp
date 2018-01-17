@@ -2,6 +2,7 @@
 #include "ui_statedialog.h"
 
 #include <QMessageBox>
+#include "pdebug.h"
 
 StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDialog){
     ui->setupUi(this);
@@ -26,7 +27,21 @@ StateDialog::~StateDialog(){
 
 void StateDialog::reload(){
     ui->textName->setText(state.name());
-    ui->comboDepartment->setCurrentIndex(state.departmentId());
+
+    if(state.departmentId() > 0){
+        ui->comboDepartment->setCurrentIndex(departmentIds.indexOf(state.departmentId()));
+    }
+    else ui->comboDepartment->setCurrentIndex(0);
+}
+
+void StateDialog::setComboDepartment(QList<QString> list){
+    ui->comboDepartment->addItems(list);
+    reload();
+}
+
+void StateDialog::setDepartmentIds(const QList<int> &value){
+    departmentIds = value;
+    reload();
 }
 
 bool StateDialog::validate(){

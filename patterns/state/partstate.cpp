@@ -19,6 +19,18 @@ void PartState::getList(){
 
 void PartState::add(){
     PartDialog *dialog = new PartDialog(m_parent);
+    QNetworkReply *reply = m_service->getProviders();
+    reply->connect(reply, &QNetworkReply::finished, [=](){
+        QList<Provider> list = TypeConverter::toProvider(QJsonDocument::fromJson(reply->readAll()).array());
+        QList<QString> providerNames;
+        QList<int> providerIds;
+        for(int i=0; i<list.size(); i++){
+            providerNames.append(list.at(i).name());
+            providerIds.append(list.at(i).id());
+        }
+        dialog->setComboProvider(providerNames);
+        dialog->setProviderIds(providerIds);
+    });
     if(dialog->exec() == QDialog::Accepted){
         m_service->post(dialog->part);
     }
@@ -26,6 +38,18 @@ void PartState::add(){
 
 void PartState::update(){
     PartDialog *dialog = new PartDialog(m_parent);
+    QNetworkReply *reply = m_service->getProviders();
+    reply->connect(reply, &QNetworkReply::finished, [=](){
+        QList<Provider> list = TypeConverter::toProvider(QJsonDocument::fromJson(reply->readAll()).array());
+        QList<QString> providerNames;
+        QList<int> providerIds;
+        for(int i=0; i<list.size(); i++){
+            providerNames.append(list.at(i).name());
+            providerIds.append(list.at(i).id());
+        }
+        dialog->setComboProvider(providerNames);
+        dialog->setProviderIds(providerIds);
+    });
     dialog->part.fromJSON(m_model->currentJSON()->toJSON());
     dialog->reload();
     if(dialog->exec() == QDialog::Accepted){

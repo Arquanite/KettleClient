@@ -19,9 +19,13 @@ public:
     ~StateDialog();
 
     void reload();
+    void setComboDepartment(QList<QString> list);
+
+    void setDepartmentIds(const QList<int> &value);
 
 private:
     Ui::StateDialog *ui;
+    QList<int> departmentIds;
 };
 
 #endif // STATEDIALOG_H

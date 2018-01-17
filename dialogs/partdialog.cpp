@@ -26,7 +26,20 @@ PartDialog::~PartDialog(){
 
 void PartDialog::reload(){
     ui->textName->setText(part.name());
-    ui->comboProvider->setCurrentIndex(part.providerId());
+    if(part.providerId() > 0){
+        ui->comboProvider->setCurrentIndex(providerIds.indexOf(part.providerId()));
+    }
+    else ui->comboProvider->setCurrentIndex(0);
+}
+
+void PartDialog::setComboProvider(QList<QString> list){
+    ui->comboProvider->addItems(list);
+    reload();
+}
+
+void PartDialog::setProviderIds(const QList<int> &value){
+    providerIds = value;
+    reload();
 }
 
 bool PartDialog::validate(){

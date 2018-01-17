@@ -19,9 +19,13 @@ public:
     ~PartDialog();
 
     void reload();
+    void setComboProvider(QList<QString> list);
+
+    void setProviderIds(const QList<int> &value);
 
 private:
     Ui::PartDialog *ui;
+    QList<int> providerIds;
 };
 
 #endif // PARTDIALOG_H
