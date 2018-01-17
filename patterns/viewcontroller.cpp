@@ -27,21 +27,29 @@ ViewController::ViewController(JSONModel *model, QWidget *parent) : QObject(pare
     m_states.append(new ProductState(&m_service, m_model, parent));
     m_states.append(new ProviderState(&m_service, m_model, parent));
     m_states.append(new StateState(&m_service, m_model, parent));
+    viewChanged(0);
 }
 
 void ViewController::viewChanged(int id){
     m_currentState = m_states.at(id);
-    m_currentState->getList();
+    refresh();
 }
 
 void ViewController::add(){
     m_currentState->add();
+    refresh();
 }
 
 void ViewController::edit(){
     m_currentState->update();
+    refresh();
 }
 
 void ViewController::remove(){
     QMessageBox::question((QWidget*)parent(), "Are you sure?", "Do you really want to remove selected row?");
+    refresh();
+}
+
+void ViewController::refresh(){
+    m_currentState->getList();
 }

@@ -22,18 +22,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_model = new JSONModel(QList<JSONAble*>(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
+    log();
+    m_controller->viewChanged(0);
+    QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
-    connect(ui->buttonRefresh, &QPushButton::clicked, [&](){
-        WaitingDialog *dialog = new WaitingDialog(this);
-        dialog->exec();
-    });
+    connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
     connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);
     connect(ui->buttonRemove, &QPushButton::clicked, m_controller, &ViewController::remove);
+    connect(ui->buttonLogout, &QPushButton::clicked, this, &MainWindow::log);
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
-        ui->tableMain->setModel(m_model);
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
@@ -82,4 +82,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow(){
     delete ui;
+}
+
+void MainWindow::log(){
+    if(buttonState) ui->buttonLogout->setText("Log In");
+    else ui->buttonLogout->setText("Log Out");
 }

@@ -13,9 +13,11 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
     ViewController *m_controller;
     JSONModel *m_model;
+    bool buttonState = true;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void log();
 
 private:
     Ui::MainWindow *ui;
