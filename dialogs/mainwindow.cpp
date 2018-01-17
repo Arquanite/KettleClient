@@ -12,6 +12,8 @@
 #include "product.h"
 #include "order.h"
 #include "typeconverter.h"
+#include "ascendingstrategy.h"
+#include "descendingstrategy.h"
 
 #include <QTimer>
 #include "pdebug.h"
@@ -20,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     ui->tableMain->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->statusBar->showMessage("Ready");
-    m_model = new JSONModel(QList<JSONAble*>(), this);
+    m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
     ui->buttonLogout->setText("Log In");
@@ -68,22 +70,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         dialog->exec();
     });
 
-//    QList<QJsonObject> data;
-//    RandomJSONFactory f;
-//    for(int i=0; i<10; i++){
-//        data.append(f.randomCustomer());
-//    }
-//    JSONModel *model = new JSONModel(data, this);
-//    ui->tableMain->setModel(model);
-
     /// TEST AREA ///
-
-    QList<JSONAble*> lol;
-    QList<Part> xd;
-//    lol = xd;
-    //toJSONAble(d);
-//    toJSONAble(1);
-    TypeConverter::toJSONAble(xd);
 
     Order o = Order::builder(21, 37, "2018-01-17")
             .addProduct(Product::builder(32, "Czajnixx 3000")
@@ -96,11 +83,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                         .addPart(Part(645, "Grzałka z drutu", 44))
                         .build())
             .build();
-
-    RandomJSONFactory fac;
-    for(int i=0; i<32; i++){
-//        qDebug()<<fac.randomState();
-    };
 }
 
 MainWindow::~MainWindow(){

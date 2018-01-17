@@ -1,6 +1,8 @@
 #include "jsonmodel.h"
 
-JSONModel::JSONModel(QList<JSONAble*> data, QObject *parent) : QAbstractTableModel(parent), m_data(data){
+#include "pdebug.h"
+
+JSONModel::JSONModel(QList<JSONAble *> data, SortingStrategy *asc, SortingStrategy *dsc, QObject *parent) : QAbstractTableModel(parent), m_data(data), m_asc(asc), m_dsc(dsc){
 
 }
 
@@ -64,4 +66,14 @@ JSONAble* JSONModel::json(int row){
 
 JSONAble* JSONModel::currentJSON(){
     return m_data.at(m_selectedIndex);
+}
+
+void JSONModel::sort(int column, Qt::SortOrder order){
+    std::sort(m_data.begin(), m_data.end(), [=](JSONAble *a, JSONAble *b){
+        SortingStrategy *ss = order == Qt::AscendingOrder ? m_asc : m_dsc;
+        QJsonObject aa = a->toJSON();
+        QJsonObject bb = b->toJSON();
+        return ss->less(aa.value(aa.keys().at(column)).toVariant(), bb.value(bb.keys().at(column)).toVariant());
+    });
+    emit dataChanged(index(0,0), index(rowCount(), columnCount()));
 }
