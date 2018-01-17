@@ -8,6 +8,7 @@
 #include "randomjsonfactory.h"
 #include "jsonmodel.h"
 
+#include "credentials.h"
 #include "product.h"
 #include "order.h"
 #include "typeconverter.h"
@@ -22,7 +23,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_model = new JSONModel(QList<JSONAble*>(), this);
     m_controller = new ViewController(m_model, this);
     ui->tableMain->setModel(m_model);
-    log();
+    ui->buttonLogout->setText("Log In");
+    ui->labelLogged->setText("No logged in");
+    ui->labelUser->setText(Credentials::instance().token());
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
@@ -36,7 +39,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
     connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);
     connect(ui->buttonRemove, &QPushButton::clicked, m_controller, &ViewController::remove);
-    connect(ui->buttonLogout, &QPushButton::clicked, this, &MainWindow::log);
+    connect(ui->buttonLogout, &QPushButton::clicked, [&](){
+        if(Credentials::instance().token().size() == 0){
+            LoginDialog *dialog = new LoginDialog(this);
+            if(dialog->exec() == QDialog::Accepted){
+                ui->buttonLogout->setText("Log Out");
+                ui->labelLogged->setText("Logged as:");
+                ui->labelUser->setText(Credentials::instance().token());
+            }
+        } else {
+            Credentials::instance().setToken("");
+            ui->buttonLogout->setText("Log In");
+            ui->labelLogged->setText("No logged in");
+            ui->labelUser->setText(Credentials::instance().token());
+        }
+    });
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
@@ -87,9 +104,4 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow(){
     delete ui;
-}
-
-void MainWindow::log(){
-    if(buttonState) ui->buttonLogout->setText("Log In");
-    else ui->buttonLogout->setText("Log Out");
 }

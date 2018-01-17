@@ -188,3 +188,8 @@ QNetworkReply* NetworkService::deleteResource(State s){
     QNetworkRequest request(QUrl(QString(m_address + "/state/%1").arg(s.id())));
     return m_manager->deleteResource(request);
 }
+
+QNetworkReply* NetworkService::login(QString name, QString pass){
+    QNetworkRequest request(QUrl(QString(m_address + "/user?name=%1&pass=%2").arg(name).arg(pass)));
+    return m_manager->get(request);
+}
