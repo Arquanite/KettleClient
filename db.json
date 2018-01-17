@@ -935,131 +935,168 @@
   "product": [
     {
       "id": 1867,
-      "name": "Czajnik elektryczny, model Agata, Różowy"
+      "name": "Czajnik elektryczny, model Agata, Różowy",
+      "parts": [
+       	{
+          "id": 2216,
+          "name": "Wtyczka typu A koloru Niebieski",
+          "provider_id": 9978
+        },
+        {
+          "id": 7088,
+          "name": "Wtyczka typu E koloru Niebieski",
+          "provider_id": 9890
+        }
+      ]
     },
     {
       "id": 3709,
-      "name": "Czajnik elektryczny, model Kinga, Srebrny"
+      "name": "Czajnik elektryczny, model Kinga, Srebrny",
+      "parts": [
+        {
+          "id": 2334,
+          "name": "Pokrywka typu F koloru Fioletowy",
+        "provider_id": 3589
+        },
+        {
+          "id": 6694,
+          "name": "Grzałka typu B koloru Pomarańczowy",
+          "provider_id": 7664
+        }
+      ]
     },
     {
       "id": 9044,
-      "name": "Czajnik elektryczny, model Sylwia, Różowy"
+      "name": "Czajnik elektryczny, model Sylwia, Różowy",
+      "parts": [
+        {
+          "id": 9378,
+          "name": "Pokrywka typu F koloru Czarny",
+          "provider_id": 2795
+        },
+        {
+          "id": 3278,
+          "name": "Wtyczka typu E koloru Niebieski",
+          "provider_id": 5532
+        }
+      ]
     },
     {
       "id": 4256,
-      "name": "Czajnik elektryczny, model Gertruda, Srebrny"
+      "name": "Czajnik elektryczny, model Gertruda, Srebrny",
+      "parts":[
+        {
+          "id": 5568,
+          "name": "Wtyczka typu E koloru Żółty",
+          "provider_id": 8311
+        },
+        {
+        "id": 5922,
+        "name": "Obudowa typu F koloru Błękitny",
+        "provider_id": 2618
+        }
+      ]
     },
     {
       "id": 4486,
-      "name": "Czajnik elektryczny, model Alicja, Czerwony"
+      "name": "Czajnik elektryczny, model Alicja, Czerwony",
+      "parts":[
+        {
+        "id": 5040,
+        "name": "Pokrywka typu E koloru Zielony",
+        "provider_id": 8695
+        },
+        {
+        "id": 5568,
+        "name": "Wtyczka typu E koloru Żółty",
+        "provider_id": 8311
+        }
+      ]
     },
     {
       "id": 4598,
-      "name": "Czajnik elektryczny, model Gertruda, Szary"
+      "name": "Czajnik elektryczny, model Gertruda, Szary",
+      "parts": [
+        {
+        "id": 8296,
+        "name": "Grzałka typu A koloru Zielony",
+        "provider_id": 2616
+        },
+        {
+          "id": 1105,
+          "name": "Obudowa typu B koloru Szary",
+          "provider_id": 4960
+        }
+      ]
     },
     {
       "id": 4967,
-      "name": "Czajnik elektryczny, model Agnieszka, Pomarańczowy"
+      "name": "Czajnik elektryczny, model Agnieszka, Pomarańczowy",
+      "parts":[
+        {
+        "id": 7014,
+        "name": "Obudowa typu C koloru Niebieski",
+        "provider_id": 2285
+        },
+        {
+        "id": 2334,
+        "name": "Pokrywka typu F koloru Fioletowy",
+        "provider_id": 3589
+        }
+      ]
     },
     {
       "id": 7795,
-      "name": "Czajnik elektryczny, model Joanna, Różowy"
+      "name": "Czajnik elektryczny, model Joanna, Różowy",
+      "parts": [
+        {
+        "id": 2216,
+        "name": "Wtyczka typu A koloru Niebieski",
+        "provider_id": 9978
+        },
+        {
+        "id": 9952,
+        "name": "tgf",
+        "provider_id": -1
+        }
+      ]
     },
     {
       "id": 9437,
-      "name": "Czajnik elektryczny, model Sylwia, Pomarańczowy"
+      "name": "Czajnik elektryczny, model Sylwia, Pomarańczowy",
+      "parts":[
+        {
+        "id": 1867,
+        "name": "Obudowa typu A koloru Błękitny",
+        "provider_id": 7831
+        },
+        {
+        "id": 4334,
+        "name": "Grzałka typu C koloru Różowy",
+        "provider_id": 4256
+        },
+        {
+        "id": 7711,
+        "name": "Wtyczka typu A koloru Czerwony",
+        "provider_id": 4453
+        }
+      ]
     },
     {
       "id": 2373,
-      "name": "Czajnik elektryczny, model Patrycja, Czarny"
-    },
-    {
-      "id": 3278,
-      "name": "Czajnik elektryczny, model Iga, Turkusowy"
-    },
-    {
-      "id": 9417,
-      "name": "Czajnik elektryczny, model Wiktoria, Niebieski"
-    },
-    {
-      "id": 1911,
-      "name": "Czajnik elektryczny, model Bogumiła, Żółty"
-    },
-    {
-      "id": 6646,
-      "name": "Czajnik elektryczny, model Gertruda, Zielony"
-    },
-    {
-      "id": 9416,
-      "name": "Czajnik elektryczny, model Dominika, Srebrny"
-    },
-    {
-      "id": 5576,
-      "name": "Czajnik elektryczny, model Andżelika, Fioletowy"
-    },
-    {
-      "id": 1092,
-      "name": "Czajnik elektryczny, model Joanna, Turkusowy"
-    },
-    {
-      "id": 6896,
-      "name": "Czajnik elektryczny, model Julia, Srebrny"
-    },
-    {
-      "id": 7594,
-      "name": "Czajnik elektryczny, model Dominika, Różowy"
-    },
-    {
-      "id": 6365,
-      "name": "Czajnik elektryczny, model Urszula, Zielony"
-    },
-    {
-      "id": 4513,
-      "name": "Czajnik elektryczny, model Sylwia, Złoty"
-    },
-    {
-      "id": 2741,
-      "name": "Czajnik elektryczny, model Dagmara, Błękitny"
-    },
-    {
-      "id": 6915,
-      "name": "Czajnik elektryczny, model Eugenia, Srebrny"
-    },
-    {
-      "id": 7497,
-      "name": "Czajnik elektryczny, model Zuzanna, Beżowy"
-    },
-    {
-      "id": 6580,
-      "name": "Czajnik elektryczny, model Iwona, Żółty"
-    },
-    {
-      "id": 8556,
-      "name": "Czajnik elektryczny, model Urszula, Niebieski"
-    },
-    {
-      "id": 4123,
-      "name": "Czajnik elektryczny, model Malwina, Niebieski"
-    },
-    {
-      "id": 5598,
-      "name": "Czajnik elektryczny, model Agnieszka, Biały"
-    },
-    {
-      "id": 8695,
-      "name": "Czajnik elektryczny, model Urszula, Pomarańczowy"
-    },
-    {
-      "id": 2840,
-      "name": "Czajnik elektryczny, model Celina, Żółty"
-    },
-    {
-      "id": 5922,
-      "name": "Czajnik elektryczny, model Maria, Różowy"
-    },
-    {
-      "id": 9424,
-      "name": "Czajnik elektryczny, model Kinga, Fioletowy"
+      "name": "Czajnik elektryczny, model Patrycja, Czarny",
+      "parts": [
+        {
+        "id": 3963,
+        "name": "Grzałka typu D koloru Czarny",
+        "provider_id": 4034
+        },
+        {
+        "id": 7399,
+        "name": "Pokrywka typu E koloru Beżowy",
+        "provider_id": 7322
+        }
+      ]
     }
   ],
   "provider": [
