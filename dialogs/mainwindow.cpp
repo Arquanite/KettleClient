@@ -36,12 +36,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
-        m_primaryFilter->filter(0, ui->textFilterPrimary->text());
-        m_secondaryFilter->filter(0, ui->textFilterSecondary->text());
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
     connect(ui->textFilterSecondary, &QLineEdit::textChanged, [=](){
-        primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
-        secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
+        m_primaryFilter->filter(ui->comboFilterPrimary->currentIndex(), ui->textFilterPrimary->text());
+        m_secondaryFilter->filter(ui->comboFilterSecondary->currentIndex(), ui->textFilterSecondary->text());
     });
 
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
@@ -84,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             ui->comboFilterPrimary->removeItem(0);
         }
         if(m_model->rowCount() < 1 || Credentials::instance().token().size() == 0) return;
-        QStringList m = m_model->currentJSON()->toJSON().keys();
+        QStringList m = m_model->json(0)->toJSON().keys();
         if(m.size() == 0) return;
         for(QString s : m){
             ui->comboFilterPrimary->addItem(s);
@@ -93,7 +93,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
             ui->comboFilterSecondary->removeItem(0);
         }
         if(m_model->rowCount() < 1) return;
-        m = m_model->currentJSON()->toJSON().keys();
+        m = m_model->json(0)->toJSON().keys();
         for(QString s : m){
             ui->comboFilterSecondary->addItem(s);
         }
