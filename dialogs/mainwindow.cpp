@@ -13,7 +13,7 @@
 #include "typeconverter.h"
 
 #include <QTimer>
-#include <QDebug>
+#include "pdebug.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow){
     ui->setupUi(this);
@@ -27,6 +27,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
+    connect(m_model, &JSONModel::dataChanged, [=](){
+        if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
+            m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
+        }
+    });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
     connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);

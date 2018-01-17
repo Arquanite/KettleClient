@@ -2,6 +2,7 @@
 #include "typeconverter.h"
 #include <QNetworkReply>
 #include <QJsonDocument>
+#include <QMessageBox>
 
 #include "statedialog.h"
 
@@ -29,5 +30,13 @@ void StateState::update(){
     dialog->reload();
     if(dialog->exec() == QDialog::Accepted){
         m_service->update(dialog->state);
+    }
+}
+
+void StateState::remove(){
+    if(QMessageBox::question(m_parent, "Are you sure?", "Do you really want to remove selected item?") == QMessageBox::Yes){
+        State s(0, "", 0);
+        s.fromJSON(m_model->currentJSON()->toJSON());
+        m_service->deleteResource(s);
     }
 }

@@ -2,6 +2,7 @@
 #include "typeconverter.h"
 #include <QNetworkReply>
 #include <QJsonDocument>
+#include <QMessageBox>
 
 #include "providerdialog.h"
 
@@ -29,5 +30,13 @@ void ProviderState::update(){
     dialog->reload();
     if(dialog->exec() == QDialog::Accepted){
         m_service->update(dialog->provider);
+    }
+}
+
+void ProviderState::remove(){
+    if(QMessageBox::question(m_parent, "Are you sure?", "Do you really want to remove selected item?") == QMessageBox::Yes){
+        Customer c(0, "", "", "");
+        c.fromJSON(m_model->currentJSON()->toJSON());
+        m_service->deleteResource(c);
     }
 }

@@ -12,6 +12,7 @@ public:
     void getList() override;
     void add() override;
     void update() override;
+    void remove() override;
 };
 
 #endif // PARTSTATE_H

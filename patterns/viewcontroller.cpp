@@ -46,7 +46,7 @@ void ViewController::edit(){
 }
 
 void ViewController::remove(){
-    QMessageBox::question((QWidget*)parent(), "Are you sure?", "Do you really want to remove selected row?");
+    m_currentState->remove();
     refresh();
 }
 

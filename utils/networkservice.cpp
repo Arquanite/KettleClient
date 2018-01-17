@@ -147,34 +147,44 @@ QNetworkReply *NetworkService::update(State s){
     return m_manager->put(request, QJsonDocument(s.toJSON()).toJson(QJsonDocument::Compact));
 }
 
-QNetworkReply* NetworkService::deleteResource(Customer c){
 
+
+QNetworkReply* NetworkService::deleteResource(Customer c){
+    QNetworkRequest request(QUrl(QString(m_address + "/customer/%1").arg(c.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Department d){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/department/%1").arg(d.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Employee e){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/employee/%1").arg(e.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Order o){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/order/%1").arg(o.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Part p){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/part/%1").arg(p.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Product p){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/product/%1").arg(p.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(Provider p){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/provider/%1").arg(p.id())));
+    return m_manager->deleteResource(request);
 }
 
 QNetworkReply* NetworkService::deleteResource(State s){
-
+    QNetworkRequest request(QUrl(QString(m_address + "/state/%1").arg(s.id())));
+    return m_manager->deleteResource(request);
 }
