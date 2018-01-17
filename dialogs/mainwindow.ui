@@ -241,10 +241,10 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="textFilter"/>
+           <widget class="QLineEdit" name="textFilterPrimary"/>
           </item>
           <item>
-           <widget class="QComboBox" name="comboFilter"/>
+           <widget class="QComboBox" name="comboFilterPrimary"/>
           </item>
           <item>
            <widget class="QLabel" name="label">
@@ -254,10 +254,10 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="textFilterSecondary"/>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox"/>
+           <widget class="QComboBox" name="comboFilterSecondary"/>
           </item>
          </layout>
         </item>

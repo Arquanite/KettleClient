@@ -26,9 +26,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
 
-    FilteringModel *filter = new FilteringModel(m_model, this);
+    FilteringModel *primaryFilter = new FilteringModel(m_model, this);
+    FilteringModel *secondaryFilter = new FilteringModel(primaryFilter, this);
 
-    ui->tableMain->setModel(filter);
+    ui->tableMain->setModel(secondaryFilter);
 
     ui->buttonLogout->setText("Log In");
     ui->labelLogged->setText("No logged in");
@@ -36,15 +37,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
-    connect(ui->textFilter, &QLineEdit::textChanged, [=](){
-        filter->filter(0, ui->textFilter->text());
+    connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
+        primaryFilter->filter(0, ui->textFilterPrimary->text());
+        secondaryFilter->filter(0, ui->textFilterSecondary->text());
     });
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
             m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
         }
-        filter->reload();
+        primaryFilter->reload();
+        secondaryFilter->reload();
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
