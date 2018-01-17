@@ -19,9 +19,17 @@ public:
     ~EmployeeDialog();
 
     void reload();
+    void setComboDepartament(QList<QString> list);
+    void setComboSupervisor(QList<QString> list);
+
+    void setDepartmentIds(const QList<int> &value);
+
+    void setSupervisorIds(const QList<int> &value);
 
 private:
     Ui::EmployeeDialog *ui;
+    QList<int> departmentIds;
+    QList<int> supervisorIds;
 };
 
 #endif // EMPLOYEEDIALOG_H

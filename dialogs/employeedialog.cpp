@@ -33,8 +33,32 @@ void EmployeeDialog::reload(){
     ui->textSurname->setText(employee.surname());
     ui->spinRate->setValue(employee.hourlyRate());
     ui->spinCount->setValue(employee.hourCount());
-    ui->comboDepartment->setCurrentIndex(employee.departmentId());
-    ui->comboSupervisor->setCurrentIndex(employee.supervisorId());
+
+    if(employee.departmentId() > 0) ui->comboDepartment->setCurrentIndex(departmentIds.indexOf(employee.departmentId()));
+    else ui->comboDepartment->setCurrentIndex(0);
+
+    if(employee.supervisorId() > 0) ui->comboSupervisor->setCurrentIndex(supervisorIds.indexOf(employee.departmentId()));
+    else ui->comboSupervisor->setCurrentIndex(0);
+}
+
+void EmployeeDialog::setComboDepartament(QList<QString> list){
+    ui->comboDepartment->addItems(list);
+    reload();
+}
+
+void EmployeeDialog::setComboSupervisor(QList<QString> list){
+    ui->comboSupervisor->addItems(list);
+    reload();
+}
+
+void EmployeeDialog::setDepartmentIds(const QList<int> &value){
+    departmentIds = value;
+    reload();
+}
+
+void EmployeeDialog::setSupervisorIds(const QList<int> &value){
+    supervisorIds = value;
+    reload();
 }
 
 bool EmployeeDialog::validate(){
