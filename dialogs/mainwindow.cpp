@@ -52,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
         primaryFilter->reload();
         secondaryFilter->reload();
+        reload();
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
@@ -70,8 +71,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                 ui->buttonRemove->setDisabled(false);
             }
         } else {
-            if (QMessageBox::question(this, tr("Log out"),
-                                     tr("Do you want to log out?")) == QMessageBox::No) return;
+            if (QMessageBox::question(this, "Log out", "Do you want to log out?") == QMessageBox::No) return;
             Credentials::instance().setToken("");
             logout();
         }
@@ -79,25 +79,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
-
-        for(int i=ui->comboFilterPrimary->count(); i>0; i--){
-            ui->comboFilterPrimary->removeItem(0);
-        }
-        if(m_model->rowCount() < 1) return;
-        auto m = m_model->currentJSON()->toJSON().keys();
-        if(m.size() == 0) return;
-        for(QString s : m){
-            ui->comboFilterPrimary->addItem(s);
-        }
-        for(int i=ui->comboFilterSecondary->count(); i>0; i--){
-            ui->comboFilterSecondary->removeItem(0);
-        }
-        if(m_model->rowCount() < 1) return;
-        m = m_model->currentJSON()->toJSON().keys();
-        for(QString s : m){
-            ui->comboFilterSecondary->addItem(s);
-        }
-
+        reload();
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);
@@ -136,4 +118,18 @@ void MainWindow::logout() {
     ui->buttonEdit->setDisabled(true);
     ui->buttonRefresh->setDisabled(true);
     ui->buttonRemove->setDisabled(true);
+}
+
+void MainWindow::reload(){
+    for(int i=ui->comboFilterPrimary->count(); i>0; i--){
+        ui->comboFilterPrimary->removeItem(0);
+        ui->comboFilterSecondary->removeItem(0);
+    }
+    if(m_model->rowCount() < 1) return;
+    auto m = m_model->json(0)->toJSON().keys();
+    if(m.size() == 0) return;
+    for(QString s : m){
+        ui->comboFilterPrimary->addItem(s);
+        ui->comboFilterSecondary->addItem(s);
+    }
 }

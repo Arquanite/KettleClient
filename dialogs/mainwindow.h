@@ -18,6 +18,8 @@ public:
     ~MainWindow();
     void logout();
 
+public slots:
+    void reload();
 private:
     Ui::MainWindow *ui;
 };
