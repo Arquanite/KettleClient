@@ -1,12 +1,6 @@
 {
   "customer": [
     {
-      "address": "ul. Baranego 61, Kraków",
-      "id": 1867,
-      "name": "Bożena Nowak",
-      "nip": "613-603-84-37"
-    },
-    {
       "address": "al. Jabłońskiego 41, Suwałki",
       "id": 1863,
       "name": "Maria Duda",
@@ -174,48 +168,6 @@
       "id": 8198,
       "name": "Marcin Zając",
       "nip": "284-017-65-46"
-    },
-    {
-      "address": "ul. Piotrowskiej 20, Tallinn",
-      "id": 9159,
-      "name": "Alfred Kozłowski",
-      "nip": "428-159-23-16"
-    },
-    {
-      "address": "al. Wiśniewskiego 74, Łódź",
-      "id": 1071,
-      "name": "Konrad Witkowski",
-      "nip": "098-234-96-81"
-    },
-    {
-      "address": "al. Sikoriej 17, Rybnik",
-      "id": 7502,
-      "name": "Maria Wójcik",
-      "nip": "453-421-98-09"
-    },
-    {
-      "address": "fdgdfg",
-      "id": 9687,
-      "name": "gfdf",
-      "nip": "dfg"
-    },
-    {
-      "address": "Holocaus 39",
-      "id": 9688,
-      "name": "Hadolf Itler",
-      "nip": "124234324fgd"
-    },
-    {
-      "address": "fdgdfg",
-      "id": 9689,
-      "name": "gfdf",
-      "nip": "dfg"
-    },
-    {
-      "address": "fdgsdfg",
-      "id": 9690,
-      "name": "gfdf",
-      "nip": "dfg"
     }
   ],
   "department": [
@@ -1422,26 +1374,13 @@
       "department_id": 6147,
       "id": 8695,
       "name": "Czeka na realizacje"
-    },
-    {
-      "department_id": 8311,
-      "id": 2840,
-      "name": "W realizacji"
-    },
-    {
-      "department_id": 1641,
-      "id": 5922,
-      "name": "W realizacji"
-    },
-    {
-      "department_id": 9084,
-      "id": 9424,
-      "name": "Gotowe"
-    },
-    {
-      "department_id": -1,
-      "id": 9438,
-      "name": "sd"
     }
+  ],
+  "user": [
+  	{
+  	  "id": 124,
+  	  "name": "user",
+  	  "pass": "user123"
+  	}
   ]
 }

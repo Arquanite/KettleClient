@@ -50,6 +50,8 @@ public:
     QNetworkReply* deleteResource(Provider p);
     QNetworkReply* deleteResource(State s);
 
+    QNetworkReply* login(QString name, QString pass);
+
 signals:
 
 public slots:
