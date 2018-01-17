@@ -1,4 +1,5 @@
 #include "product.h"
+#include "pdebug.h"
 
 Product::Product(int id, QString name, QList<Part> parts) : m_id(id), m_name(name), m_parts(parts){
 
@@ -28,10 +29,11 @@ QVariantMap Product::valuesMap(){
 void Product::setValuesMap(QVariantMap values){
     m_id = values.value("id").toInt();
     m_name = values.value("name").toString();
-    QList<QVariant> parts = values.values("products");
+    QList<QVariant> parts = values.value("parts").toList();
     for(QVariant p : parts){
-        Part part(0, "", 0);
-        part.fromJSON(p.toJsonObject());
+        QVariantMap m = p.toMap();
+        Part part(m.value("id").toInt(), m.value("name").toString(), m.value("provider_id").toInt());
+        pDebug()<<m.value("provider_id").toInt();
         m_parts.append(part);
     }
 }
