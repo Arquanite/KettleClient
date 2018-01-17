@@ -4,6 +4,8 @@
 #include "ascendingstrategy.h"
 #include "descendingstrategy.h"
 
+#include <QString>
+
 #include "pdebug.h"
 
 FilteringModel::FilteringModel(JSONModel *sourceModel, QObject *parent) : JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), parent), m_model(sourceModel){
@@ -21,7 +23,7 @@ void FilteringModel::filter(int columnNumber, QString text){
         m_data = QList<JSONAble*>();
         for(int i=0; i<data.size(); i++){
             QJsonObject json = data.at(i)->toJSON();
-            if(regex.match(json.value(json.keys().at(columnNumber)).toString()).hasMatch()){
+            if(regex.match(QString("%1").arg(json.value(json.keys().at(columnNumber)).toVariant().toString())).hasMatch()){
                 m_data.append(data.at(i));
             }
         }

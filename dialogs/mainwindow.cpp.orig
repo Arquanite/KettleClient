@@ -26,27 +26,31 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->statusBar->showMessage("Ready");
     m_model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy(), this);    
     m_controller = new ViewController(m_model, this);
-
-    FilteringModel *primaryFilter = new FilteringModel(m_model, this);
-    FilteringModel *secondaryFilter = new FilteringModel(primaryFilter, this);
-
-    ui->tableMain->setModel(secondaryFilter);
-
+<<<<<<< HEAD
+    ui->tableMain->setModel(m_model);
     logout();
+=======
+
+    FilteringModel *filter = new FilteringModel(m_model, this);
+
+    ui->tableMain->setModel(filter);
+
+    ui->buttonLogout->setText("Log In");
+    ui->labelLogged->setText("No logged in");
+    ui->labelUser->setText(Credentials::instance().token());
+>>>>>>> 158ad09a3ab935913face428611727fbff59e2fc
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
-    connect(ui->textFilterPrimary, &QLineEdit::textChanged, [=](){
-        primaryFilter->filter(0, ui->textFilterPrimary->text());
-        secondaryFilter->filter(0, ui->textFilterSecondary->text());
+    connect(ui->textFilter, &QLineEdit::textChanged, [=](){
+        filter->filter(0, ui->textFilter->text());
     });
     connect(ui->tableMain->selectionModel(), &QItemSelectionModel::currentChanged, [=](QModelIndex current, QModelIndex){ m_model->setSelectedIndex(current.row());});
     connect(m_model, &JSONModel::dataChanged, [=](){
         if(ui->tableMain->selectionModel()->selectedRows(0).size() != 0){
             m_model->setSelectedIndex(ui->tableMain->selectionModel()->selectedRows(0).first().row());
         }
-        primaryFilter->reload();
-        secondaryFilter->reload();
+        filter->reload();
     });
     connect(ui->buttonRefresh, &QPushButton::clicked, m_controller, &ViewController::refresh);
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
@@ -74,16 +78,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
-
-        for(int i=ui->comboFilter->count(); i>0; i--){
-            ui->comboFilter->removeItem(0);
-        }
-        if(m_model->rowCount() < 1) return;
-        auto m = m_model->currentJSON()->toJSON().keys();
-        for(QString s : m){
-            ui->comboFilter->addItem(s);
-        }
-
     });
     connect(ui->actionLogin, &QAction::triggered, [&](){
        LoginDialog *dialog = new LoginDialog(this);
