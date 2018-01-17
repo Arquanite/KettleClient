@@ -85,15 +85,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 //    toJSONAble(1);
     TypeConverter::toJSONAble(xd);
 
-    Product p = Product::builder(12, "lol").addPart(Part(1,"2",3)).addPart(Part(1,"2",3)).build();
-
-    Order o = Order::builder(21, 37, "lolxd")
-            .addProduct(Product::builder(32, "dsd")
-                        .addPart(Part(1,"2",3))
-                        .addPart(Part(4,"5",6)).build())
-            .addProduct(Product::builder(12, "lol")
-                        .addPart(Part(7,"8",9))
-                        .addPart(Part(6,"6",6)).build())
+    Order o = Order::builder(21, 37, "2018-01-17")
+            .addProduct(Product::builder(32, "Czajnixx 3000")
+                        .addPart(Part(1421, "Pralkogrzałka indukcyjna", 33))
+                        .addPart(Part(4, "Pokrywka przeźroczysta", 6))
+                        .addPart(Part(45, "Obudowa typu premium", 2343))
+                        .build())
+            .addProduct(Product::builder(12, "Czajnik jednorazowy")
+                        .addPart(Part(7324, "Obudowa papierowa", 29))
+                        .addPart(Part(645, "Grzałka z drutu", 44))
+                        .build())
             .build();
 
     RandomJSONFactory fac;
