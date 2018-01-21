@@ -19,7 +19,6 @@ EmployeeDialog::EmployeeDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Em
         employee.setHourlyRate(ui->spinRate->value());
         employee.setHourCount(ui->spinCount->value());
         employee.setDepartmentId(ui->comboDepartment->currentIndex());
-        employee.setSupervisorId(ui->comboSupervisor->currentIndex());
         this->accept();
     });
 }
@@ -36,18 +35,10 @@ void EmployeeDialog::reload(){
 
     if(employee.departmentId() > 0) ui->comboDepartment->setCurrentIndex(departmentIds.indexOf(employee.departmentId()));
     else ui->comboDepartment->setCurrentIndex(0);
-
-    if(employee.supervisorId() > 0) ui->comboSupervisor->setCurrentIndex(supervisorIds.indexOf(employee.departmentId()));
-    else ui->comboSupervisor->setCurrentIndex(0);
 }
 
 void EmployeeDialog::setComboDepartament(QList<QString> list){
     ui->comboDepartment->addItems(list);
-    reload();
-}
-
-void EmployeeDialog::setComboSupervisor(QList<QString> list){
-    ui->comboSupervisor->addItems(list);
     reload();
 }
 
@@ -56,14 +47,9 @@ void EmployeeDialog::setDepartmentIds(const QList<int> &value){
     reload();
 }
 
-void EmployeeDialog::setSupervisorIds(const QList<int> &value){
-    supervisorIds = value;
-    reload();
-}
-
 bool EmployeeDialog::validate(){
     if(ui->textName->text() == "" || ui->textSurname->text() == "" ||
             ui->spinRate->value() == 0 || ui->spinCount->value() == 0 ||
-            ui->comboDepartment->currentIndex() < 0 || ui->comboSupervisor->currentIndex() < 0) return false;
+            ui->comboDepartment->currentIndex() < 0) return false;
     return true;
 }

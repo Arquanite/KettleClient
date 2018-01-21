@@ -41,8 +41,6 @@ void EmployeeState::add(){
             supervisorNames.append(elist.at(i).surname() + " " + elist.at(i).name());
             supervisorIds.append(elist.at(i).id());
         }
-        dialog->setComboSupervisor(supervisorNames);
-        dialog->setSupervisorIds(supervisorIds);
     });
     if(dialog->exec() == QDialog::Accepted){
         m_service->post(dialog->employee);
@@ -72,8 +70,6 @@ void EmployeeState::update(){
             supervisorNames.append(elist.at(i).surname() + " " + elist.at(i).name());
             supervisorIds.append(elist.at(i).id());
         }
-        dialog->setComboSupervisor(supervisorNames);
-        dialog->setSupervisorIds(supervisorIds);
     });
     dialog->employee.fromJSON(m_model->currentJSON()->toJSON());
     dialog->reload();
