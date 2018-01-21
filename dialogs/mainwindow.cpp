@@ -30,8 +30,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     m_primaryFilter = new FilteringModel(m_model, this);
     m_secondaryFilter = new FilteringModel(m_primaryFilter, this);
-
-    logout();
+    ui->tableMain->setModel(m_secondaryFilter);
+    //logout();
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 

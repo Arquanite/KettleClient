@@ -2,6 +2,7 @@
 #define CUSTOMERDIALOG_H
 
 #include <QDialog>
+#include <QRegularExpression>
 #include "customer.h"
 
 namespace Ui {
@@ -22,6 +23,8 @@ public:
 
 private:
     Ui::CustomerDialog *ui;
+    QRegularExpression re;
+    QRegularExpressionMatch match;
 };
 
 #endif // CUSTOMERDIALOG_H

@@ -8,10 +8,12 @@ CustomerDialog::CustomerDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Cu
 
     reload();
 
+    re.setPattern("^[0-9][0-9][0-9]\-[0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]$");
+
     connect(ui->buttonCancel, &QPushButton::clicked, this, &CustomerDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid");
             return;
         }
         customer.setAddress(ui->textAddress->text());
@@ -33,5 +35,7 @@ void CustomerDialog::reload(){
 
 bool CustomerDialog::validate(){
     if(ui->textAddress->text() == "" || ui->textName->text() == "" || ui->textNip->text() == "") return false;
+    match = re.match(ui->textNip->text());
+    if(!match.hasMatch()) return false ;
     return true;
 }
