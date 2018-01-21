@@ -31,7 +31,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_primaryFilter = new FilteringModel(m_model, this);
     m_secondaryFilter = new FilteringModel(m_primaryFilter, this);
     ui->tableMain->setModel(m_secondaryFilter);
-    //logout();
     m_controller->viewChanged(0);
     QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
@@ -53,25 +52,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->buttonAdd, &QPushButton::clicked, m_controller, &ViewController::add);
     connect(ui->buttonEdit, &QPushButton::clicked, m_controller, &ViewController::edit);
     connect(ui->buttonRemove, &QPushButton::clicked, m_controller, &ViewController::remove);
-    connect(ui->buttonLogout, &QPushButton::clicked, [&](){
-        if(Credentials::instance().token().size() == 0){
-            LoginDialog *dialog = new LoginDialog(this);
-            if(dialog->exec() == QDialog::Accepted){
-                ui->buttonLogout->setText("Log Out");
-                ui->labelLogged->setText("Logged as:");
-                ui->labelUser->setText(Credentials::instance().token());
-                ui->buttonAdd->setDisabled(false);
-                ui->buttonEdit->setDisabled(false);
-                ui->buttonRefresh->setDisabled(false);
-                ui->buttonRemove->setDisabled(false);
-                ui->tableMain->setModel(m_secondaryFilter);
-            }
-        } else {
-            if (QMessageBox::question(this, "Log out", "Do you want to log out?") == QMessageBox::No) return;
-            Credentials::instance().setToken("");
-            logout();
-        }
-    });
     connect(ui->tableCommon, &QTableWidget::clicked, [&](QModelIndex index){
         m_controller->viewChanged(index.row());
         QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); });
@@ -104,17 +84,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow(){
     delete ui;
-}
-
-void MainWindow::logout() {
-    ui->buttonLogout->setText("Log In");
-    ui->labelLogged->setText("Not logged in");
-    ui->labelUser->setText(Credentials::instance().token());
-    ui->buttonAdd->setDisabled(true);
-    ui->buttonEdit->setDisabled(true);
-    ui->buttonRefresh->setDisabled(true);
-    ui->buttonRemove->setDisabled(true);
-    ui->tableMain->setModel(m_emptyModel);
 }
 
 void MainWindow::reload(){

@@ -8,7 +8,7 @@ CustomerDialog::CustomerDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Cu
 
     reload();
 
-    re.setPattern("^[0-9][0-9][0-9]\-[0-9][0-9][0-9]\-[0-9][0-9]\-[0-9][0-9]$");
+    re.setPattern("^[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]$");
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &CustomerDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){

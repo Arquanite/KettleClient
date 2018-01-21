@@ -6,231 +6,162 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1199</width>
-    <height>612</height>
+    <width>1008</width>
+    <height>557</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <property name="leftMargin">
-     <number>4</number>
-    </property>
-    <property name="topMargin">
-     <number>4</number>
-    </property>
-    <property name="rightMargin">
-     <number>4</number>
-    </property>
-    <property name="bottomMargin">
-     <number>4</number>
-    </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
     <item>
-     <widget class="QSplitter" name="splitter_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <property name="childrenCollapsible">
-       <bool>false</bool>
-      </property>
-      <widget class="QSplitter" name="splitter">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+      <widget class="QTableWidget" name="tableCommon">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
        </property>
-       <property name="childrenCollapsible">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="showGrid">
         <bool>false</bool>
        </property>
-       <widget class="QWidget" name="layoutWidget">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="labelLogged">
-             <property name="text">
-              <string>Logged as: </string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="labelUser">
-             <property name="text">
-              <string>NAME</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonLogout">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>Log out</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QTableWidget" name="tableCommon">
-           <property name="editTriggers">
-            <set>QAbstractItemView::NoEditTriggers</set>
-           </property>
-           <property name="selectionMode">
-            <enum>QAbstractItemView::SingleSelection</enum>
-           </property>
-           <property name="selectionBehavior">
-            <enum>QAbstractItemView::SelectRows</enum>
-           </property>
-           <property name="showGrid">
-            <bool>false</bool>
-           </property>
-           <attribute name="horizontalHeaderStretchLastSection">
-            <bool>true</bool>
-           </attribute>
-           <attribute name="verticalHeaderVisible">
-            <bool>false</bool>
-           </attribute>
-           <row>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>8</string>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>Common views</string>
-            </property>
-           </column>
-           <item row="0" column="0">
-            <property name="text">
-             <string>Customer</string>
-            </property>
-           </item>
-           <item row="1" column="0">
-            <property name="text">
-             <string>Department</string>
-            </property>
-           </item>
-           <item row="2" column="0">
-            <property name="text">
-             <string>Employees</string>
-            </property>
-           </item>
-           <item row="3" column="0">
-            <property name="text">
-             <string>Orders</string>
-            </property>
-           </item>
-           <item row="4" column="0">
-            <property name="text">
-             <string>Parts</string>
-            </property>
-           </item>
-           <item row="5" column="0">
-            <property name="text">
-             <string>Products</string>
-            </property>
-           </item>
-           <item row="6" column="0">
-            <property name="text">
-             <string>Providers</string>
-            </property>
-           </item>
-           <item row="7" column="0">
-            <property name="text">
-             <string>States</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonAdd">
-           <property name="text">
-            <string>Add</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonRefresh">
-           <property name="text">
-            <string>Refresh</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonEdit">
-           <property name="text">
-            <string>Edit</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonRemove">
-           <property name="text">
-            <string>Remove</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Common views</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>Customer</string>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>Department</string>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>Employees</string>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>Orders</string>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>Parts</string>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>Products</string>
+        </property>
+       </item>
+       <item row="6" column="0">
+        <property name="text">
+         <string>Providers</string>
+        </property>
+       </item>
+       <item row="7" column="0">
+        <property name="text">
+         <string>States</string>
+        </property>
+       </item>
       </widget>
       <widget class="QWidget" name="layoutWidget1">
        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="buttonAdd">
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonEdit">
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonRefresh">
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonRemove">
+            <property name="text">
+             <string>Remove</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
