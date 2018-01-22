@@ -17,7 +17,7 @@ StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDia
             return;
         }
         state.setName(ui->textName->text());
-        state.setDepartmentId(ui->comboDepartment->currentIndex());
+        state.setDepartmentId(departmentIds.at(ui->comboDepartment->currentIndex()));
         this->accept();
     });
 }
