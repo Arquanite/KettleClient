@@ -21,6 +21,10 @@ public:
 
     void reload();
 
+public slots:
+    void add();
+    void remove();
+
 private:
     Ui::ProductDialog *ui;
     JSONModel *model;

@@ -1304,6 +1304,11 @@
       "id": 9952,
       "name": "tgf",
       "provider_id": -1
+    },
+    {
+      "id": 9953,
+      "name": "ssdsa",
+      "provider_id": 0
     }
   ],
   "product": [
@@ -1343,6 +1348,26 @@
       "id": 9044,
       "name": "Czajnik elektryczny, model Sylwia, Różowy",
       "parts": [
+        {
+          "id": 2216,
+          "name": "Wtyczka typu A koloru Niebieski",
+          "provider_id": 9978
+        },
+        {
+          "id": 7088,
+          "name": "Wtyczka typu E koloru Niebieski",
+          "provider_id": 9890
+        },
+        {
+          "id": 2334,
+          "name": "Pokrywka typu F koloru Fioletowy",
+          "provider_id": 3589
+        },
+        {
+          "id": 6694,
+          "name": "Grzałka typu B koloru Pomarańczowy",
+          "provider_id": 7664
+        },
         {
           "id": 9378,
           "name": "Pokrywka typu F koloru Czarny",
