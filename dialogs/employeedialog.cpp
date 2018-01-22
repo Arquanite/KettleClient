@@ -19,7 +19,7 @@ EmployeeDialog::EmployeeDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Em
         employee.setSurname(ui->textSurname->text());
         employee.setHourlyRate(ui->spinRate->value());
         employee.setHourCount(ui->spinCount->value());
-        employee.setDepartmentId(ui->comboDepartment->currentIndex());
+        employee.setDepartmentId(departmentIds.at(ui->comboDepartment->currentIndex()));
         this->accept();
     });
 }
