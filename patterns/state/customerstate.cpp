@@ -6,6 +6,7 @@
 
 #include "customerdialog.h"
 
+
 CustomerState::CustomerState(NetworkService *service, JSONModel *model, QWidget *parent) : AbstractState(service, model, parent){
 
 }

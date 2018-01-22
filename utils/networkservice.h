@@ -8,7 +8,7 @@
 
 class NetworkService : public QObject {
     Q_OBJECT
-    const QString m_address = "http://localhost:3000";
+    const QString m_address = "http://10.8.0.2:8080/KettleServer/rest";
     QNetworkAccessManager *m_manager = new QNetworkAccessManager(this);
 
 public:

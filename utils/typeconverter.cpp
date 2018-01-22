@@ -19,7 +19,7 @@ QList<Department> TypeConverter::toDepartment(QJsonArray array){
 }
 
 QList<Employee> TypeConverter::toEmployee(QJsonArray array){
-    Employee e(0, "", "", 0, 0, 0, 0);
+    Employee e(0, "", "", 0, 0, 0);
     QList<Employee> list;
     for(int i=0; i<array.size(); i++){
         if(e.fromJSON(array.at(i).toObject())) list.append(e);

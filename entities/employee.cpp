@@ -1,8 +1,8 @@
 #include "employee.h"
 
-Employee::Employee(int id, QString name, QString surname, double hourlyRate, int hourCount, int supervisorId, int departmentId)
+Employee::Employee(int id, QString name, QString surname, double hourlyRate, int hourCount, int departmentId)
     : m_id(id), m_name(name), m_surname(surname), m_hourlyRate(hourlyRate), m_hourCount(hourCount),
-      m_supervisorId(supervisorId), m_departmentId(departmentId){
+      m_departmentId(departmentId){
 
 }
 
@@ -12,7 +12,6 @@ bool Employee::validate(QJsonObject json){
     if(!json.contains("surname")) return false;
     if(!json.contains("hourly_rate")) return false;
     if(!json.contains("hour_count")) return false;
-    if(!json.contains("supervisor_id")) return false;
     if(!json.contains("department_id")) return false;
     return true;
 }
@@ -24,7 +23,6 @@ QVariantMap Employee::valuesMap(){
     values.insert("surname", m_surname);
     values.insert("hourly_rate", m_hourlyRate);
     values.insert("hour_count", m_hourCount);
-    values.insert("supervisor_id", m_supervisorId);
     values.insert("department_id", m_departmentId);
     return values;
 }
@@ -35,7 +33,6 @@ void Employee::setValuesMap(QVariantMap values){
     m_surname = values.value("surname").toString();
     m_hourlyRate = values.value("hourly_rate").toDouble();
     m_hourCount = values.value("hour_count").toInt();
-    m_supervisorId = values.value("supervisor_id").toInt();
     m_departmentId = values.value("department_id").toInt();
 }
 
@@ -77,14 +74,6 @@ int Employee::hourCount() const {
 
 void Employee::setHourCount(int hourCount){
     m_hourCount = hourCount;
-}
-
-int Employee::supervisorId() const {
-    return m_supervisorId;
-}
-
-void Employee::setSupervisorId(int superVisorId){
-    m_supervisorId = superVisorId;
 }
 
 int Employee::departmentId() const {
