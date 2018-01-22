@@ -10,10 +10,9 @@ protected:
     QString m_surname;
     double m_hourlyRate;
     int m_hourCount;
-    int m_supervisorId;
     int m_departmentId;
 public:
-    Employee(int id, QString name, QString surname, double hourlyRate, int hourCount, int supervisorId, int departmentId);
+    Employee(int id, QString name, QString surname, double hourlyRate, int hourCount, int departmentId);
 
     int id() const;
     void setId(int id);
@@ -29,9 +28,6 @@ public:
 
     int hourCount() const;
     void setHourCount(int hourCount);
-
-    int supervisorId() const;
-    void setSupervisorId(int supervisorId);
 
     int departmentId() const;
     void setDepartmentId(int departmentId);

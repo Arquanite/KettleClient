@@ -80,7 +80,7 @@ void EmployeeState::update(){
 
 void EmployeeState::remove(){
     if(QMessageBox::question(m_parent, "Are you sure?", "Do you really want to remove selected item?") == QMessageBox::Yes){
-        Employee e(0, "", "", 0, 0, 0, 0);
+        Employee e(0, "", "", 0, 0, 0);
         e.fromJSON(m_model->currentJSON()->toJSON());
         m_service->deleteResource(e);
     }

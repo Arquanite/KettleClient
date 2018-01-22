@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     m_secondaryFilter = new FilteringModel(m_primaryFilter, this);
     ui->tableMain->setModel(m_secondaryFilter);
     m_controller->viewChanged(0);
-    QTimer::singleShot(100,[=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
+    QTimer::singleShot(200, [=](){ ui->tableMain->selectRow(0); ui->tableCommon->selectRow(0);});
 
     connect(ui->comboFilterPrimary, &QComboBox::currentTextChanged, this, &MainWindow::filter);
     connect(ui->comboFilterSecondary, &QComboBox::currentTextChanged, this, &MainWindow::filter);

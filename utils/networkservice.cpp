@@ -1,8 +1,6 @@
 #include "networkservice.h"
 #include <QJsonDocument>
 
-#include "pdebug.h"
-
 NetworkService::NetworkService(QObject *parent) : QObject(parent){
 
 }
