@@ -168,6 +168,12 @@
       "id": 9687,
       "name": "Asdsadas",
       "nip": "ssdadas"
+    },
+    {
+      "address": "as",
+      "id": 9688,
+      "name": "as",
+      "nip": "222-222-22-22"
     }
   ],
   "department": [
@@ -302,6 +308,10 @@
     {
       "id": 9438,
       "name": "DONktonow"
+    },
+    {
+      "id": 9439,
+      "name": "Jakiś Departament"
     }
   ],
   "employee": [
@@ -995,45 +1005,6 @@
       ]
     },
     {
-      "customer_id": 6896,
-      "date": "1999-09-06",
-      "id": 6629,
-      "products": [
-        {
-          "id": 1867,
-          "name": "Czajnik elektryczny, model Agata, Różowy",
-          "parts": [
-            {
-              "id": 2216,
-              "name": "Wtyczka typu A koloru Niebieski",
-              "provider_id": 9978
-            },
-            {
-              "id": 7088,
-              "name": "Wtyczka typu E koloru Niebieski",
-              "provider_id": 9890
-            }
-          ]
-        },
-        {
-          "id": 3709,
-          "name": "Czajnik elektryczny, model Kinga, Srebrny",
-          "parts": [
-            {
-              "id": 2334,
-              "name": "Pokrywka typu F koloru Fioletowy",
-              "provider_id": 3589
-            },
-            {
-              "id": 6694,
-              "name": "Grzałka typu B koloru Pomarańczowy",
-              "provider_id": 7664
-            }
-          ]
-        }
-      ]
-    },
-    {
       "customer_id": 6715,
       "date": "2003-05-13",
       "id": 5241
@@ -1309,6 +1280,11 @@
       "id": 9953,
       "name": "ssdsa",
       "provider_id": 0
+    },
+    {
+      "id": 9954,
+      "name": "Someparten",
+      "provider_id": 17
     }
   ],
   "product": [
@@ -1668,6 +1644,11 @@
       "address": "asdsds",
       "id": 9891,
       "name": "sd"
+    },
+    {
+      "address": "kek",
+      "id": 9892,
+      "name": "top"
     }
   ],
   "state": [

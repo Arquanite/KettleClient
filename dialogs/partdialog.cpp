@@ -2,6 +2,7 @@
 #include "ui_partdialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 
 PartDialog::PartDialog(QWidget *parent) : QDialog(parent), ui(new Ui::PartDialog){
     ui->setupUi(this);
@@ -11,7 +12,7 @@ PartDialog::PartDialog(QWidget *parent) : QDialog(parent), ui(new Ui::PartDialog
     connect(ui->buttonCancel, &QPushButton::clicked, this, &PartDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid!");
             return;
         }
         part.setName(ui->textName->text());
@@ -43,6 +44,7 @@ void PartDialog::setProviderIds(const QList<int> &value){
 }
 
 bool PartDialog::validate(){
-    if(ui->textName->text() == "" || ui->comboProvider->currentIndex() < 0) return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
+    if(ui->comboProvider->currentIndex() < 0) return false;
     return true;
 }

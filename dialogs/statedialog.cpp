@@ -2,6 +2,7 @@
 #include "ui_statedialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 #include "pdebug.h"
 
 StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDialog){
@@ -12,7 +13,7 @@ StateDialog::StateDialog(QWidget *parent) : QDialog(parent), ui(new Ui::StateDia
     connect(ui->buttonCancel, &QPushButton::clicked, this, &StateDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid!");
             return;
         }
         state.setName(ui->textName->text());
@@ -45,6 +46,7 @@ void StateDialog::setDepartmentIds(const QList<int> &value){
 }
 
 bool StateDialog::validate(){
-    if(ui->textName->text() == "" || ui->comboDepartment->currentIndex() < 0) return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
+    if(ui->comboDepartment->currentIndex() < 0) return false;
     return true;
 }

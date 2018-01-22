@@ -2,6 +2,7 @@
 #include "ui_providerdialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 
 ProviderDialog::ProviderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::ProviderDialog){
     ui->setupUi(this);
@@ -11,7 +12,7 @@ ProviderDialog::ProviderDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Pr
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProviderDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid!");
             return;
         }
         provider.setName(ui->textName->text());
@@ -30,6 +31,8 @@ void ProviderDialog::reload(){
 }
 
 bool ProviderDialog::validate(){
-    if(ui->textAddress->text() == "" || ui->textName->text() == "") return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
+    if(!StringValidator::isNonEmpty(ui->textAddress->text())) return false;
+
     return true;
 }

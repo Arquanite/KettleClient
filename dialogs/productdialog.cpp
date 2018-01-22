@@ -22,7 +22,7 @@ ProductDialog::ProductDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Prod
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProductDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "BŁĄÐ", "Formularz zawiera błędy");
+            QMessageBox::critical(this, "ERROR", "Form is invalid!");
             return;
         }
         product.setName(ui->textName->text());

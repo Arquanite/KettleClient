@@ -2,6 +2,7 @@
 #include "ui_departmentdialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 
 DepartmentDialog::DepartmentDialog(QWidget *parent) : QDialog(parent), ui(new Ui::DepartmentDialog){
     ui->setupUi(this);
@@ -11,7 +12,7 @@ DepartmentDialog::DepartmentDialog(QWidget *parent) : QDialog(parent), ui(new Ui
     connect(ui->buttonCancel, &QPushButton::clicked, this, &DepartmentDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid");
             return;
         }
         department.setName(ui->textName->text());
@@ -28,6 +29,6 @@ void DepartmentDialog::reload(){
 }
 
 bool DepartmentDialog::validate(){
-    if(ui->textName->text() == "") return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
     return true;
 }

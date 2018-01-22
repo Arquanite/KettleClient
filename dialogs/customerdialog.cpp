@@ -2,6 +2,7 @@
 #include "ui_customerdialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 
 CustomerDialog::CustomerDialog(QWidget *parent) : QDialog(parent), ui(new Ui::CustomerDialog){
     ui->setupUi(this);
@@ -34,7 +35,9 @@ void CustomerDialog::reload(){
 }
 
 bool CustomerDialog::validate(){
-    if(ui->textAddress->text() == "" || ui->textName->text() == "" || ui->textNip->text() == "") return false;
+    if(!StringValidator::isNonEmpty(ui->textAddress->text())) return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
+    if(!StringValidator::isNonEmpty(ui->textNip->text())) return false;
     match = re.match(ui->textNip->text());
     if(!match.hasMatch()) return false;
     return true;

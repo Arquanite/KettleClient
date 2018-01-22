@@ -2,6 +2,7 @@
 #define ORDERDIALOG_H
 
 #include <QDialog>
+#include <jsonmodel.h>
 #include "order.h"
 
 namespace Ui {
@@ -20,8 +21,13 @@ public:
 
     void reload();
 
+public slots:
+    void add();
+    void remove();
+
 private:
     Ui::OrderDialog *ui;
+    JSONModel *model;
 };
 
 #endif // ORDERDIALOG_H

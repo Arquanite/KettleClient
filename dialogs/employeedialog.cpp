@@ -2,6 +2,7 @@
 #include "ui_employeedialog.h"
 
 #include <QMessageBox>
+#include <stringvalidator.h>
 
 EmployeeDialog::EmployeeDialog(QWidget *parent) : QDialog(parent), ui(new Ui::EmployeeDialog){
     ui->setupUi(this);
@@ -11,7 +12,7 @@ EmployeeDialog::EmployeeDialog(QWidget *parent) : QDialog(parent), ui(new Ui::Em
     connect(ui->buttonCancel, &QPushButton::clicked, this, &EmployeeDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
         if(!validate()){
-            QMessageBox::critical(this, "ERROR", "Form is missing one or more fields");
+            QMessageBox::critical(this, "ERROR", "Form is invalid!");
             return;
         }
         employee.setName(ui->textName->text());
@@ -48,8 +49,9 @@ void EmployeeDialog::setDepartmentIds(const QList<int> &value){
 }
 
 bool EmployeeDialog::validate(){
-    if(ui->textName->text() == "" || ui->textSurname->text() == "" ||
-            ui->spinRate->value() == 0 || ui->spinCount->value() == 0 ||
+    if(ui->spinRate->value() == 0 || ui->spinCount->value() == 0 ||
             ui->comboDepartment->currentIndex() < 0) return false;
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
+    if(!StringValidator::isNonEmpty(ui->textSurname->text())) return false;
     return true;
 }
