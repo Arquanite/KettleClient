@@ -77,7 +77,8 @@ SOURCES += \
     patterns/state/partstate.cpp \
     patterns/state/productstate.cpp \
     patterns/state/providerstate.cpp \
-    patterns/state/statestate.cpp
+    patterns/state/statestate.cpp \
+    utils/stringvalidator.cpp
 
 HEADERS += \
         dialogs/mainwindow.h \
@@ -123,7 +124,8 @@ HEADERS += \
     patterns/state/partstate.h \
     patterns/state/productstate.h \
     patterns/state/providerstate.h \
-    patterns/state/statestate.h
+    patterns/state/statestate.h \
+    utils/stringvalidator.h
 
 FORMS += \
         dialogs/mainwindow.ui \

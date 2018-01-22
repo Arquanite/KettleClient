@@ -36,6 +36,6 @@ void CustomerDialog::reload(){
 bool CustomerDialog::validate(){
     if(ui->textAddress->text() == "" || ui->textName->text() == "" || ui->textNip->text() == "") return false;
     match = re.match(ui->textNip->text());
-    if(!match.hasMatch()) return false ;
+    if(!match.hasMatch()) return false;
     return true;
 }

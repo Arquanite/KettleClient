@@ -5,12 +5,13 @@
 #include "ascendingstrategy.h"
 #include "descendingstrategy.h"
 #include <QMessageBox>
+#include "stringvalidator.h"
 
 ProductDialog::ProductDialog(QWidget *parent) : QDialog(parent), ui(new Ui::ProductDialog){
     ui->setupUi(this);
 
     model = new JSONModel(QList<JSONAble*>(), new AscendingStrategy(), new DescendingStrategy, parent);
-    ui->tableView->setModel(model);
+    ui->tableView->setModel(model); 
 
     connect(ui->buttonCancel, &QPushButton::clicked, this, &ProductDialog::reject);
     connect(ui->buttonSave, &QPushButton::clicked, [&](){
@@ -33,5 +34,6 @@ void ProductDialog::reload(){
 }
 
 bool ProductDialog::validate(){
+    if(!StringValidator::isNonEmpty(ui->textName->text())) return false;
     return true;
 }

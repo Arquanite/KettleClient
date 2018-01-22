@@ -1,12 +1,6 @@
 {
   "customer": [
     {
-      "address": "al. Jabłońskiego 41, Suwałki",
-      "id": 1863,
-      "name": "Maria Duda",
-      "nip": "558-567-28-18"
-    },
-    {
       "address": "al. Olszewskiej 85, Rybnik",
       "id": 2507,
       "name": "Karol Michalak",
@@ -31,7 +25,7 @@
       "nip": "444-856-64-41"
     },
     {
-      "address": "ul. Zającego 7, Sopot",
+      "address": "ul. Zającego 7, Sopotasdsad",
       "id": 2616,
       "name": "Bogumiła Kowalczyk",
       "nip": "854-527-54-01"
@@ -168,6 +162,12 @@
       "id": 8198,
       "name": "Marcin Zając",
       "nip": "284-017-65-46"
+    },
+    {
+      "address": "asdasda",
+      "id": 9687,
+      "name": "Asdsadas",
+      "nip": "ssdadas"
     }
   ],
   "department": [
@@ -613,7 +613,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -652,7 +652,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -691,7 +691,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -730,7 +730,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -769,7 +769,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -808,7 +808,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -847,7 +847,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -886,7 +886,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -925,7 +925,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -964,7 +964,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -1003,7 +1003,7 @@
           "id": 1867,
           "name": "Czajnik elektryczny, model Agata, Różowy",
           "parts": [
-       	    {
+            {
               "id": 2216,
               "name": "Wtyczka typu A koloru Niebieski",
               "provider_id": 9978
@@ -1311,7 +1311,7 @@
       "id": 1867,
       "name": "Czajnik elektryczny, model Agata, Różowy",
       "parts": [
-       	{
+        {
           "id": 2216,
           "name": "Wtyczka typu A koloru Niebieski",
           "provider_id": 9978
@@ -1330,7 +1330,7 @@
         {
           "id": 2334,
           "name": "Pokrywka typu F koloru Fioletowy",
-        "provider_id": 3589
+          "provider_id": 3589
         },
         {
           "id": 6694,
@@ -1358,32 +1358,32 @@
     {
       "id": 4256,
       "name": "Czajnik elektryczny, model Gertruda, Srebrny",
-      "parts":[
+      "parts": [
         {
           "id": 5568,
           "name": "Wtyczka typu E koloru Żółty",
           "provider_id": 8311
         },
         {
-        "id": 5922,
-        "name": "Obudowa typu F koloru Błękitny",
-        "provider_id": 2618
+          "id": 5922,
+          "name": "Obudowa typu F koloru Błękitny",
+          "provider_id": 2618
         }
       ]
     },
     {
       "id": 4486,
       "name": "Czajnik elektryczny, model Alicja, Czerwony",
-      "parts":[
+      "parts": [
         {
-        "id": 5040,
-        "name": "Pokrywka typu E koloru Zielony",
-        "provider_id": 8695
+          "id": 5040,
+          "name": "Pokrywka typu E koloru Zielony",
+          "provider_id": 8695
         },
         {
-        "id": 5568,
-        "name": "Wtyczka typu E koloru Żółty",
-        "provider_id": 8311
+          "id": 5568,
+          "name": "Wtyczka typu E koloru Żółty",
+          "provider_id": 8311
         }
       ]
     },
@@ -1392,9 +1392,9 @@
       "name": "Czajnik elektryczny, model Gertruda, Szary",
       "parts": [
         {
-        "id": 8296,
-        "name": "Grzałka typu A koloru Zielony",
-        "provider_id": 2616
+          "id": 8296,
+          "name": "Grzałka typu A koloru Zielony",
+          "provider_id": 2616
         },
         {
           "id": 1105,
@@ -1406,16 +1406,16 @@
     {
       "id": 4967,
       "name": "Czajnik elektryczny, model Agnieszka, Pomarańczowy",
-      "parts":[
+      "parts": [
         {
-        "id": 7014,
-        "name": "Obudowa typu C koloru Niebieski",
-        "provider_id": 2285
+          "id": 7014,
+          "name": "Obudowa typu C koloru Niebieski",
+          "provider_id": 2285
         },
         {
-        "id": 2334,
-        "name": "Pokrywka typu F koloru Fioletowy",
-        "provider_id": 3589
+          "id": 2334,
+          "name": "Pokrywka typu F koloru Fioletowy",
+          "provider_id": 3589
         }
       ]
     },
@@ -1424,35 +1424,35 @@
       "name": "Czajnik elektryczny, model Joanna, Różowy",
       "parts": [
         {
-        "id": 2216,
-        "name": "Wtyczka typu A koloru Niebieski",
-        "provider_id": 9978
+          "id": 2216,
+          "name": "Wtyczka typu A koloru Niebieski",
+          "provider_id": 9978
         },
         {
-        "id": 9952,
-        "name": "tgf",
-        "provider_id": -1
+          "id": 9952,
+          "name": "tgf",
+          "provider_id": -1
         }
       ]
     },
     {
       "id": 9437,
       "name": "Czajnik elektryczny, model Sylwia, Pomarańczowy",
-      "parts":[
+      "parts": [
         {
-        "id": 1867,
-        "name": "Obudowa typu A koloru Błękitny",
-        "provider_id": 7831
+          "id": 1867,
+          "name": "Obudowa typu A koloru Błękitny",
+          "provider_id": 7831
         },
         {
-        "id": 4334,
-        "name": "Grzałka typu C koloru Różowy",
-        "provider_id": 4256
+          "id": 4334,
+          "name": "Grzałka typu C koloru Różowy",
+          "provider_id": 4256
         },
         {
-        "id": 7711,
-        "name": "Wtyczka typu A koloru Czerwony",
-        "provider_id": 4453
+          "id": 7711,
+          "name": "Wtyczka typu A koloru Czerwony",
+          "provider_id": 4453
         }
       ]
     },
@@ -1461,16 +1461,21 @@
       "name": "Czajnik elektryczny, model Patrycja, Czarny",
       "parts": [
         {
-        "id": 3963,
-        "name": "Grzałka typu D koloru Czarny",
-        "provider_id": 4034
+          "id": 3963,
+          "name": "Grzałka typu D koloru Czarny",
+          "provider_id": 4034
         },
         {
-        "id": 7399,
-        "name": "Pokrywka typu E koloru Beżowy",
-        "provider_id": 7322
+          "id": 7399,
+          "name": "Pokrywka typu E koloru Beżowy",
+          "provider_id": 7322
         }
       ]
+    },
+    {
+      "id": 9438,
+      "name": "aa sdsad",
+      "parts": []
     }
   ],
   "provider": [
@@ -1788,10 +1793,10 @@
     }
   ],
   "user": [
-  	{
-  	  "id": 124,
-  	  "name": "user",
-  	  "pass": "user123"
-  	}
+    {
+      "id": 124,
+      "name": "user",
+      "pass": "user123"
+    }
   ]
 }
